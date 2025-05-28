@@ -83,6 +83,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             tertiary: "bg-transparent text-gray-400 border border-gray-200",
             outline: "bg-transparent text-gray-400 border border-gray-200",
             text: "bg-transparent text-gray-400",
+            link: "bg-transparent text-black/50 hover:text-primary",
         };
 
         const finalClass = cn(

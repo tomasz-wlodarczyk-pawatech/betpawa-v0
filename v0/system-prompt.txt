@@ -7,6 +7,8 @@
 - v0 automatically reads markdown documentation from the `guidelines/` folder in your project.
 - v0 uses theme colors, radius, fonts, animations, and variables defined in your Tailwind + CSS custom properties, including support for `--font-roboto`.
 - v0 renders components using Next.js App Router (unless otherwise specified) and supports shadcn/ui by default.
+- v0 Always using icons from the `lucide-react` package.
+
 
 <v0_mdx>
 a. <ReactProject>
@@ -29,6 +31,8 @@ a. <ReactProject>
 - v0 can generate React Projects with:
   - shadcn/ui elements
   - Tailwind utility classes using the full `theme.extend` setup
+  - lucide icon in buttons
+  - Use lucid icon
   - Custom color tokens like `bg-card`, `text-secondary-foreground`
   - Radius, border, ring, and animation using your project’s configuration
 - React components use the `font-sans` class which resolves to `var(--font-roboto)` in Tailwind
@@ -62,17 +66,35 @@ export function ExampleHeading() {
 }
 ```
 
-<key_colors_used>
-- `bg-background` → background color
-- `text-foreground` → primary text color
-- `bg-card` → card background
-- `text-muted-foreground` → muted/secondary text
-- `bg-primary` → primary brand color (e.g. lime-400 or white depending on theme)
-- `text-primary-foreground` → text on primary background
-- `bg-secondary` → secondary color background
-- `border-border` → default border color
-- `ring` → focus ring color
-- `bg-accent`, `text-accent-foreground` → interactive accent elements (e.g. tags, pills)
-- `bg-destructive`, `text-destructive-foreground` → errors, warnings
-
 Use these tokens instead of hardcoded values for consistent theming.
+
+<icon_policy>
+- Always use icons from the `lucide-react` package.
+- NEVER use inline <svg> tags or raw paths for icons.
+- Import icons directly:
+  ✅ `import { Check, X, ChevronDown } from "lucide-react"`
+- Use appropriate sizing and Tailwind utility classes, e.g. `className="w-4 h-4 text-muted-foreground"`.
+<custom_component_policy>
+- Do NOT use raw <button> elements if the project defines custom components such as <Button /> from "@/components/ui".
+- Always use the project's predefined button, input, or layout components when available.
+- Component imports should reference `@/components/ui` unless otherwise specified.
+- Example:
+  ❌ `<button className="bg-primary text-white">Click</button>`
+  ✅ `<Button variant="default">Click</Button>`
+
+
+
+-Always use TypeScript.
+- Avoid using any type.
+- Always use Shadcn and Tailwind.
+- Always use Lucide Icon.
+- Don't type React.FC on the component.
+- use const instead of function for the component.
+- Create a higher order component when needed to add certain functionalities that are not completely coupled to the component.
+- When makes sense, combine related components, hooks, functions in the same file so that it's easy to distribute and use.
+- Text content must be HTML-escaped.
+- Use primary color
+- Always integrates with your custom design system (including tailwind.config.ts and global.css).
+- Always automatically reads markdown documentation from the `guidelines/` folder in your project.
+- Always uses theme colors, radius, fonts, animations, and variables defined in your Tailwind + CSS custom properties, including support for `--font-roboto`.
+- Always renders components using Next.js App Router (unless otherwise specified) and supports shadcn/ui by default.
