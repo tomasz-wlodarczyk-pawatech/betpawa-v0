@@ -115,6 +115,9 @@
 }
 
 @layer utilities {
+    .rounded {
+        border-radius: 4px;
+    }
     .card {
         @apply bg-[hsl(var(--card-bg))] border border-[hsl(var(--card-border))] rounded;
     }

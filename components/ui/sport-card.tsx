@@ -73,7 +73,7 @@ export function SportCard({
                             "flex items-center justify-center gap-1 p-2 rounded border transition-all cursor-pointer min-w-[60px]",
                             hotSelection === "home"
                                 ? "bg-green-500 border-green-500 text-white"
-                                : "bg-gray-50 border-gray-200 hover:bg-gray-100 text-gray-900"
+                                : "bg-gray-100 border-gray-200 hover:bg-gray-100 text-gray-900"
                         )}
                     >
                         <span className="text-sm font-bold">1</span>
@@ -86,7 +86,7 @@ export function SportCard({
                             "flex items-center justify-center gap-1 p-2 rounded border transition-all cursor-pointer min-w-[60px]",
                             hotSelection === "draw"
                                 ? "bg-green-500 border-green-500 text-white"
-                                : "bg-gray-50 border-gray-200 hover:bg-gray-100 text-gray-900"
+                                : "bg-gray-100 border-gray-200 hover:bg-gray-100 text-gray-900"
                         )}
                     >
                         <span className="text-sm font-bold">X</span>
@@ -96,10 +96,10 @@ export function SportCard({
                     {/* Away odds with hot indicator */}
                     <div
                         className={cn(
-                            "flex items-center justify-center gap-1 p-2 rounded border transition-all cursor-pointer min-w-[80px]",
+                            "flex items-center justify-center gap-1 p-2 rounded border transition-all cursor-pointer min-w-[70px]",
                             hotSelection === "away"
                                 ? "bg-green-500 border-green-500 text-white"
-                                : "bg-gray-50 border-gray-200 hover:bg-gray-100 text-gray-900"
+                                : "bg-gray-100 border-gray-200 hover:bg-gray-100 text-gray-900"
                         )}
                     >
                         <span className="text-sm font-bold">2</span>
@@ -114,7 +114,7 @@ export function SportCard({
                     {/* More markets indicator */}
                     {moreMarkets && (
                         <div
-                            className="flex items-center justify-center gap-1 p-2 rounded border bg-gray-50 border-gray-200 hover:bg-gray-100 text-gray-900 transition-all cursor-pointer min-w-[50px]">
+                            className="flex items-center justify-center gap-1 p-2 rounded border bg-gray-50 border-gray-200 hover:bg-gray-100 text-gray-900 transition-all cursor-pointer min-w-[20px]">
                             <span className="text-sm font-bold">{moreMarkets}</span>
                             <span className="text-sm">›</span>
                         </div>

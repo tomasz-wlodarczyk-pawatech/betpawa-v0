@@ -79,10 +79,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
         const disabledClassMap = {
             primary: "bg-lime-200 text-black/50 border border-lime-200",
-            secondary: "bg-gray-300 text-gray-500 border border-gray-300",
-            tertiary: "bg-transparent text-gray-400 border border-gray-200",
-            outline: "bg-transparent text-gray-400 border border-gray-200",
-            text: "bg-transparent text-gray-400",
+            secondary: "bg-gray-300 text-white border border-gray-300",
+            tertiary: "bg-transparent text-white border border-gray-200",
+            outline: "bg-transparent text-gray-100 border border-gray-200",
+            text: "bg-transparent text-gray-100",
             link: "bg-transparent text-black/50 hover:text-primary",
         };
 

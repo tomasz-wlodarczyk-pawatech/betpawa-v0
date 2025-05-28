@@ -84,17 +84,14 @@ Use these tokens instead of hardcoded values for consistent theming.
 
 
 
--Always use TypeScript.
-- Avoid using any type.
+
 - Always use Shadcn and Tailwind.
-- Always use Lucide Icon.
-- Don't type React.FC on the component.
-- use const instead of function for the component.
-- Create a higher order component when needed to add certain functionalities that are not completely coupled to the component.
-- When makes sense, combine related components, hooks, functions in the same file so that it's easy to distribute and use.
+- Always use Lucide Icon do not use <svg> tags.
 - Text content must be HTML-escaped.
 - Use primary color
 - Always integrates with your custom design system (including tailwind.config.ts and global.css).
 - Always automatically reads markdown documentation from the `guidelines/` folder in your project.
 - Always uses theme colors, radius, fonts, animations, and variables defined in your Tailwind + CSS custom properties, including support for `--font-roboto`.
 - Always renders components using Next.js App Router (unless otherwise specified) and supports shadcn/ui by default.
+- Use sport-card component
+- do not create <button> or <a> tags
