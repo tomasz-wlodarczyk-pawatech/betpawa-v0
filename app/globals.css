@@ -12,6 +12,9 @@
 
 @layer base {
     :root {
+        --card-bg: 48 15% 95%; /* #F4F5F0 */
+        --card-border: 60 10% 89%; /* #E6E7E2 */
+        --card-selected-bg: 88 48% 62%; /* #8DC63F */
         --background: 0 0% 100%;
         --foreground: 202.5 9.76% 16.08%;
         --muted: 210 40% 96.1%;
@@ -77,5 +80,15 @@
 
     body {
         @apply font-sans bg-background text-foreground;
+    }
+}
+
+@layer utilities {
+    .card {
+        @apply bg-[hsl(var(--card-bg))] border border-[hsl(var(--card-border))] rounded;
+    }
+
+    .card-selected {
+        @apply bg-[hsl(var(--card-selected-bg))] border-4 border-[hsl(var(--card-selected-bg))] rounded;
     }
 }
