@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 
-
 @layer utilities {
     .text-balance {
         text-wrap: balance;
@@ -80,6 +79,38 @@
 
     body {
         @apply font-sans bg-background text-foreground;
+    }
+
+    h1 {
+        @apply font-sans text-4xl leading-10 font-extrabold tracking-tight lg:text-5xl;
+    }
+
+    h2 {
+        @apply font-sans text-3xl leading-9 font-semibold tracking-tight;
+    }
+
+    h3 {
+        @apply font-sans text-2xl leading-8 font-semibold tracking-tight;
+    }
+
+    h4 {
+        @apply font-sans text-xl leading-7 font-semibold tracking-tight;
+    }
+
+    p {
+        @apply font-sans text-base leading-7 font-normal tracking-normal;
+    }
+
+    blockquote {
+        @apply font-sans text-base leading-6 font-normal tracking-normal italic;
+    }
+
+    code {
+        @apply font-mono text-sm leading-5 font-semibold;
+    }
+
+    ul, ol {
+        @apply font-sans text-base leading-7 font-normal tracking-normal;
     }
 }
 

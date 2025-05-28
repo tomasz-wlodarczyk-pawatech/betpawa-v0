@@ -54,7 +54,7 @@ export default function HomePage() {
                 <div className="container mx-auto p-4 space-y-8 max-w-2xl">
                     {/* Header */}
                     <div className="space-y-2">
-                        <h1 className="text-3xl font-bold text-gray-900">Component Catalog</h1>
+                        <h1>Component Catalog</h1>
                         <p className="text-gray-600">A comprehensive preview of all pawabloX design system
                             components</p>
                     </div>
