@@ -27,7 +27,7 @@ const buttonVariants = cva(
                 icon: "h-10 w-10 p-0",
             },
             disabledStyle: {
-                true: "", // styl disabled obsłużony niżej
+                true: "",
                 false: "",
             },
         },

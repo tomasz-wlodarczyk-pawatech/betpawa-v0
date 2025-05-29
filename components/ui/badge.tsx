@@ -1,7 +1,6 @@
 import * as React from "react";
 import {cva, type VariantProps} from "class-variance-authority";
 import {cn} from "@/lib/utils";
-import {Calendar} from "lucide-react";
 
 const badgeVariants = cva(
     "inline-flex items-center justify-center gap-1.5 rounded-full font-medium transition-all duration-200 select-none",
@@ -17,6 +16,7 @@ const badgeVariants = cva(
                 sm: "px-2 py-0.5 text-xs max-h-5",
                 default: "px-2 py-1 text-sm max-h-5",
                 lg: "px-2 py-1 text-base max-h-5",
+                md: "text-sm h-5 w-5 rounded-full",
             },
         },
         defaultVariants: {
@@ -29,6 +29,7 @@ const badgeVariants = cva(
 const iconSizes = {
     sm: "w-3 h-3",
     default: "w-4 h-4",
+    md: "w-4 h-4",
     lg: "w-4 h-4",
 };
 
@@ -47,9 +48,9 @@ const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
                 {...props}
             >
         {Icon && (
-            <Icon className={cn(iconSizes[size || "default"], "my-1")}/>
+            <Icon className={cn(iconSizes[size || "default"], )}/>
         )}
-                <span>{children}</span>
+                {children && <span>{children}</span>}
       </span>
         );
     }

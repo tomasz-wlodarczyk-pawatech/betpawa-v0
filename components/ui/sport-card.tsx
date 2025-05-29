@@ -1,8 +1,9 @@
 import * as React from "react";
 import {Card, CardContent} from "@/components/ui/card";
 import {Badge} from "@/components/ui/badge";
-import {Clock, TrendingUp} from "lucide-react";
+import {Clock, Flame, ChevronsUp } from "lucide-react";
 import {cn} from "@/lib/utils";
+import BetButton from "@/components/ui/bet-button";
 
 interface SportCardProps {
     time: string;
@@ -35,7 +36,7 @@ export function SportCard({
                           }: SportCardProps) {
     return (
         <Card className={cn("border-border shadow-sm", className)}>
-            <CardContent className="p-4 space-y-4">
+            <CardContent className="p-4 space-y-2">
                 {/* Header with time, date and badges */}
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -44,83 +45,53 @@ export function SportCard({
                         <span>{date}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                        <Badge variant="secondary" size="sm">
+                        <Badge variant="secondary" size="md">
                             2
                         </Badge>
-                        <Badge variant="primary" size="sm" Icon={TrendingUp}>
+                        <Badge variant="primary" size="md" Icon={ChevronsUp} className="bg-purple-500 text-white">
                         </Badge>
                     </div>
                 </div>
-
                 {/* Teams */}
-                <div className="space-y-2">
-                    <h3 className="text-sm font-semibold text-foreground leading-tight">
-                        {homeTeam}
-                    </h3>
-                    <h3 className="text-sm font-semibold text-foreground leading-tight">
-                        {awayTeam}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
+                <div>
+                        <h3 className="text-lg font-semibold text-foreground leading-tight mb-1 mt-0">
+                            {homeTeam}
+                        </h3>
+                        <h3 className="text-lg font-semibold text-foreground leading-tight mt-0">
+                            {awayTeam}
+                        </h3>
+
+
+                    <p className="text-sm text-muted-foreground mt-2">
                         {sport} / {league}
                     </p>
                 </div>
+                <div className="flex gap-2">
+                    {/* Betting odds */}
+                    <BetButton leftValue={'1'} rightValue={homeOdds} className={'flex-1'}
+                               Icon={hotSelection === "home" ? Flame : undefined} active={hotSelection === "home"}/>
 
-                {/* Betting odds */}
-                <div className="flex items-center gap-4">
-                    {/* Home odds */}
-                    <div
-                        className={cn(
-                            "flex items-center justify-center gap-1 p-2 rounded border transition-all cursor-pointer min-w-[60px]",
-                            hotSelection === "home"
-                                ? "bg-green-500 border-green-500 text-white"
-                                : "bg-gray-100 border-gray-200 hover:bg-gray-100 text-gray-900"
-                        )}
-                    >
-                        <span className="text-sm font-bold">1</span>
-                        <span className="text-sm font-medium">{homeOdds}</span>
-                    </div>
 
                     {/* Draw odds */}
-                    <div
-                        className={cn(
-                            "flex items-center justify-center gap-1 p-2 rounded border transition-all cursor-pointer min-w-[60px]",
-                            hotSelection === "draw"
-                                ? "bg-green-500 border-green-500 text-white"
-                                : "bg-gray-100 border-gray-200 hover:bg-gray-100 text-gray-900"
-                        )}
-                    >
-                        <span className="text-sm font-bold">X</span>
-                        <span className="text-sm font-medium">{drawOdds}</span>
-                    </div>
+                    <BetButton leftValue={'X'} rightValue={drawOdds} className={'flex-1'}
+                               Icon={hotSelection === "draw" ? Flame : undefined} active={hotSelection === "draw"}/>
+
 
                     {/* Away odds with hot indicator */}
-                    <div
-                        className={cn(
-                            "flex items-center justify-center gap-1 p-2 rounded border transition-all cursor-pointer min-w-[70px]",
-                            hotSelection === "away"
-                                ? "bg-green-500 border-green-500 text-white"
-                                : "bg-gray-100 border-gray-200 hover:bg-gray-100 text-gray-900"
-                        )}
-                    >
-                        <span className="text-sm font-bold">2</span>
-                        <div className="flex items-center gap-1">
-                            {hotSelection === "away" && (
-                                <TrendingUp className="w-3 h-3 text-orange-500"/>
-                            )}
-                            <span className="text-sm font-medium">{awayOdds}</span>
-                        </div>
-                    </div>
+                    <BetButton leftValue={2} rightValue={awayOdds} className={'flex-1'} Icon={hotSelection === "away" ? Flame : undefined}
+                               active={hotSelection === "away"}/>
+
 
                     {/* More markets indicator */}
-                    {moreMarkets && (
-                        <div
-                            className="flex items-center justify-center gap-1 p-2 rounded border bg-gray-50 border-gray-200 hover:bg-gray-100 text-gray-900 transition-all cursor-pointer min-w-[20px]">
-                            <span className="text-sm font-bold">{moreMarkets}</span>
-                            <span className="text-sm">›</span>
-                        </div>
-                    )}
+                    {/*{moreMarkets && (*/}
+                    {/*    <BetButton leftValue={moreMarkets} rightValue={""} Icon={ArrowRight}*/}
+                    {/*               className={"bg-white text-black border border-black"}/>*/}
+
+
+                    {/*)}*/}
                 </div>
             </CardContent>
         </Card>
-    );
+    )
+        ;
 }
