@@ -78,6 +78,13 @@ export default function HowToUsePage() {
                                     browser</CardDescription>
                             </CardHeader>
                             <CardContent>
+                                <Button variant="outline" size="sm" className="w-full mb-2">
+                                    <a href="https://replit.com/@tomekkwlodarczy/pawaBloX?v=1" target="_blank" rel="noopener noreferrer"
+                                       className="flex flex-row items-center gap-2">
+                                        <ExternalLink className="w-4 h-4 mr-2"/>
+                                        Fork pawaBloX Replit
+                                    </a>
+                                </Button>
                                 <Button variant="outline" size="sm" className="w-full">
                                     <a href="https://replit.com" target="_blank" rel="noopener noreferrer"
                                        className="flex flex-row items-center gap-2">
@@ -490,8 +497,41 @@ Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent className="space-y-6">
+                                    <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                                        <h4 className="font-medium text-blue-800 mb-2">🚀 Quick Start Template</h4>
+                                        <p className="text-blue-700 text-sm mb-3">
+                                            Use our ready-made Replit project with pawabloX design system pre-configured:
+                                        </p>
+                                        <Button 
+                                            variant="outline" 
+                                            size="sm" 
+                                            asChild 
+                                            className="bg-white border-blue-300 hover:bg-blue-100"
+                                        >
+                                            <a 
+                                                href="https://replit.com/@tomekkwlodarczy/pawaBloX?v=1" 
+                                                target="_blank" 
+                                                rel="noopener noreferrer"
+                                                className="flex items-center gap-2"
+                                            >
+                                                <ExternalLink className="w-4 h-4"/>
+                                                Fork pawaBloX Replit
+                                            </a>
+                                        </Button>
+                                    </div>
+
                                     <div className="space-y-4">
-                                        <h3 className="text-lg font-semibold">Step 1: Create a New Repl</h3>
+                                        <h3 className="text-lg font-semibold">Option 1: Use Our Template (Recommended)</h3>
+                                        <ol className="list-decimal list-inside text-muted-foreground space-y-2 ml-4">
+                                            <li>Click the "Fork pawaBloX Replit" button above</li>
+                                            <li>Sign in to Replit if you haven't already</li>
+                                            <li>Click "Fork" to create your own copy of the project</li>
+                                            <li>Start coding with all pawabloX components ready to use!</li>
+                                        </ol>
+                                    </div>
+
+                                    <div className="space-y-4">
+                                        <h3 className="text-lg font-semibold">Option 2: Create from Scratch</h3>
                                         <ol className="list-decimal list-inside text-muted-foreground space-y-2 ml-4">
                                             <li>
                                                 Go to{" "}
@@ -512,7 +552,7 @@ Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
                                     </div>
 
                                     <div className="space-y-4">
-                                        <h3 className="text-lg font-semibold">Step 2: Install Dependencies</h3>
+                                        <h3 className="text-lg font-semibold">Step 3: Install Dependencies (If creating from scratch)</h3>
                                         <p className="text-muted-foreground">In the Replit shell, install the required
                                             dependencies:</p>
                                         <div className="bg-muted p-4 rounded-lg font-mono text-sm">
@@ -523,6 +563,29 @@ Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
                                                 tailwind-merge
                                             </div>
                                         </div>
+                                    </div>
+
+                                    <div className="space-y-4">
+                                        <h3 className="text-lg font-semibold">Step 4: Using the Master Prompt with Replit Agent</h3>
+                                        <p className="text-muted-foreground">
+                                            When using Replit's AI assistant, always start with the master prompt from above:
+                                        </p>
+                                        <div className="bg-blue-50 border border-blue-200 p-3 rounded text-sm">
+                                            <p className="text-blue-700">
+                                                <strong>Example Replit Agent prompt:</strong><br/>
+                                                [Copy master prompt from above] + "Create a betting slip component with multiple selections"
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
+                                        <h4 className="font-medium text-yellow-800 mb-2">⚡ Pro Tips for Replit</h4>
+                                        <ul className="text-yellow-700 text-sm space-y-1">
+                                            <li>• Use the Replit Agent for AI-powered coding assistance</li>
+                                            <li>• Collaborate in real-time with team members</li>
+                                            <li>• Deploy instantly using Replit's deployment features</li>
+                                            <li>• Use the integrated terminal for package management</li>
+                                        </ul>
                                     </div>
                                 </CardContent>
                             </Card>
