@@ -245,19 +245,19 @@ Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
                                         }}
                                     >
                                         {copiedCode === "master-prompt" ? (
-                                            <>
+                                            <div className="flex items-center gap-2">
                                                 <span className="text-xs mr-1">
                                                     Copied!
                                                 </span>
                                                 <Check className="w-4 h-4" />
-                                            </>
+                                            </div>
                                         ) : (
-                                            <>
+                                            <div className="flex items-center gap-2">
                                                 <span className="text-xs mr-1">
                                                     Copy
                                                 </span>
                                                 <Copy className="w-4 h-4" />
-                                            </>
+                                            </div>
                                         )}
                                     </Button>
                                 </div>
@@ -284,6 +284,7 @@ Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
 - Use <ReactProject> with \`tsx file="..."\` structure for output.
 - Text content must be HTML-escaped.
 - Support only \`lucide-react\` for all icons. No custom or raw SVGs.
+- If you can use sport-card component, use it.
 
 ############################################
 ### COLOUR TOKENS
@@ -325,9 +326,7 @@ Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
 - All interactions and motion must be smooth (e.g. sheet slide-in: 250ms ease-out)
 
 
-<user_prompt>
-[ INSERT YOUR REQUEST HERE ]
-</user_prompt>`}
+`}
                                     </pre>
                                 </div>
                             </div>
