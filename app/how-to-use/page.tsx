@@ -126,15 +126,14 @@ export default function HowToUsePage() {
                                     <strong>With every AI command</strong> (v0, Claude, ChatGPT, Replit Agent) you must <strong>ALWAYS paste</strong> this master prompt at the beginning of your query to ensure consistency with the pawabloX design system.
                                 </p>
                             </div>
-                            
+
                             <div className="relative">
                                 <div className="flex items-center justify-between mb-2">
                                     <span className="text-sm font-medium">Master Prompt</span>
                                     <Button 
                                         variant="outline" 
                                         size="sm"
-                                        onClick={() => {
-                                            const masterPrompt = `You are a senior frontend developer building a **mobile-first app** that looks and feels exactly like betPawa using the custom design system provided in this project.
+                                        onClick={() => {                                            const masterPrompt = `You are a senior frontend developer building a **mobile-first app** that looks and feels exactly like betPawa using the custom design system provided in this project.
 
 ############################################
 ### DESIGN PRINCIPLES
@@ -286,7 +285,7 @@ Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
                                     </pre>
                                 </div>
                             </div>
-                            
+
                             <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
                                 <h4 className="font-medium text-blue-800 mb-2">💡 Step by step - how to use</h4>
                                 <ol className="text-blue-700 text-sm space-y-2 list-decimal list-inside">
@@ -333,7 +332,7 @@ Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
                                     </code>
                                 </div>
                             </div>
-                            
+
                             <div className="space-y-3">
                                 <h4 className="font-medium text-green-800">Example 2: Modifying existing code</h4>
                                 <div className="bg-green-50 border border-green-200 p-3 rounded text-sm">
@@ -349,7 +348,7 @@ Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
                                     </code>
                                 </div>
                             </div>
-                            
+
                             <div className="bg-green-100 border border-green-300 p-3 rounded">
                                 <p className="text-green-800 text-sm">
                                     <strong>Tip:</strong> Always replace <code className="bg-green-200 px-1 rounded">[MASTER PROMPT]</code> with the full content copied from the field above, and <code className="bg-green-200 px-1 rounded">[INSERT YOUR REQUEST HERE]</code> with your specific command.
@@ -363,7 +362,6 @@ Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
                             <TabsTrigger value="v0">v0 Integration</TabsTrigger>
                             <TabsTrigger value="replit">Replit & Vibe Coding</TabsTrigger>
                             <TabsTrigger value="local">Local Development</TabsTrigger>
-                            <TabsTrigger value="tokens">Design Tokens</TabsTrigger>
                         </TabsList>
 
                         <TabsContent value="v0" className="space-y-6">
@@ -505,49 +503,6 @@ Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
                                             <li>npm, yarn, or pnpm package manager</li>
                                             <li>Code editor (VS Code recommended)</li>
                                         </ul>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </TabsContent>
-
-                        <TabsContent value="tokens" className="space-y-6">
-                            <Card>
-                                <CardHeader>
-                                    <CardTitle className="flex items-center gap-2">
-                                        <Palette className="w-5 h-5 text-green-600"/>
-                                        Using Design Tokens
-                                    </CardTitle>
-                                    <CardDescription>Learn how to use pawabloX design tokens in your
-                                        projects</CardDescription>
-                                </CardHeader>
-                                <CardContent className="space-y-6">
-                                    <div className="space-y-4">
-                                        <h3 className="text-lg font-semibold">Color Tokens</h3>
-                                        <p className="text-muted-foreground">Use our semantic color tokens for
-                                            consistent theming:</p>
-                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                            <div className="p-3 border rounded-lg">
-                                                <div className="w-full h-8 bg-pw-green-400 rounded mb-2"></div>
-                                                <div className="text-sm font-medium">Primary</div>
-                                                <div
-                                                    className="text-xs text-muted-foreground font-mono">bg-pw-green-400
-                                                </div>
-                                            </div>
-                                            <div className="p-3 border rounded-lg">
-                                                <div className="w-full h-8 bg-pw-slate-600 rounded mb-2"></div>
-                                                <div className="text-sm font-medium">Text</div>
-                                                <div
-                                                    className="text-xs text-muted-foreground font-mono">text-pw-slate-600
-                                                </div>
-                                            </div>
-                                            <div className="p-3 border rounded-lg">
-                                                <div className="w-full h-8 bg-pw-orange-500 rounded mb-2"></div>
-                                                <div className="text-sm font-medium">Warning</div>
-                                                <div
-                                                    className="text-xs text-muted-foreground font-mono">bg-pw-orange-500
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </CardContent>
                             </Card>
