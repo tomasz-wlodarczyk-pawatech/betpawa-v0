@@ -81,22 +81,22 @@ export function AppSidebar({...props}: React.ComponentProps<typeof Sidebar>) {
                                 <SidebarMenuItem key={item.title}>
 
                                     <SidebarMenuButton asChild>
-                                        <Link href={item.url}>
-                                            <item.icon/>
-                                            <span>{item.title}</span>
+                                        <Link href={item.url} className="flex flex-row items-center gap-2">
+                                            <item.icon className="w-4 h-4"/>
+                                            <span className={"text-sm"}>{item.title}</span>
                                         </Link>
                                     </SidebarMenuButton>
                                 </SidebarMenuItem>
                             ))}
 
-              <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <Link href="/example-apps">
-                    <Zap className="w-4 h-4" />
-                    <span>Example Apps</span>
-                  </Link>
-                </SidebarMenuButton>
-                                </SidebarMenuItem>
+                            <SidebarMenuItem>
+                                <SidebarMenuButton asChild>
+                                    <Link href="/example-apps" className="flex flex-row items-center gap-2">
+                                        <Zap className="w-4 h-4"/>
+                                        <span className="text-sm">Example Apps</span>
+                                    </Link>
+                                </SidebarMenuButton>
+                            </SidebarMenuItem>
                         </SidebarMenu>
                     </SidebarGroupContent>
                 </SidebarGroup>
