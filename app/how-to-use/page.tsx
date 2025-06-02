@@ -534,7 +534,7 @@ Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
                                                 already
                                             </li>
                                             <li>
-                                                Click "Fork" or "Use Template"
+                                                Click "open in v0"
                                                 to create your own copy
                                             </li>
                                         </ol>
@@ -603,7 +603,7 @@ Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
                                                 className="flex items-center gap-2"
                                             >
                                                 <ExternalLink className="w-4 h-4" />
-                                                Fork pawaBloX Replit
+                                                Remix pawaBloX Replit
                                             </a>
                                         </Button>
                                     </div>
@@ -615,7 +615,7 @@ Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
                                         </h3>
                                         <ol className="list-decimal list-inside text-muted-foreground space-y-2 ml-4">
                                             <li>
-                                                Click the "Fork pawaBloX Replit"
+                                                Click the "Remix pawaBloX Replit"
                                                 button above
                                             </li>
                                             <li>
@@ -623,7 +623,7 @@ Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
                                                 already
                                             </li>
                                             <li>
-                                                Click "Fork" to create your own
+                                                Click "Remix this app" to create your own
                                                 copy of the project
                                             </li>
                                             <li>
