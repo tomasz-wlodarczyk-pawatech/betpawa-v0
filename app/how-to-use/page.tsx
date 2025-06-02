@@ -4,7 +4,7 @@ import {SidebarTrigger} from "@/components/ui/sidebar"
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card"
 import {Button} from "@/components/ui/button"
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs"
-import {HelpCircle, ExternalLink, Code, Palette, Download, Zap, Globe, Terminal, Layers} from "lucide-react"
+import {HelpCircle, ExternalLink, Code, Palette, Download, Zap, Globe, Terminal, Layers, Copy, Check} from "lucide-react"
 import {useState} from "react"
 
 export default function HowToUsePage() {
@@ -108,6 +108,197 @@ export default function HowToUsePage() {
                             </CardContent>
                         </Card>
                     </div>
+
+                    <Card className="border-yellow-200 bg-yellow-50/50">
+                        <CardHeader>
+                            <CardTitle className="flex items-center gap-2">
+                                <Code className="w-5 h-5 text-yellow-600"/>
+                                Master Prompt
+                            </CardTitle>
+                            <CardDescription>
+                                Use this master prompt with every AI request to ensure pawabloX design consistency
+                            </CardDescription>
+                        </CardHeader>
+                        <CardContent className="space-y-4">
+                            <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
+                                <h4 className="font-medium text-yellow-800 mb-2">⚠️ Important</h4>
+                                <p className="text-yellow-700 text-sm">
+                                    Z każdym poleceniem do AI (v0, Claude, ChatGPT) musisz wklejać ten master prompt na początku,
+                                    aby zapewnić spójność z systemem projektowym pawabloX.
+                                </p>
+                            </div>
+                            
+                            <div className="relative">
+                                <div className="flex items-center justify-between mb-2">
+                                    <span className="text-sm font-medium">Master Prompt</span>
+                                    <Button 
+                                        variant="outline" 
+                                        size="sm"
+                                        onClick={() => {
+                                            const masterPrompt = `You are a senior frontend developer building a **mobile-first app** that looks and feels exactly like betPawa using the custom design system provided in this project.
+
+############################################
+### DESIGN PRINCIPLES
+Energetic · minimalist · trustworthy · dense but scannable.
+Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
+
+- All icons MUST come from \`lucide-react\` with 1.5px stroke and rounded ends.
+- NEVER use raw HTML tags like <button>, <a>, <svg>, <input>. Instead, use design system components like <Button />, <Link />, <Input />, etc.
+- Always use tokens and values defined in \`tailwind.config.ts\` and \`global.css\`.
+- Always use the primary green color \`#9CE800\` for CTAs.
+- Always use \`Roboto\` as the primary font (\`Inter\`, Helvetica as fallback).
+
+############################################
+### COMPONENT USAGE
+- Use Shadcn UI and Tailwind utilities.
+- Always use pre-defined components from \`components/\` such as:
+  - <Button />, <Card />, <Badge />, <Input />, <Sheet />, <Tabs />, <Label />, etc.
+- Use <ReactProject> with \`tsx file="..."\` structure for output.
+- Text content must be HTML-escaped.
+- Support only \`lucide-react\` for all icons. No custom or raw SVGs.
+
+############################################
+### COLOUR TOKENS
+- --bp-primary-green: #9CE800 → CTAs, highlights
+- --bp-charcoal: #252A2D → header/footer backgrounds
+- --bp-off-white: #FFFFFF → cards, backgrounds
+- --bp-light-grey: #F2F4F7 → borders, dividers, disabled
+- --bp-warning-orange: #FF7A00 → hot tags, boosted odds
+- --bp-danger-red: #CC371B → error states, LOSS badges
+- --bp-info-blue: #22BFDB → links, info banners
+
+############################################
+### TYPOGRAPHY
+- Font: Roboto (fallback Inter, Helvetica)
+- Weight guide:
+  - 700: odds, balances
+  - 600: headers
+  - 400: body
+  - 300: fine print
+- Line-height: 1.2
+
+############################################
+### SPACING & LAYOUT
+- Base grid: 4dp, paddings ×8
+- Radius:
+  - 4dp: inputs, chips
+  - 8dp: sheets, cards
+  - 12dp: CTAs
+- App bar: 48dp, Bottom nav: 56dp
+- Odds chip: 64×36dp (auto width)
+
+############################################
+### ENGINEERING RULES
+- Always use Next.js App Router.
+- Read from tailwind.config.ts, global.css, and markdown docs in /guidelines.
+- Always use theme tokens for spacing, fonts, colors, etc.
+- Avoid inline styles; use Tailwind classes and design system utilities.
+- Never define components outside the system.
+- All interactions and motion must be smooth (e.g. sheet slide-in: 250ms ease-out)
+
+
+<user_prompt>
+[ INSERT YOUR REQUEST HERE ]
+</user_prompt>`;
+                                            navigator.clipboard.writeText(masterPrompt);
+                                            handleCopyCode(masterPrompt, "master-prompt");
+                                        }}
+                                    >
+                                        {copiedCode === "master-prompt" ? (
+                                            <>
+                                                <span className="text-xs mr-1">Skopiowane!</span>
+                                                <Check className="w-4 h-4"/>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <span className="text-xs mr-1">Kopiuj</span>
+                                                <Copy className="w-4 h-4"/>
+                                            </>
+                                        )}
+                                    </Button>
+                                </div>
+                                <div className="bg-gray-50 border rounded-lg p-4 max-h-64 overflow-y-auto">
+                                    <pre className="text-xs text-gray-700 whitespace-pre-wrap font-mono">
+{`You are a senior frontend developer building a **mobile-first app** that looks and feels exactly like betPawa using the custom design system provided in this project.
+
+############################################
+### DESIGN PRINCIPLES
+Energetic · minimalist · trustworthy · dense but scannable.
+Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
+
+- All icons MUST come from \`lucide-react\` with 1.5px stroke and rounded ends.
+- NEVER use raw HTML tags like <button>, <a>, <svg>, <input>. Instead, use design system components like <Button />, <Link />, <Input />, etc.
+- Always use tokens and values defined in \`tailwind.config.ts\` and \`global.css\`.
+- Always use the primary green color \`#9CE800\` for CTAs.
+- Always use \`Roboto\` as the primary font (\`Inter\`, Helvetica as fallback).
+
+############################################
+### COMPONENT USAGE
+- Use Shadcn UI and Tailwind utilities.
+- Always use pre-defined components from \`components/\` such as:
+  - <Button />, <Card />, <Badge />, <Input />, <Sheet />, <Tabs />, <Label />, etc.
+- Use <ReactProject> with \`tsx file="..."\` structure for output.
+- Text content must be HTML-escaped.
+- Support only \`lucide-react\` for all icons. No custom or raw SVGs.
+
+############################################
+### COLOUR TOKENS
+- --bp-primary-green: #9CE800 → CTAs, highlights
+- --bp-charcoal: #252A2D → header/footer backgrounds
+- --bp-off-white: #FFFFFF → cards, backgrounds
+- --bp-light-grey: #F2F4F7 → borders, dividers, disabled
+- --bp-warning-orange: #FF7A00 → hot tags, boosted odds
+- --bp-danger-red: #CC371B → error states, LOSS badges
+- --bp-info-blue: #22BFDB → links, info banners
+
+############################################
+### TYPOGRAPHY
+- Font: Roboto (fallback Inter, Helvetica)
+- Weight guide:
+  - 700: odds, balances
+  - 600: headers
+  - 400: body
+  - 300: fine print
+- Line-height: 1.2
+
+############################################
+### SPACING & LAYOUT
+- Base grid: 4dp, paddings ×8
+- Radius:
+  - 4dp: inputs, chips
+  - 8dp: sheets, cards
+  - 12dp: CTAs
+- App bar: 48dp, Bottom nav: 56dp
+- Odds chip: 64×36dp (auto width)
+
+############################################
+### ENGINEERING RULES
+- Always use Next.js App Router.
+- Read from tailwind.config.ts, global.css, and markdown docs in /guidelines.
+- Always use theme tokens for spacing, fonts, colors, etc.
+- Avoid inline styles; use Tailwind classes and design system utilities.
+- Never define components outside the system.
+- All interactions and motion must be smooth (e.g. sheet slide-in: 250ms ease-out)
+
+
+<user_prompt>
+[ INSERT YOUR REQUEST HERE ]
+</user_prompt>`}
+                                    </pre>
+                                </div>
+                            </div>
+                            
+                            <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                                <h4 className="font-medium text-blue-800 mb-2">💡 Jak używać</h4>
+                                <ol className="text-blue-700 text-sm space-y-1 list-decimal list-inside">
+                                    <li>Skopiuj powyższy master prompt</li>
+                                    <li>Wklej go na początku każdego zapytania do AI</li>
+                                    <li>Zastąp <code className="bg-blue-100 px-1 rounded">[INSERT YOUR REQUEST HERE]</code> swoim poleceniem</li>
+                                    <li>Wyślij zapytanie do v0, Claude, ChatGPT lub innego AI</li>
+                                </ol>
+                            </div>
+                        </CardContent>
+                    </Card>
 
                     <Tabs defaultValue="v0" className="space-y-6">
                         <TabsList className="grid w-full grid-cols-2 md:grid-cols-4">
