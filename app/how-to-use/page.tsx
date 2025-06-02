@@ -113,17 +113,17 @@ export default function HowToUsePage() {
                         <CardHeader>
                             <CardTitle className="flex items-center gap-2">
                                 <Code className="w-5 h-5 text-yellow-600"/>
-                                Master Prompt dla AI
+                                Master Prompt for AI
                             </CardTitle>
                             <CardDescription>
-                                Używaj tego master prompt z każdym zapytaniem do AI, aby zapewnić spójność z pawabloX
+                                Use this master prompt with every AI query to ensure consistency with pawabloX
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="space-y-4">
                             <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
-                                <h4 className="font-medium text-yellow-800 mb-2">⚠️ Ważne - Przeczytaj!</h4>
+                                <h4 className="font-medium text-yellow-800 mb-2">⚠️ Important - Please Read!</h4>
                                 <p className="text-yellow-700 text-sm">
-                                    <strong>Z każdym poleceniem do AI</strong> (v0, Claude, ChatGPT, Replit Agent) musisz <strong>ZAWSZE wklejać</strong> ten master prompt na początku zapytania, aby zapewnić spójność z systemem projektowym pawabloX.
+                                    <strong>With every AI command</strong> (v0, Claude, ChatGPT, Replit Agent) you must <strong>ALWAYS paste</strong> this master prompt at the beginning of your query to ensure consistency with the pawabloX design system.
                                 </p>
                             </div>
                             
@@ -205,12 +205,12 @@ Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
                                     >
                                         {copiedCode === "master-prompt" ? (
                                             <>
-                                                <span className="text-xs mr-1">Skopiowane!</span>
+                                                <span className="text-xs mr-1">Copied!</span>
                                                 <Check className="w-4 h-4"/>
                                             </>
                                         ) : (
                                             <>
-                                                <span className="text-xs mr-1">Kopiuj</span>
+                                                <span className="text-xs mr-1">Copy</span>
                                                 <Copy className="w-4 h-4"/>
                                             </>
                                         )}
@@ -288,21 +288,21 @@ Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
                             </div>
                             
                             <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
-                                <h4 className="font-medium text-blue-800 mb-2">💡 Krok po kroku - jak używać</h4>
+                                <h4 className="font-medium text-blue-800 mb-2">💡 Step by step - how to use</h4>
                                 <ol className="text-blue-700 text-sm space-y-2 list-decimal list-inside">
-                                    <li><strong>Skopiuj</strong> powyższy master prompt (kliknij przycisk "Kopiuj")</li>
-                                    <li><strong>Wklej go na początku</strong> każdego zapytania do AI (v0, Claude, ChatGPT, Replit Agent)</li>
-                                    <li><strong>Zastąp</strong> <code className="bg-blue-100 px-1 rounded text-xs">[INSERT YOUR REQUEST HERE]</code> swoim poleceniem, np.:
+                                    <li><strong>Copy</strong> the master prompt above (click the "Copy" button)</li>
+                                    <li><strong>Paste it at the beginning</strong> of every AI query (v0, Claude, ChatGPT, Replit Agent)</li>
+                                    <li><strong>Replace</strong> <code className="bg-blue-100 px-1 rounded text-xs">[INSERT YOUR REQUEST HERE]</code> with your command, e.g.:
                                         <div className="mt-1 ml-4 text-xs italic">
-                                            "Stwórz formularz logowania z walidacją"<br/>
-                                            "Dodaj przycisk do zapisywania danych"<br/>
-                                            "Zrób responsywną kartę produktu"
+                                            "Create a login form with validation"<br/>
+                                            "Add a button for saving data"<br/>
+                                            "Make a responsive product card"
                                         </div>
                                     </li>
-                                    <li><strong>Wyślij zapytanie</strong> - AI automatycznie zastosuje pawabloX design system</li>
+                                    <li><strong>Send the query</strong> - AI will automatically apply the pawabloX design system</li>
                                 </ol>
                                 <div className="mt-3 p-2 bg-blue-100 rounded text-xs text-blue-800">
-                                    <strong>Pamiętaj:</strong> Master prompt musi być wklejony przy KAŻDYM zapytaniu, aby AI pamiętało o pawabloX guidelines!
+                                    <strong>Remember:</strong> The master prompt must be pasted with EVERY query so AI remembers the pawabloX guidelines!
                                 </div>
                             </div>
                         </CardContent>
@@ -312,39 +312,39 @@ Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
                         <CardHeader>
                             <CardTitle className="flex items-center gap-2">
                                 <Zap className="w-5 h-5 text-green-600"/>
-                                Przykłady zapytań z master prompt
+                                Example queries with master prompt
                             </CardTitle>
                             <CardDescription>
-                                Zobacz jak prawidłowo formulować zapytania do AI z master prompt
+                                See how to properly formulate AI queries with the master prompt
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="space-y-4">
                             <div className="space-y-3">
-                                <h4 className="font-medium text-green-800">Przykład 1: Tworzenie komponentu</h4>
+                                <h4 className="font-medium text-green-800">Example 1: Creating a component</h4>
                                 <div className="bg-green-50 border border-green-200 p-3 rounded text-sm">
                                     <div className="text-green-700 mb-2">
-                                        <strong>Zapytanie do AI:</strong>
+                                        <strong>AI Query:</strong>
                                     </div>
                                     <code className="text-xs bg-white p-2 rounded block">
                                         [MASTER PROMPT]<br/><br/>
                                         &lt;user_prompt&gt;<br/>
-                                        Stwórz komponent karty produktu z obrazkiem, tytułem, ceną i przyciskiem "Dodaj do koszyka". Karta powinna być responsywna i używać pawabloX kolorów.<br/>
+                                        Create a product card component with image, title, price and "Add to Cart" button. The card should be responsive and use pawabloX colors.<br/>
                                         &lt;/user_prompt&gt;
                                     </code>
                                 </div>
                             </div>
                             
                             <div className="space-y-3">
-                                <h4 className="font-medium text-green-800">Przykład 2: Modyfikacja istniejącego kodu</h4>
+                                <h4 className="font-medium text-green-800">Example 2: Modifying existing code</h4>
                                 <div className="bg-green-50 border border-green-200 p-3 rounded text-sm">
                                     <div className="text-green-700 mb-2">
-                                        <strong>Zapytanie do AI:</strong>
+                                        <strong>AI Query:</strong>
                                     </div>
                                     <code className="text-xs bg-white p-2 rounded block">
                                         [MASTER PROMPT]<br/><br/>
                                         &lt;user_prompt&gt;<br/>
-                                        Popraw ten przycisk żeby używał pawabloX design system:<br/>
-                                        &lt;button className="bg-blue-500 text-white p-2"&gt;Kliknij&lt;/button&gt;<br/>
+                                        Fix this button to use pawabloX design system:<br/>
+                                        &lt;button className="bg-blue-500 text-white p-2"&gt;Click&lt;/button&gt;<br/>
                                         &lt;/user_prompt&gt;
                                     </code>
                                 </div>
@@ -352,7 +352,7 @@ Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
                             
                             <div className="bg-green-100 border border-green-300 p-3 rounded">
                                 <p className="text-green-800 text-sm">
-                                    <strong>Wskazówka:</strong> Zawsze zastępuj <code className="bg-green-200 px-1 rounded">[MASTER PROMPT]</code> pełną treścią skopiowaną z powyższego pola, a <code className="bg-green-200 px-1 rounded">[INSERT YOUR REQUEST HERE]</code> swoim konkretnym poleceniem.
+                                    <strong>Tip:</strong> Always replace <code className="bg-green-200 px-1 rounded">[MASTER PROMPT]</code> with the full content copied from the field above, and <code className="bg-green-200 px-1 rounded">[INSERT YOUR REQUEST HERE]</code> with your specific command.
                                 </p>
                             </div>
                         </CardContent>
