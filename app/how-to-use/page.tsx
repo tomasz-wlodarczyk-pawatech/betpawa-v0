@@ -90,7 +90,7 @@ export default function HowToUsePage() {
                                     className="w-full"
                                 >
                                     <a
-                                        href="https://v0.dev/community/betpawa-desing-system-0jyGs6lPfxs"
+                                        href="https://v0.dev/community/pawa-blox-e2g02lKaB5a"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="flex flex-row items-center gap-2"
@@ -122,7 +122,7 @@ export default function HowToUsePage() {
                                     className="w-full"
                                 >
                                     <a
-                                        href="https://replit.com/@tomekkwlodarczy/pawaBloX?v=1"
+                                        href="https://replit.com/t/pawatech/repls/pawablox/view"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="flex flex-row items-center gap-2"
@@ -493,7 +493,7 @@ Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
                                             className="bg-white border-green-300 hover:bg-green-100"
                                         >
                                             <a
-                                                href="https://v0.dev/community/betpawa-desing-system-0jyGs6lPfxs"
+                                                href="https://v0.dev/community/pawa-blox-e2g02lKaB5a"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="flex items-center gap-2"
@@ -583,7 +583,7 @@ Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
                                             className="bg-white border-blue-300 hover:bg-blue-100"
                                         >
                                             <a
-                                                href="https://replit.com/@tomekkwlodarczy/pawaBloX?v=1"
+                                                href="https://replit.com/t/pawatech/repls/pawablox/view"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="flex items-center gap-2"
