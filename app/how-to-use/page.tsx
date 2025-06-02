@@ -83,29 +83,36 @@ export default function HowToUsePage() {
                                 </CardDescription>
                             </CardHeader>
                             <CardContent>
-                                <Button
-                                    variant="outline"
-                                    size="sm"
-                                    asChild
-                                    className="w-full"
+                                <a
+                                    href="https://v0.dev/community/pawa-blox-e2g02lKaB5a"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex flex-row items-center gap-2 w-full"
                                 >
-                                    <a
-                                        href="https://v0.dev/community/pawa-blox-e2g02lKaB5a"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex flex-row items-center gap-2"
+                                    <Button
+                                        variant="outline"
+                                        size="sm"
+                                        asChild
+                                        className="w-full"
                                     >
-                                        <ExternalLink className="w-4 h-4 mr-2" />
-                                        Try v0
-                                    </a>
-                                </Button>
+                                        <a
+                                            href="https://v0.dev/community/pawa-blox-e2g02lKaB5a"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex flex-row items-center gap-2 w-full"
+                                        >
+                                            <ExternalLink className="w-4 h-4 mr-2"/>
+                                            Try v0
+                                        </a>
+                                    </Button>
+                                </a>
                             </CardContent>
                         </Card>
 
                         <Card className="border-blue-200 bg-blue-50/50 w-[50%]">
                             <CardHeader>
                                 <div className="flex items-center gap-2">
-                                    <Terminal className="w-5 h-5 text-blue-600" />
+                                    <Terminal className="w-5 h-5 text-blue-600"/>
                                     <CardTitle className="text-lg">
                                         Replit
                                     </CardTitle>
@@ -116,21 +123,28 @@ export default function HowToUsePage() {
                                 </CardDescription>
                             </CardHeader>
                             <CardContent>
-                                <Button
-                                    variant="outline"
-                                    size="sm"
-                                    className="w-full"
+                                <a
+                                    href="https://replit.com/t/pawatech/repls/pawablox/view"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex flex-row items-center gap-2"
                                 >
-                                    <a
-                                        href="https://replit.com/t/pawatech/repls/pawablox/view"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex flex-row items-center gap-2"
+                                    <Button
+                                        variant="outline"
+                                        size="sm"
+                                        className="w-full"
                                     >
-                                        <ExternalLink className="w-4 h-4 mr-2" />
-                                        Open Replit
-                                    </a>
-                                </Button>
+                                        <a
+                                            href="https://replit.com/t/pawatech/repls/pawablox/view"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex flex-row items-center gap-2"
+                                        >
+                                            <ExternalLink className="w-4 h-4 mr-2"/>
+                                            Open Replit
+                                        </a>
+                                    </Button>
+                                </a>
                             </CardContent>
                         </Card>
                     </div>
@@ -138,7 +152,7 @@ export default function HowToUsePage() {
                     <Card className="border-yellow-200 bg-yellow-50/50">
                         <CardHeader>
                             <CardTitle className="flex items-center gap-2">
-                                <Code className="w-5 h-5 text-yellow-600" />
+                                <Code className="w-5 h-5 text-yellow-600"/>
                                 Master Prompt for AI
                             </CardTitle>
                             <CardDescription>
