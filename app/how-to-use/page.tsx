@@ -388,13 +388,13 @@ Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
                                             className="bg-white border-green-300 hover:bg-green-100"
                                         >
                                             <a 
-                                                href="https://v0.dev/community/betpawa-desing-system-0jyGs6lPfxs" 
+                                                href="https://v0.dev/t/betpawa-desing-system-0jyGs6lPfxs" 
                                                 target="_blank" 
                                                 rel="noopener noreferrer"
                                                 className="flex items-center gap-2"
                                             >
                                                 <ExternalLink className="w-4 h-4"/>
-                                                Get pawabloX Template
+                                                Try v0
                                             </a>
                                         </Button>
                                     </div>
