@@ -376,59 +376,102 @@ Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent className="space-y-6">
-                                    <div className="space-y-4">
-                                        <h3 className="text-lg font-semibold">Step 1: Access v0</h3>
-                                        <p className="text-muted-foreground">
-                                            Visit{" "}
-                                            <a
-                                                href="https://v0.dev"
-                                                className="text-green-600 hover:underline"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                            >
-                                                v0.dev
-                                            </a>{" "}
-                                            and sign in with your Vercel account.
-                                        </p>
-                                    </div>
-
-                                    <div className="space-y-4">
-                                        <h3 className="text-lg font-semibold">Step 2: Use pawabloX Prompts</h3>
-                                        <p className="text-muted-foreground">
-                                            When prompting v0, specify that you want to use the pawabloX design system.
-                                        </p>
-                                    </div>
-
-                                    <div className="space-y-4">
-                                        <h3 className="text-lg font-semibold">Step 3: Specify Design Tokens</h3>
-                                        <p className="text-muted-foreground">
-                                            Always mention specific pawabloX design tokens in your prompts:
-                                        </p>
-                                        <ul className="list-disc list-inside text-muted-foreground space-y-1 ml-4">
-                                            <li>
-                                                <strong>Colors:</strong> pw-green-400 (primary), pw-slate-600 (text),
-                                                pw-orange-500 (warning)
-                                            </li>
-                                            <li>
-                                                <strong>Typography:</strong> Font weights 400, 500, 600, 700, 900
-                                            </li>
-                                            <li>
-                                                <strong>Spacing:</strong> Consistent 4px grid system
-                                            </li>
-                                            <li>
-                                                <strong>Border Radius:</strong> 6px for buttons, 8px for cards
-                                            </li>
-                                        </ul>
-                                    </div>
-
                                     <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
-                                        <h4 className="font-medium text-green-800 mb-2">💡 Pro Tip</h4>
-                                        <p className="text-green-700 text-sm">
-                                            Reference this design system documentation in your prompts by saying
-                                            "following the pawabloX
-                                            design system guidelines" to ensure consistency with our established
-                                            patterns.
+                                        <h4 className="font-medium text-green-800 mb-2">🚀 Quick Start Template</h4>
+                                        <p className="text-green-700 text-sm mb-3">
+                                            Use our ready-made v0 template with pawabloX design system pre-configured:
                                         </p>
+                                        <Button 
+                                            variant="outline" 
+                                            size="sm" 
+                                            asChild 
+                                            className="bg-white border-green-300 hover:bg-green-100"
+                                        >
+                                            <a 
+                                                href="https://v0.dev/community/betpawa-desing-system-0jyGs6lPfxs" 
+                                                target="_blank" 
+                                                rel="noopener noreferrer"
+                                                className="flex items-center gap-2"
+                                            >
+                                                <ExternalLink className="w-4 h-4"/>
+                                                Get pawabloX Template
+                                            </a>
+                                        </Button>
+                                    </div>
+
+                                    <div className="space-y-4">
+                                        <h3 className="text-lg font-semibold">Step 1: Access v0 Template</h3>
+                                        <ol className="list-decimal list-inside text-muted-foreground space-y-2 ml-4">
+                                            <li>
+                                                Click the "Get pawabloX Template" button above to access the pre-configured template
+                                            </li>
+                                            <li>
+                                                Sign in to v0.dev with your Vercel account if you haven't already
+                                            </li>
+                                            <li>
+                                                Click "Fork" or "Use Template" to create your own copy
+                                            </li>
+                                        </ol>
+                                    </div>
+
+                                    <div className="space-y-4">
+                                        <h3 className="text-lg font-semibold">Step 2: Use Master Prompt with v0</h3>
+                                        <p className="text-muted-foreground">
+                                            Always start your v0 prompts with the master prompt from above. This ensures v0 generates components that follow pawabloX guidelines.
+                                        </p>
+                                        <div className="bg-blue-50 border border-blue-200 p-3 rounded text-sm">
+                                            <p className="text-blue-700">
+                                                <strong>Example v0 prompt:</strong><br/>
+                                                [Copy master prompt from above] + "Create a login form with email, password fields and a submit button"
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-4">
+                                        <h3 className="text-lg font-semibold">Step 3: Key pawabloX Design Tokens</h3>
+                                        <p className="text-muted-foreground">
+                                            When customizing components in v0, use these pawabloX design tokens:
+                                        </p>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div className="space-y-2">
+                                                <h4 className="font-medium text-sm">Colors</h4>
+                                                <ul className="text-xs text-muted-foreground space-y-1">
+                                                    <li><code className="bg-gray-100 px-1 rounded">#9CE800</code> - Primary green (CTAs)</li>
+                                                    <li><code className="bg-gray-100 px-1 rounded">#252A2D</code> - Charcoal (headers)</li>
+                                                    <li><code className="bg-gray-100 px-1 rounded">#FF7A00</code> - Warning orange</li>
+                                                    <li><code className="bg-gray-100 px-1 rounded">#22BFDB</code> - Info blue</li>
+                                                </ul>
+                                            </div>
+                                            <div className="space-y-2">
+                                                <h4 className="font-medium text-sm">Layout</h4>
+                                                <ul className="text-xs text-muted-foreground space-y-1">
+                                                    <li>Base grid: 4px</li>
+                                                    <li>Button radius: 12px</li>
+                                                    <li>Card radius: 8px</li>
+                                                    <li>Font: Roboto, Inter, Helvetica</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-4">
+                                        <h3 className="text-lg font-semibold">Step 4: Export and Use</h3>
+                                        <ol className="list-decimal list-inside text-muted-foreground space-y-2 ml-4">
+                                            <li>Generate your component in v0 using the master prompt</li>
+                                            <li>Review the generated code and make any necessary adjustments</li>
+                                            <li>Copy the component code from v0</li>
+                                            <li>Import it into your pawabloX project or use it in Replit</li>
+                                        </ol>
+                                    </div>
+
+                                    <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
+                                        <h4 className="font-medium text-yellow-800 mb-2">⚡ Pro Tips for v0</h4>
+                                        <ul className="text-yellow-700 text-sm space-y-1">
+                                            <li>• Always mention "mobile-first" in your prompts for responsive design</li>
+                                            <li>• Reference "betPawa style" for betting app specific components</li>
+                                            <li>• Use "lucide-react icons only" to ensure icon consistency</li>
+                                            <li>• Specify "Shadcn UI components" for proper component usage</li>
+                                        </ul>
                                     </div>
                                 </CardContent>
                             </Card>
