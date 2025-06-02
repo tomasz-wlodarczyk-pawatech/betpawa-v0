@@ -1,7 +1,7 @@
 "use client"
 
 import type * as React from "react"
-import {BookOpen, LifeBuoy, Map, Layers} from "lucide-react"
+import {BookOpen, LifeBuoy, Map, Layers, Zap} from "lucide-react"
 
 import {
     Sidebar,
@@ -87,6 +87,22 @@ export function AppSidebar({...props}: React.ComponentProps<typeof Sidebar>) {
                                     </SidebarMenuButton>
                                 </SidebarMenuItem>
                             ))}
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <a href="/custom-components">
+                    <Layers className="w-4 h-4" />
+                    <span>Custom Components</span>
+                  </a>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <a href="/example-apps">
+                    <Zap className="w-4 h-4" />
+                    <span>Example Apps</span>
+                  </a>
+                </SidebarMenuButton>
+                                </SidebarMenuItem>
                         </SidebarMenu>
                     </SidebarGroupContent>
                 </SidebarGroup>
