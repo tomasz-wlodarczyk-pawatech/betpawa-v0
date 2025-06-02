@@ -1,6 +1,8 @@
 import type React from "react"
 import "./globals.css"
 import {Roboto} from "next/font/google"
+import {SidebarProvider} from "@/components/ui/sidebar";
+import {AppSidebar} from "@/components/app-sidebar";
 
 const roboto = Roboto({
     subsets: ["latin"],
@@ -14,8 +16,11 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" className={roboto.variable}>
-        <body className="bg-black">
-        <main className="flex-1 max-w-[360px] m-auto">{children}</main>
+        <body>
+        <SidebarProvider>
+            <AppSidebar/>
+            <main className="flex-1 m-auto">{children}</main>
+        </SidebarProvider>
         </body>
         </html>
     )

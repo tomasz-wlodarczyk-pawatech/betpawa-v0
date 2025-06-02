@@ -101,10 +101,21 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         return (
             <Comp className={`${finalClass} ${baseClasses} ${sizeClass}`} disabled={isDisabled}
                   ref={ref} {...props} >
-                {loading && <Loader2 className={cn(iconClass, "animate-spin")}/>}
-                {!loading && Icon && iconPosition === "left" && <Icon className={iconClass}/>}
-                {size !== "icon" && <span>{children}</span>}
-                {!loading && Icon && iconPosition === "right" && <Icon className={iconClass}/>}
+                {asChild ? (
+                    <span className="flex flex-row items-center gap-2">
+        {loading && <Loader2 className={cn(iconClass, "animate-spin")} />}
+                        {!loading && Icon && iconPosition === "left" && <Icon className={iconClass} />}
+                        {size !== "icon" && <span>{children}</span>}
+                        {!loading && Icon && iconPosition === "right" && <Icon className={iconClass} />}
+      </span>
+                ) : (
+                    <>
+                        {loading && <Loader2 className={cn(iconClass, "animate-spin")} />}
+                        {!loading && Icon && iconPosition === "left" && <Icon className={iconClass} />}
+                        {size !== "icon" && <span>{children}</span>}
+                        {!loading && Icon && iconPosition === "right" && <Icon className={iconClass} />}
+                    </>
+                )}
             </Comp>
         );
     }
