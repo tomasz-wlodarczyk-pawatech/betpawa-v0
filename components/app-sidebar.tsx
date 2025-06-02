@@ -15,6 +15,7 @@ import {
     SidebarGroupLabel,
     SidebarGroupContent,
 } from "@/components/ui/sidebar"
+import Link from "next/link";
 
 const data = {
     user: {
@@ -54,7 +55,7 @@ export function AppSidebar({...props}: React.ComponentProps<typeof Sidebar>) {
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton size="lg" asChild>
-                            <a href="/">
+                            <Link href="/">
                                 <div
                                     className="flex aspect-square size-8 items-center justify-center rounded-lg bg-gradient-to-br from-green-400 to-green-600 text-sidebar-primary-foreground">
                                     <span className="text-white font-bold text-sm">P</span>
@@ -66,7 +67,7 @@ export function AppSidebar({...props}: React.ComponentProps<typeof Sidebar>) {
                   </span>
                                     <span className="truncate text-xs text-muted-foreground">Design System</span>
                                 </div>
-                            </a>
+                            </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                 </SidebarMenu>
@@ -80,27 +81,20 @@ export function AppSidebar({...props}: React.ComponentProps<typeof Sidebar>) {
                                 <SidebarMenuItem key={item.title}>
 
                                     <SidebarMenuButton asChild>
-                                        <a href={item.url}>
+                                        <Link href={item.url}>
                                             <item.icon/>
                                             <span>{item.title}</span>
-                                        </a>
+                                        </Link>
                                     </SidebarMenuButton>
                                 </SidebarMenuItem>
                             ))}
+
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <a href="/custom-components">
-                    <Layers className="w-4 h-4" />
-                    <span>Custom Components</span>
-                  </a>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <a href="/example-apps">
+                  <Link href="/example-apps">
                     <Zap className="w-4 h-4" />
                     <span>Example Apps</span>
-                  </a>
+                  </Link>
                 </SidebarMenuButton>
                                 </SidebarMenuItem>
                         </SidebarMenu>
