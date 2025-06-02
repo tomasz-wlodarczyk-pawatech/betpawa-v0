@@ -27,6 +27,7 @@ import {
     MessageSquare,
     Zap
 } from "lucide-react"
+import Image from "next/image";
 
 interface ExampleApp {
     id: string
@@ -49,7 +50,7 @@ const exampleApps: ExampleApp[] = [
         prompt: `create a blank mobile app strictly based on the designs provided in the code with the following functionality on the front page: login form
 
 load upcoming betting events from https://pawa-api.replit.app/gh/events and display them under the login form together with event details, 1x2 markets and their odds. Example api response: { "status": "success", "data": [ { "start_time": "2025-05-28T19:00:00Z", "competition": "Football - International - UEFA Conference League", "event_name": "Real Betis Seville - Chelsea FC (n)", "event_id": "27279048", "sr_id": "58267485", "scoreboard": [], "markets": [ { "name": "1X2 | Full Time", "selections": [ { "id": "1199575943", "name": "1", "odds": "4.45", "hot": 0 }, { "id": "1199575944", "name": "X", "odds": "3.70", "hot": 0 }, { "id": "1199575945", "name": "2", "odds": "1.90", "hot": 1 } ] }, { "name": "Double Chance | Full Time", "selections": [ { "id": "1199578566", "name": "1X", "odds": "1.92", "hot": 0 }, { "id": "1199578568", "name": "X2", "odds": "1.23", "hot": 1 }, { "id": "1199578567", "name": "12", "odds": "1.31", "hot": 0 } ] }, { "name": "Both Teams To Score | Full Time", "selections": [ { "id": "1199578829", "name": "Yes", "odds": "1.83", "hot": 1 }, { "id": "1199578830", "name": "No", "odds": "1.98", "hot": 0 } ] }`,
-        image: "/placeholder.svg",
+        image: "/sport-bet.png",
         technologies: ["Next.js"],
         difficulty: "Intermediate",
         icon: Smartphone
@@ -139,6 +140,7 @@ export default function ExampleAppsPage() {
                                         <div className="flex items-start justify-between">
                                             <div className="flex items-center gap-3">
                                                 <div className="p-2 bg-green-100 rounded-lg">
+
                                                     <IconComponent className="w-5 h-5 text-green-600"/>
                                                 </div>
                                                 <div>
@@ -175,7 +177,10 @@ export default function ExampleAppsPage() {
                                         <div
                                             className="aspect-video bg-gray-100 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300">
                                             <div className="text-center text-gray-500">
-                                                <IconComponent className="w-8 h-8 mx-auto mb-2 opacity-50"/>
+                                                {app.image ? <Image src={app.image} alt={app.title} width={400}
+                                                                    height={400}/> :
+                                                    <IconComponent className="w-8 h-8 mx-auto mb-2 opacity-50"/>
+                                                }
                                                 <p className="text-sm">App Preview</p>
                                             </div>
                                         </div>
@@ -263,19 +268,7 @@ export default function ExampleAppsPage() {
                     </div>
 
                     {/* Call to action */}
-                    <div className="text-center py-8">
-                        <Card className="max-w-md mx-auto">
-                            <CardContent className="pt-6">
-                                <h3 className="text-lg font-semibold mb-2">Ready to Build?</h3>
-                                <p className="text-sm text-gray-600 mb-4">
-                                    Copy any prompt above and start building your own app with Replit's AI assistant!
-                                </p>
-                                <Button variant="primary" className="w-full">
-                                    Start Building
-                                </Button>
-                            </CardContent>
-                        </Card>
-                    </div>
+
                 </div>
             </div>
         </div>
