@@ -161,19 +161,7 @@ export default function HowToUsePage() {
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="space-y-4">
-                            <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
-                                <h4 className="font-medium text-yellow-800 mb-2">
-                                    ⚠️ Important - Please Read!
-                                </h4>
-                                <p className="text-yellow-700 text-sm">
-                                    <strong>With every AI command</strong> (v0,
-                                    Claude, ChatGPT, Replit Agent) you must{" "}
-                                    <strong>ALWAYS paste</strong> this master
-                                    prompt at the beginning of your query to
-                                    ensure consistency with the pawabloX design
-                                    system.
-                                </p>
-                            </div>
+                            
 
                             <div className="relative">
                                 <div className="flex items-center justify-between mb-2">
@@ -510,18 +498,22 @@ All text content must be HTML-escaped.
                                 </div>
                             </div>
 
+                            
                             <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
                                 <h4 className="font-medium text-yellow-800 mb-2">
-                                    ⚠️ Important - Please Read!
+                                    ⚠️ Platform-Specific Usage
                                 </h4>
-                                <p className="text-yellow-700 text-sm">
-                                    <strong>With every AI command</strong> (v0,
-                                    Claude, ChatGPT, Replit Agent) you must{" "}
-                                    <strong>ALWAYS paste</strong> this master
-                                    prompt at the beginning of your query to
-                                    ensure consistency with the pawabloX design
-                                    system.
-                                </p>
+                                <div className="space-y-2 text-yellow-700 text-sm">
+                                    <p>
+                                        <strong>🚀 Replit Agent:</strong> Simply use <code className="bg-yellow-100 px-1 rounded">@v0/system-prompt.txt</code> - no copy/paste needed!
+                                    </p>
+                                    <p>
+                                        <strong>🎨 v0.dev:</strong> Add <code className="bg-yellow-100 px-1 rounded">v0/system-prompt.txt</code> to context, then reference in prompts
+                                    </p>
+                                    <p>
+                                        <strong>💬 Claude/ChatGPT:</strong> Copy the master prompt below and paste at the beginning of every query
+                                    </p>
+                                </div>
                             </div>
 
                             <div className="bg-purple-50 border border-purple-200 p-4 rounded-lg">
@@ -556,7 +548,7 @@ All text content must be HTML-escaped.
                                             <li>Send the query - AI will automatically apply pawabloX design system</li>
                                         </ol>
                                     </div>
-                                    
+
                                     <div className="bg-blue-25 border border-blue-100 p-3 rounded">
                                         <h5 className="font-medium text-blue-800 mb-2">
                                             Option 2: Other AI Tools (v0, Claude, ChatGPT)
@@ -676,7 +668,8 @@ All text content must be HTML-escaped.
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent className="space-y-6">
-                                    <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
+                                    <div className="bg-green-50 border border-green-200 p-4 rounded-lg```tool_code
+">
                                         <h4 className="font-medium text-green-800 mb-2">
                                             🚀 Quick Start Template
                                         </h4>
@@ -734,7 +727,7 @@ All text content must be HTML-escaped.
                                             the master prompt. This ensures v0 generates components that
                                             follow pawabloX guidelines.
                                         </p>
-                                        
+
                                         <div className="bg-purple-50 border border-purple-200 p-4 rounded-lg">
                                             <h4 className="font-medium text-purple-800 mb-2">
                                                 🚀 Method 1: File Reference (If using Replit)
@@ -871,7 +864,7 @@ All text content must be HTML-escaped.
                                         <p className="text-muted-foreground">
                                             Replit Agent has a special feature that makes using pawabloX even easier!
                                         </p>
-                                        
+
                                         <div className="bg-purple-50 border border-purple-200 p-4 rounded-lg">
                                             <h4 className="font-medium text-purple-800 mb-2">
                                                 🚀 Method 1: File Reference (Recommended)
