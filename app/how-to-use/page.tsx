@@ -193,14 +193,14 @@ Voice: concise, second-person ("Place Bet", "Deposit now").
 
 ############################################
 ### COLOUR TOKENS
-- --bp-primary-green: #9CE800 → CTAs, WIN badges, highlights
-- --bp-background: #252A2D → top bar, bottom nav BG
-- --bp-foreground: #252A2D → button text, text titles
-- --bp-off-white: #FFFFFF → backdrops, cards
-- --bp-light-grey: #F2F4F7 → dividers, disabled states
-- --bp-warning-orange: #FF7A00 → boosted-odds flame, "Hot" tags
-- --bp-danger-red: #CC371B → LOSS badge, error text
-- --bp-info-blue: #22BFDB → links & educational banners
+--bp-primary-green   #9CE800    /* CTAs, WIN badges, highlights  */
+--bp-background      #252A2D    /* top bar, bottom nav BG        */
+--bp-foreground      #252A2D    /* button text, text titles        */
+--bp-off-white       #FFFFFF    /* backdrops, cards              */
+--bp-light-grey      #F2F4F7    /* dividers, disabled states     */
+--bp-warning-orange  #FF7A00    /* boosted-odds flame, "Hot" tags*/
+--bp-danger-red      #CC371B    /* LOSS badge, error text        */
+--bp-info-blue       #22BFDB    /* links & educational banners   */
 
 ############################################
 ### TYPOGRAPHY
@@ -223,15 +223,98 @@ Odds chip ≈ 64 × 36 dp (auto-wide).
 ############################################
 ### CORE COMPONENTS
 
-**Button** - Use <div role="button" tabindex="0">, Default: --bp-primary-green background, 700 weight 16sp text, 48dp height, 16dp padding, 12dp radius
-**Badges** - WIN: --bp-primary-green bg, LOSS: --bp-danger-red bg, VOID: transparent bg with border, HOT: --bp-warning-orange bg with flame icon
-**Checkbox** - Use <div role="checkbox">, 20×20dp, --bp-light-grey border, check icon when selected
-**Radio Button** - Use <div role="radio">, 20×20dp circle, inner 10×10dp circle when selected
-**Switch** - Use <div role="switch">, 36×20dp track, 16×16dp thumb, --bp-primary-green when on
-**Input Fields** - Use <div role="textbox">, 40dp height, --bp-off-white bg, --bp-light-grey border
-**Alert** - Use <div role="alert">, colored left border, Lucide icons, dismissible with close button
-**Bet Button** - Min 64×36dp, two-line text (label + odds), --bp-primary-green when selected
-**Pre-Sport Card** - 12dp padding, 8dp radius, competition path + teams + date/time + bet buttons
+**Button**
+Use <div role="button" tabindex="0"> styled to look like a button; do not use <button> or <a> tags.
+Default: --bp-primary-green background, 700 weight 16sp text, 48dp height, 16dp padding, 12dp radius
+Disabled: --bp-light-grey background, 400 weight text, opacity 0.5, cursor not-allowed
+Hover: brightness(1.1) over 100ms
+Active: scale(0.98) over 80ms
+Focus: 2px dashed --bp-primary-green outline, 2px offset
+Icon Buttons: 36dp × 36dp circular, centered Lucide icon 20×20dp
+Sizes: Small (32dp height, 12dp padding), Default (48dp), Large (56dp height, 24dp padding)
+
+**Badges**
+WIN: --bp-primary-green bg, 700 weight 12sp black text, 4dp padding, check-circle icon optional
+LOSS: --bp-danger-red bg, 700 weight 12sp white text, x-circle icon optional
+VOID: transparent bg, --bp-light-grey border, 400 weight 12sp text
+HOT: --bp-warning-orange bg, 600 weight 12sp white text, flame icon with pulse animation
+
+**Checkbox**
+Use <div role="checkbox" tabindex="0" aria-checked="false">
+20×20dp box, --bp-light-grey border, --bp-off-white background, 4dp radius
+Checked: check icon (Lucide 16×16dp), --bp-primary-green border
+Disabled: --bp-light-grey background 30% opacity, cursor not-allowed
+Focus: 2px dashed --bp-primary-green outline, 2px offset
+Label: 8dp gap, 14sp 400 weight text
+
+**Radio Button**
+Use <div role="radio" tabindex="0" aria-checked="false">
+20×20dp circle, --bp-light-grey border, --bp-off-white background
+Checked: 10×10dp inner circle, --bp-primary-green background
+Disabled: --bp-light-grey background 30% opacity
+Focus: 2px dashed --bp-primary-green outline, 2px offset
+Label: 8dp gap, 14sp 400 weight text
+
+**Switch**
+Use <div role="switch" tabindex="0" aria-checked="false">
+36×20dp track, 16×16dp thumb, 2dp margin from track edges
+Off: --bp-light-grey track, --bp-off-white thumb positioned left
+On: --bp-primary-green track, thumb positioned right
+Disabled: --bp-light-grey track/thumb 30% opacity, cursor not-allowed
+Focus: 2px dashed --bp-primary-green outline around track
+
+**Input Fields**
+Use <div role="textbox" tabindex="0" aria-multiline="false">
+40dp height, --bp-off-white background, --bp-light-grey border, 4dp radius
+8dp horizontal padding, Inter font 14sp 400 weight
+Placeholder: --text-secondary color
+Focus: 2px solid --bp-primary-green border
+Error: 2px solid --bp-danger-red border, error text below
+Disabled: --bp-light-grey background 30% opacity, cursor not-allowed
+Label: 14sp 600 weight, 4dp bottom margin
+Description: 12sp 300 weight, 4dp top margin
+
+**Alert**
+Use <div role="alert">
+--bp-off-white background, 4dp wide colored left border, 12dp padding
+Icons: info (info), check-circle (success), alert-triangle (warning), x-circle (error)
+20×20dp Lucide icons, 8dp gap from text
+Title: 16sp 600 weight, Description: 14sp 400 weight
+Dismissible: x icon (16×16dp) on right, fade out animation
+Variants: Info (--bp-info-blue), Success (--bp-primary-green), Warning (--bp-warning-orange), Error (--bp-danger-red)
+
+**Bet Button**
+Use <div role="button" tabindex="0">
+Min 64×36dp, auto-width, 4dp padding vertical, 8dp horizontal
+Two-line text: Label (14sp 400 weight --text-secondary), Odds (16sp 600 weight --text-primary)
+Unselected: 1px --bp-light-grey border, transparent background
+Selected: 2px --bp-primary-green border, rgba(156,232,0,0.1) background, --bp-primary-green text
+Disabled: --bp-light-grey border/background 30% opacity, cursor not-allowed
+Hover: border transitions to hsl(0,0%,70%) over 100ms
+Active: scale(0.95) over 80ms
+
+**Pre-Sport Card**
+Use <div role="group">
+12dp padding, 8dp corner radius, --bp-off-white background
+Competition path: 12sp 400 weight --text-secondary
+Teams: Two lines, 16sp 600 weight --text-primary, 4dp gap between lines
+Date/Time: 12sp 300 weight --text-secondary, 4dp below teams
+Bet buttons row (optional): 8dp gap between buttons, 12dp top margin from date
+Optional stat: 14sp 400 weight --text-secondary, far right or after buttons
+
+############################################
+### DATA INTEGRATION
+Fetch upcoming events from https://pawa-api.replit.app/gh/events at load.
+For each event render competition path, two-line event_name, start-time, 1X2 market using sport-card.
+Highlight "hot": 1 selections with orange outline + flame icon.
+Support "Add to Bet-Slip" with haptic micro-feedback.
+
+############################################
+### INTERACTION & MOTION
+Sheets & drawers slide vertical 250ms ease-out.
+Boosted/Hot chip pulses opacity 80→100% once (1s).
+Active bottom-nav icon has 36dp green halo (40% opacity).
+All text content must be HTML-escaped.
 
 ############################################
 ### ENGINEERING RULES
@@ -241,6 +324,10 @@ Odds chip ≈ 64 × 36 dp (auto-wide).
 - Use Next.js App Router and shadcn/ui by default
 - Do not create <button> or <a> tags
 - All colour/text pairs ≥ 4.5:1 contrast (WCAG AA)
+- Always integrates with custom design system (tailwind.config.ts and global.css)
+- Always reads markdown documentation from guidelines/ folder
+- Uses theme colors, radius, fonts, animations, and variables from Tailwind + CSS custom properties
+- Use sport-card component when possible
 
 <user_prompt>
 [ INSERT YOUR REQUEST HERE ]
@@ -282,14 +369,14 @@ Voice: concise, second-person ("Place Bet", "Deposit now").
 
 ############################################
 ### COLOUR TOKENS
-- --bp-primary-green: #9CE800 → CTAs, WIN badges, highlights
-- --bp-background: #252A2D → top bar, bottom nav BG
-- --bp-foreground: #252A2D → button text, text titles
-- --bp-off-white: #FFFFFF → backdrops, cards
-- --bp-light-grey: #F2F4F7 → dividers, disabled states
-- --bp-warning-orange: #FF7A00 → boosted-odds flame, "Hot" tags
-- --bp-danger-red: #CC371B → LOSS badge, error text
-- --bp-info-blue: #22BFDB → links & educational banners
+--bp-primary-green   #9CE800    /* CTAs, WIN badges, highlights  */
+--bp-background      #252A2D    /* top bar, bottom nav BG        */
+--bp-foreground      #252A2D    /* button text, text titles        */
+--bp-off-white       #FFFFFF    /* backdrops, cards              */
+--bp-light-grey      #F2F4F7    /* dividers, disabled states     */
+--bp-warning-orange  #FF7A00    /* boosted-odds flame, "Hot" tags*/
+--bp-danger-red      #CC371B    /* LOSS badge, error text        */
+--bp-info-blue       #22BFDB    /* links & educational banners   */
 
 ############################################
 ### TYPOGRAPHY
@@ -312,15 +399,98 @@ Odds chip ≈ 64 × 36 dp (auto-wide).
 ############################################
 ### CORE COMPONENTS
 
-**Button** - Use <div role="button" tabindex="0">, Default: --bp-primary-green background, 700 weight 16sp text, 48dp height, 16dp padding, 12dp radius
-**Badges** - WIN: --bp-primary-green bg, LOSS: --bp-danger-red bg, VOID: transparent bg with border, HOT: --bp-warning-orange bg with flame icon
-**Checkbox** - Use <div role="checkbox">, 20×20dp, --bp-light-grey border, check icon when selected
-**Radio Button** - Use <div role="radio">, 20×20dp circle, inner 10×10dp circle when selected
-**Switch** - Use <div role="switch">, 36×20dp track, 16×16dp thumb, --bp-primary-green when on
-**Input Fields** - Use <div role="textbox">, 40dp height, --bp-off-white bg, --bp-light-grey border
-**Alert** - Use <div role="alert">, colored left border, Lucide icons, dismissible with close button
-**Bet Button** - Min 64×36dp, two-line text (label + odds), --bp-primary-green when selected
-**Pre-Sport Card** - 12dp padding, 8dp radius, competition path + teams + date/time + bet buttons
+**Button**
+Use <div role="button" tabindex="0"> styled to look like a button; do not use <button> or <a> tags.
+Default: --bp-primary-green background, 700 weight 16sp text, 48dp height, 16dp padding, 12dp radius
+Disabled: --bp-light-grey background, 400 weight text, opacity 0.5, cursor not-allowed
+Hover: brightness(1.1) over 100ms
+Active: scale(0.98) over 80ms
+Focus: 2px dashed --bp-primary-green outline, 2px offset
+Icon Buttons: 36dp × 36dp circular, centered Lucide icon 20×20dp
+Sizes: Small (32dp height, 12dp padding), Default (48dp), Large (56dp height, 24dp padding)
+
+**Badges**
+WIN: --bp-primary-green bg, 700 weight 12sp black text, 4dp padding, check-circle icon optional
+LOSS: --bp-danger-red bg, 700 weight 12sp white text, x-circle icon optional
+VOID: transparent bg, --bp-light-grey border, 400 weight 12sp text
+HOT: --bp-warning-orange bg, 600 weight 12sp white text, flame icon with pulse animation
+
+**Checkbox**
+Use <div role="checkbox" tabindex="0" aria-checked="false">
+20×20dp box, --bp-light-grey border, --bp-off-white background, 4dp radius
+Checked: check icon (Lucide 16×16dp), --bp-primary-green border
+Disabled: --bp-light-grey background 30% opacity, cursor not-allowed
+Focus: 2px dashed --bp-primary-green outline, 2px offset
+Label: 8dp gap, 14sp 400 weight text
+
+**Radio Button**
+Use <div role="radio" tabindex="0" aria-checked="false">
+20×20dp circle, --bp-light-grey border, --bp-off-white background
+Checked: 10×10dp inner circle, --bp-primary-green background
+Disabled: --bp-light-grey background 30% opacity
+Focus: 2px dashed --bp-primary-green outline, 2px offset
+Label: 8dp gap, 14sp 400 weight text
+
+**Switch**
+Use <div role="switch" tabindex="0" aria-checked="false">
+36×20dp track, 16×16dp thumb, 2dp margin from track edges
+Off: --bp-light-grey track, --bp-off-white thumb positioned left
+On: --bp-primary-green track, thumb positioned right
+Disabled: --bp-light-grey track/thumb 30% opacity, cursor not-allowed
+Focus: 2px dashed --bp-primary-green outline around track
+
+**Input Fields**
+Use <div role="textbox" tabindex="0" aria-multiline="false">
+40dp height, --bp-off-white background, --bp-light-grey border, 4dp radius
+8dp horizontal padding, Inter font 14sp 400 weight
+Placeholder: --text-secondary color
+Focus: 2px solid --bp-primary-green border
+Error: 2px solid --bp-danger-red border, error text below
+Disabled: --bp-light-grey background 30% opacity, cursor not-allowed
+Label: 14sp 600 weight, 4dp bottom margin
+Description: 12sp 300 weight, 4dp top margin
+
+**Alert**
+Use <div role="alert">
+--bp-off-white background, 4dp wide colored left border, 12dp padding
+Icons: info (info), check-circle (success), alert-triangle (warning), x-circle (error)
+20×20dp Lucide icons, 8dp gap from text
+Title: 16sp 600 weight, Description: 14sp 400 weight
+Dismissible: x icon (16×16dp) on right, fade out animation
+Variants: Info (--bp-info-blue), Success (--bp-primary-green), Warning (--bp-warning-orange), Error (--bp-danger-red)
+
+**Bet Button**
+Use <div role="button" tabindex="0">
+Min 64×36dp, auto-width, 4dp padding vertical, 8dp horizontal
+Two-line text: Label (14sp 400 weight --text-secondary), Odds (16sp 600 weight --text-primary)
+Unselected: 1px --bp-light-grey border, transparent background
+Selected: 2px --bp-primary-green border, rgba(156,232,0,0.1) background, --bp-primary-green text
+Disabled: --bp-light-grey border/background 30% opacity, cursor not-allowed
+Hover: border transitions to hsl(0,0%,70%) over 100ms
+Active: scale(0.95) over 80ms
+
+**Pre-Sport Card**
+Use <div role="group">
+12dp padding, 8dp corner radius, --bp-off-white background
+Competition path: 12sp 400 weight --text-secondary
+Teams: Two lines, 16sp 600 weight --text-primary, 4dp gap between lines
+Date/Time: 12sp 300 weight --text-secondary, 4dp below teams
+Bet buttons row (optional): 8dp gap between buttons, 12dp top margin from date
+Optional stat: 14sp 400 weight --text-secondary, far right or after buttons
+
+############################################
+### DATA INTEGRATION
+Fetch upcoming events from https://pawa-api.replit.app/gh/events at load.
+For each event render competition path, two-line event_name, start-time, 1X2 market using sport-card.
+Highlight "hot": 1 selections with orange outline + flame icon.
+Support "Add to Bet-Slip" with haptic micro-feedback.
+
+############################################
+### INTERACTION & MOTION
+Sheets & drawers slide vertical 250ms ease-out.
+Boosted/Hot chip pulses opacity 80→100% once (1s).
+Active bottom-nav icon has 36dp green halo (40% opacity).
+All text content must be HTML-escaped.
 
 ############################################
 ### ENGINEERING RULES
@@ -330,6 +500,10 @@ Odds chip ≈ 64 × 36 dp (auto-wide).
 - Use Next.js App Router and shadcn/ui by default
 - Do not create <button> or <a> tags
 - All colour/text pairs ≥ 4.5:1 contrast (WCAG AA)
+- Always integrates with custom design system (tailwind.config.ts and global.css)
+- Always reads markdown documentation from guidelines/ folder
+- Uses theme colors, radius, fonts, animations, and variables from Tailwind + CSS custom properties
+- Use sport-card component when possible
 
 `}
                                     </pre>
