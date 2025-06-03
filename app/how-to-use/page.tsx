@@ -731,21 +731,38 @@ All text content must be HTML-escaped.
                                         </h3>
                                         <p className="text-muted-foreground">
                                             Always start your v0 prompts with
-                                            the master prompt from above. This
-                                            ensures v0 generates components that
+                                            the master prompt. This ensures v0 generates components that
                                             follow pawabloX guidelines.
                                         </p>
-                                        <div className="bg-blue-50 border border-blue-200 p-3 rounded text-sm">
-                                            <p className="text-blue-700">
-                                                <strong>
-                                                    Example v0 prompt:
-                                                </strong>
-                                                <br />
-                                                [Copy master prompt from above]
-                                                + "Create a login form with
-                                                email, password fields and a
-                                                submit button"
+                                        
+                                        <div className="bg-purple-50 border border-purple-200 p-4 rounded-lg">
+                                            <h4 className="font-medium text-purple-800 mb-2">
+                                                🚀 Method 1: File Reference (If using Replit)
+                                            </h4>
+                                            <p className="text-purple-700 text-sm mb-3">
+                                                If you're coding in Replit and using v0, you can reference the system prompt file directly:
                                             </p>
+                                            <div className="bg-white border border-purple-200 p-3 rounded text-sm font-mono">
+                                                <span className="text-purple-600">@v0/system-prompt.txt</span> create a login form with email, password fields and a submit button
+                                            </div>
+                                            <p className="text-purple-600 text-xs mt-2">
+                                                ✅ This automatically includes the entire master prompt without copy/paste!
+                                            </p>
+                                        </div>
+
+                                        <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                                            <h4 className="font-medium text-blue-800 mb-2">
+                                                📋 Method 2: Manual Copy/Paste
+                                            </h4>
+                                            <p className="text-blue-700 text-sm mb-3">
+                                                For traditional v0 usage or when not using Replit:
+                                            </p>
+                                            <div className="bg-white border border-blue-200 p-3 rounded text-sm">
+                                                <p className="text-blue-700">
+                                                    <strong>Example v0 prompt:</strong><br />
+                                                    [Copy master prompt from above] + "Create a login form with email, password fields and a submit button"
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </CardContent>
