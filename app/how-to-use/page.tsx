@@ -294,7 +294,8 @@ All text content must be HTML-escaped.
                                         <h4 className="font-medium text-purple-800">🚀 Replit Agent</h4>
                                     </div>
                                     <p className="text-purple-700 text-sm mb-3">
-                                        Simply use <code className="bg-purple-100 px-1 rounded text-xs">@v0/system-prompt.txt</code> - no copy/paste needed!
+                                        <strong>Method 1:</strong> Use <code className="bg-purple-100 px-1 rounded text-xs">@v0/system-prompt.txt</code> - no copy/paste needed!<br/>
+                                        <strong>Method 2:</strong> Manual copy/paste also works
                                     </p>
                                     <div className="bg-purple-100 border border-purple-200 p-2 rounded text-xs font-mono">
                                         @v0/system-prompt.txt create login form
@@ -307,10 +308,11 @@ All text content must be HTML-escaped.
                                         <h4 className="font-medium text-blue-800">🎨 v0.dev</h4>
                                     </div>
                                     <p className="text-blue-700 text-sm mb-3">
-                                        Add <code className="bg-blue-100 px-1 rounded text-xs">v0/system-prompt.txt</code> to context, then reference in prompts
+                                        <strong>Method 1:</strong> Add <code className="bg-blue-100 px-1 rounded text-xs">v0/system-prompt.txt</code> to context<br/>
+                                        <strong>Method 2:</strong> Manual copy/paste of master prompt
                                     </p>
                                     <div className="bg-blue-100 border border-blue-200 p-2 rounded text-xs">
-                                        Add file → Reference in prompt
+                                        File reference OR copy/paste
                                     </div>
                                 </div>
 
@@ -320,12 +322,18 @@ All text content must be HTML-escaped.
                                         <h4 className="font-medium text-gray-800">💬 Claude/ChatGPT</h4>
                                     </div>
                                     <p className="text-gray-700 text-sm mb-3">
-                                        Copy the master prompt below and paste at the beginning of every query
+                                        Manual copy/paste of the master prompt at the beginning of every query
                                     </p>
                                     <div className="bg-gray-100 border border-gray-200 p-2 rounded text-xs">
-                                        Manual copy/paste required
+                                        Copy/paste required
                                     </div>
                                 </div>
+                            </div>
+
+                            <div className="mt-4 p-3 bg-green-100 rounded-lg border border-green-200">
+                                <p className="text-green-800 text-sm font-medium">
+                                    💡 <strong>Want to see it in action?</strong> Check out our <a href="/example-apps" className="underline text-green-700 hover:text-green-900">Example Apps page</a> to see working prompts and their results!
+                                </p>
                             </div>
                         </CardContent>
                     </Card>
@@ -395,24 +403,44 @@ All text content must be HTML-escaped.
                                         <span className="w-6 h-6 bg-purple-600 text-white rounded-full flex items-center justify-center text-xs font-bold">1</span>
                                         Replit Agent (Recommended)
                                     </h5>
-                                    <ol className="text-purple-700 text-sm space-y-2 list-decimal list-inside">
-                                        <li>Type <code className="bg-purple-100 px-1 rounded text-xs">@v0/system-prompt.txt</code> at the beginning</li>
-                                        <li>Add your request after the file reference</li>
-                                        <li>Send the query - AI will automatically apply pawabloX design system</li>
-                                    </ol>
+                                    <div className="text-purple-700 text-sm space-y-3">
+                                        <div>
+                                            <p className="font-medium mb-1">🚀 Quick Method:</p>
+                                            <ol className="list-decimal list-inside space-y-1 ml-2">
+                                                <li>Type <code className="bg-purple-100 px-1 rounded text-xs">@v0/system-prompt.txt</code> at the beginning</li>
+                                                <li>Add your request after the file reference</li>
+                                                <li>Send the query - AI will automatically apply pawabloX design system</li>
+                                            </ol>
+                                        </div>
+                                        <div>
+                                            <p className="font-medium mb-1">📋 Alternative Method:</p>
+                                            <p className="ml-2">Manual copy/paste also works if preferred</p>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div className="bg-blue-25 border border-blue-100 p-4 rounded-lg">
                                     <h5 className="font-medium text-blue-800 mb-3 flex items-center gap-2">
                                         <span className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-bold">2</span>
-                                        Other AI Tools
+                                        v0.dev &amp; Other AI Tools
                                     </h5>
-                                    <ol className="text-blue-700 text-sm space-y-2 list-decimal list-inside">
-                                        <li><strong>Copy</strong> the master prompt above</li>
-                                        <li><strong>Paste it at the beginning</strong> of every AI query</li>
-                                        <li><strong>Replace</strong> <code className="bg-blue-100 px-1 rounded text-xs">[INSERT YOUR REQUEST HERE]</code> with your command</li>
-                                        <li><strong>Send the query</strong> - AI will apply pawabloX design system</li>
-                                    </ol>
+                                    <div className="text-blue-700 text-sm space-y-3">
+                                        <div>
+                                            <p className="font-medium mb-1">🎨 v0.dev Methods:</p>
+                                            <ol className="list-decimal list-inside space-y-1 ml-2">
+                                                <li>Add <code className="bg-blue-100 px-1 rounded text-xs">v0/system-prompt.txt</code> to context OR</li>
+                                                <li>Copy/paste the master prompt manually</li>
+                                            </ol>
+                                        </div>
+                                        <div>
+                                            <p className="font-medium mb-1">💬 Claude/ChatGPT:</p>
+                                            <ol className="list-decimal list-inside space-y-1 ml-2">
+                                                <li><strong>Copy</strong> the master prompt above</li>
+                                                <li><strong>Paste it at the beginning</strong> of every AI query</li>
+                                                <li><strong>Replace</strong> <code className="bg-blue-100 px-1 rounded text-xs">[INSERT YOUR REQUEST HERE]</code> with your command</li>
+                                            </ol>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -519,24 +547,36 @@ All text content must be HTML-escaped.
 
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                             <div className="bg-purple-50 border border-purple-200 p-4 rounded-lg">
-                                                <h4 className="font-medium text-purple-800 mb-2">🚀 Method 1: File Reference</h4>
+                                                <h4 className="font-medium text-purple-800 mb-2">🚀 Method 1: File Reference (Replit)</h4>
                                                 <p className="text-purple-700 text-sm mb-3">
                                                     If coding in Replit and using v0:
                                                 </p>
                                                 <div className="bg-white border border-purple-200 p-3 rounded text-sm font-mono">
                                                     <span className="text-purple-600">@v0/system-prompt.txt</span> create a login form
                                                 </div>
+                                                <p className="text-purple-600 text-xs mt-2">
+                                                    ✅ This automatically includes the entire master prompt!
+                                                </p>
                                             </div>
 
                                             <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
                                                 <h4 className="font-medium text-blue-800 mb-2">📋 Method 2: Manual Copy/Paste</h4>
                                                 <p className="text-blue-700 text-sm mb-3">
-                                                    For traditional v0 usage:
+                                                    For direct v0.dev usage or when file reference isn't available:
                                                 </p>
                                                 <div className="bg-white border border-blue-200 p-3 rounded text-sm">
-                                                    [Copy master prompt] + "Create a login form"
+                                                    [Copy master prompt from above] + "Create a login form"
                                                 </div>
+                                                <p className="text-blue-600 text-xs mt-2">
+                                                    ✅ Works on v0.dev, Replit, and all AI platforms
+                                                </p>
                                             </div>
+                                        </div>
+
+                                        <div className="mt-4 p-3 bg-green-100 rounded-lg border border-green-200">
+                                            <p className="text-green-800 text-sm">
+                                                💡 <strong>See it in action:</strong> Visit our <a href="/example-apps" className="underline text-green-700 hover:text-green-900">Example Apps page</a> to see working prompts and their results. You can copy any prompt and try it yourself!
+                                            </p>
                                         </div>
                                     </div>
                                 </CardContent>
