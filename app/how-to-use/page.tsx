@@ -192,14 +192,6 @@ Energetic · trustworthy · minimalist · data-dense but easy to scan.
 Voice: concise, second-person ("Place Bet", "Deposit now").
 
 ############################################
-### DESIGN PRINCIPLES
-- All icons MUST come from \`lucide-react\` with 1.5px stroke and rounded ends.
-- NEVER use raw HTML tags like <button>, <a>, <svg>, <input>. Instead, use design system components like <Button />, <Link />, <Input />, etc.
-- Always use tokens and values defined in \`tailwind.config.ts\` and \`global.css\`.
-- Always use the primary green color \`#9CE800\` for CTAs.
-- Always use \`Inter\` as the primary font (fallback Roboto, Helvetica).
-
-############################################
 ### COLOUR TOKENS
 - --bp-primary-green: #9CE800 → CTAs, WIN badges, highlights
 - --bp-background: #252A2D → top bar, bottom nav BG
@@ -212,54 +204,43 @@ Voice: concise, second-person ("Place Bet", "Deposit now").
 
 ############################################
 ### TYPOGRAPHY
-- Primary font: Inter (fallback Roboto, Helvetica)
-- Weights → 700 balances & odds, 600 headers, 400 body, 300 fine print
-- Line-height: 1.2
+Primary font: Inter (fallback Roboto, Helvetica).
+Weights → 700 balances & odds, 600 headers, 400 body, 300 fine print.
+Line-height 1.2.
 
 ############################################
 ### ICONOGRAPHY
-- Every icon must come from the Lucide icon library
-- Icon style: Lucide icons, 1.5 px stroke, rounded ends; flat fills only when status-critical
+Every icon must come from the Lucide icon library.
+Icon style: Lucide icons, 1.5 px stroke, rounded ends; flat fills only when status-critical.
 
 ############################################
 ### SPACING & SIZES
-- Base grid 4 dp; paddings × 8
-- Corner radius: 4 dp chips & inputs; 8 dp sheets & cards; 12 dp CTAs
-- Top app-bar 48 dp; bottom nav 56 dp
-- Odds chip ≈ 64 × 36 dp (auto-wide)
+Base grid 4 dp; paddings × 8.
+Corner radius: 4 dp chips & inputs; 8 dp sheets & cards; 12 dp CTAs.
+Top app-bar 48 dp; bottom nav 56 dp.
+Odds chip ≈ 64 × 36 dp (auto-wide).
 
 ############################################
 ### CORE COMPONENTS
 
-**Button**
-- Structure: Use <div role="button" tabindex="0"> styled to look like a button; do not use <button> or <a> tags
-- Default Style: Background --bp-primary-green, Text 700 weight 16sp black, Height 48dp, Padding 16dp horizontal, Corner radius 12dp
-- Icon Buttons: 36dp × 36dp circular container with background --bp-primary-green
-- Disabled: Background --bp-light-grey, Text 400 weight --text-secondary, cursor not-allowed, opacity 0.5
-- Text Labels: Concise, start with verb in second person (e.g., "Generate", "Place Bet", "Deposit Now"), no punctuation at end
-
-**Badges**
-- WIN Badge: Background --bp-primary-green, Text 700 weight 12sp black, Padding 4dp vertical 8dp horizontal, Corner radius 4dp
-- LOSS Badge: Background --bp-danger-red, Text 700 weight 12sp white, Padding 4dp vertical 8dp horizontal, Corner radius 4dp
-- VOID Badge: Background transparent, Border 1px solid --bp-light-grey, Text 400 weight 12sp --text-secondary
-- CUSTOM STATUS (HOT/BOOSTED): Background --bp-warning-orange, Text 600 weight 12sp white, flame icon with pulse animation
-
-############################################
-### COMPONENT USAGE
-- Use Shadcn UI and Tailwind utilities
-- Always use pre-defined components from \`components/\` such as: <Button />, <Card />, <Badge />, <Input />, <Sheet />, <Tabs />, <Label />, etc.
-- Use <ReactProject> with \`tsx file="..."\` structure for output
-- Text content must be HTML-escaped
-- Support only \`lucide-react\` for all icons. No custom or raw SVGs
+**Button** - Use <div role="button" tabindex="0">, Default: --bp-primary-green background, 700 weight 16sp text, 48dp height, 16dp padding, 12dp radius
+**Badges** - WIN: --bp-primary-green bg, LOSS: --bp-danger-red bg, VOID: transparent bg with border, HOT: --bp-warning-orange bg with flame icon
+**Checkbox** - Use <div role="checkbox">, 20×20dp, --bp-light-grey border, check icon when selected
+**Radio Button** - Use <div role="radio">, 20×20dp circle, inner 10×10dp circle when selected
+**Switch** - Use <div role="switch">, 36×20dp track, 16×16dp thumb, --bp-primary-green when on
+**Input Fields** - Use <div role="textbox">, 40dp height, --bp-off-white bg, --bp-light-grey border
+**Alert** - Use <div role="alert">, colored left border, Lucide icons, dismissible with close button
+**Bet Button** - Min 64×36dp, two-line text (label + odds), --bp-primary-green when selected
+**Pre-Sport Card** - 12dp padding, 8dp radius, competition path + teams + date/time + bet buttons
 
 ############################################
 ### ENGINEERING RULES
-- Always use Next.js App Router
-- Read from tailwind.config.ts, global.css, and markdown docs in /guidelines
-- Always use theme tokens for spacing, fonts, colors, etc.
-- Avoid inline styles; use Tailwind classes and design system utilities
-- Never define components outside the system
-- All interactions and motion must be smooth (e.g. sheet slide-in: 250ms ease-out)
+- Always use Shadcn and Tailwind
+- Always use Lucide Icon; no <svg> tags
+- Text content must be HTML-escaped
+- Use Next.js App Router and shadcn/ui by default
+- Do not create <button> or <a> tags
+- All colour/text pairs ≥ 4.5:1 contrast (WCAG AA)
 
 <user_prompt>
 [ INSERT YOUR REQUEST HERE ]
@@ -300,14 +281,6 @@ Energetic · trustworthy · minimalist · data-dense but easy to scan.
 Voice: concise, second-person ("Place Bet", "Deposit now").
 
 ############################################
-### DESIGN PRINCIPLES
-- All icons MUST come from \`lucide-react\` with 1.5px stroke and rounded ends.
-- NEVER use raw HTML tags like <button>, <a>, <svg>, <input>. Instead, use design system components like <Button />, <Link />, <Input />, etc.
-- Always use tokens and values defined in \`tailwind.config.ts\` and \`global.css\`.
-- Always use the primary green color \`#9CE800\` for CTAs.
-- Always use \`Inter\` as the primary font (fallback Roboto, Helvetica).
-
-############################################
 ### COLOUR TOKENS
 - --bp-primary-green: #9CE800 → CTAs, WIN badges, highlights
 - --bp-background: #252A2D → top bar, bottom nav BG
@@ -320,54 +293,43 @@ Voice: concise, second-person ("Place Bet", "Deposit now").
 
 ############################################
 ### TYPOGRAPHY
-- Primary font: Inter (fallback Roboto, Helvetica)
-- Weights → 700 balances & odds, 600 headers, 400 body, 300 fine print
-- Line-height: 1.2
+Primary font: Inter (fallback Roboto, Helvetica).
+Weights → 700 balances & odds, 600 headers, 400 body, 300 fine print.
+Line-height 1.2.
 
 ############################################
 ### ICONOGRAPHY
-- Every icon must come from the Lucide icon library
-- Icon style: Lucide icons, 1.5 px stroke, rounded ends; flat fills only when status-critical
+Every icon must come from the Lucide icon library.
+Icon style: Lucide icons, 1.5 px stroke, rounded ends; flat fills only when status-critical.
 
 ############################################
 ### SPACING & SIZES
-- Base grid 4 dp; paddings × 8
-- Corner radius: 4 dp chips & inputs; 8 dp sheets & cards; 12 dp CTAs
-- Top app-bar 48 dp; bottom nav 56 dp
-- Odds chip ≈ 64 × 36 dp (auto-wide)
+Base grid 4 dp; paddings × 8.
+Corner radius: 4 dp chips & inputs; 8 dp sheets & cards; 12 dp CTAs.
+Top app-bar 48 dp; bottom nav 56 dp.
+Odds chip ≈ 64 × 36 dp (auto-wide).
 
 ############################################
 ### CORE COMPONENTS
 
-**Button**
-- Structure: Use <div role="button" tabindex="0"> styled to look like a button; do not use <button> or <a> tags
-- Default Style: Background --bp-primary-green, Text 700 weight 16sp black, Height 48dp, Padding 16dp horizontal, Corner radius 12dp
-- Icon Buttons: 36dp × 36dp circular container with background --bp-primary-green
-- Disabled: Background --bp-light-grey, Text 400 weight --text-secondary, cursor not-allowed, opacity 0.5
-- Text Labels: Concise, start with verb in second person (e.g., "Generate", "Place Bet", "Deposit Now"), no punctuation at end
-
-**Badges**
-- WIN Badge: Background --bp-primary-green, Text 700 weight 12sp black, Padding 4dp vertical 8dp horizontal, Corner radius 4dp
-- LOSS Badge: Background --bp-danger-red, Text 700 weight 12sp white, Padding 4dp vertical 8dp horizontal, Corner radius 4dp
-- VOID Badge: Background transparent, Border 1px solid --bp-light-grey, Text 400 weight 12sp --text-secondary
-- CUSTOM STATUS (HOT/BOOSTED): Background --bp-warning-orange, Text 600 weight 12sp white, flame icon with pulse animation
-
-############################################
-### COMPONENT USAGE
-- Use Shadcn UI and Tailwind utilities
-- Always use pre-defined components from \`components/\` such as: <Button />, <Card />, <Badge />, <Input />, <Sheet />, <Tabs />, <Label />, etc.
-- Use <ReactProject> with \`tsx file="..."\` structure for output
-- Text content must be HTML-escaped
-- Support only \`lucide-react\` for all icons. No custom or raw SVGs
+**Button** - Use <div role="button" tabindex="0">, Default: --bp-primary-green background, 700 weight 16sp text, 48dp height, 16dp padding, 12dp radius
+**Badges** - WIN: --bp-primary-green bg, LOSS: --bp-danger-red bg, VOID: transparent bg with border, HOT: --bp-warning-orange bg with flame icon
+**Checkbox** - Use <div role="checkbox">, 20×20dp, --bp-light-grey border, check icon when selected
+**Radio Button** - Use <div role="radio">, 20×20dp circle, inner 10×10dp circle when selected
+**Switch** - Use <div role="switch">, 36×20dp track, 16×16dp thumb, --bp-primary-green when on
+**Input Fields** - Use <div role="textbox">, 40dp height, --bp-off-white bg, --bp-light-grey border
+**Alert** - Use <div role="alert">, colored left border, Lucide icons, dismissible with close button
+**Bet Button** - Min 64×36dp, two-line text (label + odds), --bp-primary-green when selected
+**Pre-Sport Card** - 12dp padding, 8dp radius, competition path + teams + date/time + bet buttons
 
 ############################################
 ### ENGINEERING RULES
-- Always use Next.js App Router
-- Read from tailwind.config.ts, global.css, and markdown docs in /guidelines
-- Always use theme tokens for spacing, fonts, colors, etc.
-- Avoid inline styles; use Tailwind classes and design system utilities
-- Never define components outside the system
-- All interactions and motion must be smooth (e.g. sheet slide-in: 250ms ease-out)
+- Always use Shadcn and Tailwind
+- Always use Lucide Icon; no <svg> tags
+- Text content must be HTML-escaped
+- Use Next.js App Router and shadcn/ui by default
+- Do not create <button> or <a> tags
+- All colour/text pairs ≥ 4.5:1 contrast (WCAG AA)
 
 `}
                                     </pre>
