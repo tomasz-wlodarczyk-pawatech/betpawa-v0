@@ -1,0 +1,68 @@
+⚠️ Platform-Specific Usage
+🚀 Replit Agent: Simply use @v0/system-prompt.txt - no copy/paste needed!
+
+🎨 v0.dev: Add v0/system-prompt.txt to context, then reference in prompts
+
+💬 Claude/ChatGPT: Copy the master prompt below and paste at the beginning of every query
+
+🚀 Replit Quick Start
+In Replit Agent, you can use the @ symbol to reference the system prompt directly:
+
+@v0/system-prompt.txt create a login form with validation
+This automatically includes the master prompt without copy/paste!
+
+💡 Step by step - how to use
+Option 1: Replit Agent (Recommended)
+Type @v0/system-prompt.txt at the beginning
+Add your request after the file reference
+Send the query - AI will automatically apply pawabloX design system
+Option 2: Other AI Tools (v0, Claude, ChatGPT)
+Copy the master prompt above (click "Copy" button)
+Paste it at the beginning of every AI query
+Replace [INSERT YOUR REQUEST HERE] with your command
+Send the query - AI will apply pawabloX design system
+Remember: The master prompt must be included with EVERY query so AI remembers the pawabloX guidelines!
+Example queries with master prompt
+See how to properly formulate AI queries with the master prompt
+Example 1: Creating a component
+AI Query:
+[MASTER PROMPT]
+
+<user_prompt>
+Create a product card component with image, title, price and "Add to Cart" button. The card should be responsive and use pawabloX colors.
+</user_prompt>
+Example 2: Modifying existing code
+AI Query:
+[MASTER PROMPT]
+
+<user_prompt>
+Fix this button to use pawabloX design system:
+<button className="bg-blue-500 text-white p-2">Click</button>
+</user_prompt>
+Tip: Always replace [MASTER PROMPT] with the full content copied from the field above, and [INSERT YOUR REQUEST HERE] with your specific command.
+
+v0 Integration
+Replit & Vibe Coding
+Using pawabloX with v0 by Vercel
+Generate beautiful UI components using pawabloX design system with AI-powered v0
+🚀 Quick Start Template
+Use our ready-made v0 template with pawabloX design system pre-configured:
+
+Step 1: Access v0 Template
+Click the "Get pawabloX Template" button above to access the pre-configured template
+Sign in to v0.dev with your Vercel account if you haven't already
+Click "open in v0" to create your own copy
+Step 2: Use Master Prompt with v0
+Always start your v0 prompts with the master prompt. This ensures v0 generates components that follow pawabloX guidelines.
+
+🚀 Method 1: File Reference (If using Replit)
+If you're coding in Replit and using v0, you can reference the system prompt file directly:
+
+@v0/system-prompt.txt create a login form with email, password fields and a submit button
+✅ This automatically includes the entire master prompt without copy/paste!
+
+📋 Method 2: Manual Copy/Paste
+For traditional v0 usage or when not using Replit:
+
+Example v0 prompt:
+[Copy master prompt from above] + "Create a login form with email, password fields and a submit button"
