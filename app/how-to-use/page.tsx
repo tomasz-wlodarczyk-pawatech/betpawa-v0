@@ -510,47 +510,67 @@ All text content must be HTML-escaped.
                                 </div>
                             </div>
 
+                            <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
+                                <h4 className="font-medium text-yellow-800 mb-2">
+                                    ⚠️ Important - Please Read!
+                                </h4>
+                                <p className="text-yellow-700 text-sm">
+                                    <strong>With every AI command</strong> (v0,
+                                    Claude, ChatGPT, Replit Agent) you must{" "}
+                                    <strong>ALWAYS paste</strong> this master
+                                    prompt at the beginning of your query to
+                                    ensure consistency with the pawabloX design
+                                    system.
+                                </p>
+                            </div>
+
+                            <div className="bg-purple-50 border border-purple-200 p-4 rounded-lg">
+                                <h4 className="font-medium text-purple-800 mb-2">
+                                    🚀 Replit Quick Start
+                                </h4>
+                                <p className="text-purple-700 text-sm mb-3">
+                                    <strong>In Replit Agent</strong>, you can use the <code className="bg-purple-100 px-1 rounded">@</code> symbol to reference the system prompt directly:
+                                </p>
+                                <div className="bg-purple-100 border border-purple-200 p-3 rounded text-sm">
+                                    <code className="text-purple-800">
+                                        @v0/system-prompt.txt create a login form with validation
+                                    </code>
+                                </div>
+                                <p className="text-purple-700 text-xs mt-2">
+                                    This automatically includes the master prompt without copy/paste!
+                                </p>
+                            </div>
+
                             <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
                                 <h4 className="font-medium text-blue-800 mb-2">
                                     💡 Step by step - how to use
                                 </h4>
-                                <ol className="text-blue-700 text-sm space-y-2 list-decimal list-inside">
-                                    <li>
-                                        <strong>Copy</strong> the master prompt
-                                        above (click the "Copy" button)
-                                    </li>
-                                    <li>
-                                        <strong>
-                                            Paste it at the beginning
-                                        </strong>{" "}
-                                        of every AI query (v0, Claude, ChatGPT,
-                                        Replit Agent)
-                                    </li>
-                                    <li>
-                                        <strong>Replace</strong>{" "}
-                                        <code className="bg-blue-100 px-1 rounded text-xs">
-                                            [INSERT YOUR REQUEST HERE]
-                                        </code>{" "}
-                                        with your command, e.g.:
-                                        <div className="mt-1 ml-4 text-xs italic">
-                                            "Create a login form with
-                                            validation"
-                                            <br />
-                                            "Add a button for saving data"
-                                            <br />
-                                            "Make a responsive product card"
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <strong>Send the query</strong> - AI
-                                        will automatically apply the pawabloX
-                                        design system
-                                    </li>
-                                </ol>
+                                <div className="space-y-3">
+                                    <div className="bg-purple-25 border border-purple-100 p-3 rounded">
+                                        <h5 className="font-medium text-purple-800 mb-2">
+                                            Option 1: Replit Agent (Recommended)
+                                        </h5>
+                                        <ol className="text-purple-700 text-sm space-y-1 list-decimal list-inside">
+                                            <li>Type <code className="bg-purple-100 px-1 rounded text-xs">@v0/system-prompt.txt</code> at the beginning</li>
+                                            <li>Add your request after the file reference</li>
+                                            <li>Send the query - AI will automatically apply pawabloX design system</li>
+                                        </ol>
+                                    </div>
+                                    
+                                    <div className="bg-blue-25 border border-blue-100 p-3 rounded">
+                                        <h5 className="font-medium text-blue-800 mb-2">
+                                            Option 2: Other AI Tools (v0, Claude, ChatGPT)
+                                        </h5>
+                                        <ol className="text-blue-700 text-sm space-y-1 list-decimal list-inside">
+                                            <li><strong>Copy</strong> the master prompt above (click "Copy" button)</li>
+                                            <li><strong>Paste it at the beginning</strong> of every AI query</li>
+                                            <li><strong>Replace</strong> <code className="bg-blue-100 px-1 rounded text-xs">[INSERT YOUR REQUEST HERE]</code> with your command</li>
+                                            <li><strong>Send the query</strong> - AI will apply pawabloX design system</li>
+                                        </ol>
+                                    </div>
+                                </div>
                                 <div className="mt-3 p-2 bg-blue-100 rounded text-xs text-blue-800">
-                                    <strong>Remember:</strong> The master prompt
-                                    must be pasted with EVERY query so AI
-                                    remembers the pawabloX guidelines!
+                                    <strong>Remember:</strong> The master prompt must be included with EVERY query so AI remembers the pawabloX guidelines!
                                 </div>
                             </div>
                         </CardContent>
@@ -829,24 +849,45 @@ All text content must be HTML-escaped.
 
                                     <div className="space-y-4">
                                         <h3 className="text-lg font-semibold">
-                                            Step 4: Using the Master Prompt with
-                                            Replit Agent
+                                            Step 4: Using pawabloX with Replit Agent
                                         </h3>
                                         <p className="text-muted-foreground">
-                                            When using Replit's AI assistant,
-                                            always start with the master prompt
-                                            from above:
+                                            Replit Agent has a special feature that makes using pawabloX even easier!
                                         </p>
-                                        <div className="bg-blue-50 border border-blue-200 p-3 rounded text-sm">
-                                            <p className="text-blue-700">
-                                                <strong>
-                                                    Example Replit Agent prompt:
-                                                </strong>
-                                                <br />
-                                                [Copy master prompt from above]
-                                                + "Create a betting slip
-                                                component with multiple
-                                                selections"
+                                        
+                                        <div className="bg-purple-50 border border-purple-200 p-4 rounded-lg">
+                                            <h4 className="font-medium text-purple-800 mb-2">
+                                                🚀 Method 1: File Reference (Recommended)
+                                            </h4>
+                                            <p className="text-purple-700 text-sm mb-3">
+                                                Use the <code className="bg-purple-100 px-1 rounded">@</code> symbol to reference the system prompt file directly:
+                                            </p>
+                                            <div className="bg-white border border-purple-200 p-3 rounded text-sm font-mono">
+                                                <span className="text-purple-600">@v0/system-prompt.txt</span> create a betting slip component with multiple selections
+                                            </div>
+                                            <p className="text-purple-600 text-xs mt-2">
+                                                ✅ This automatically includes the entire master prompt without copy/paste!
+                                            </p>
+                                        </div>
+
+                                        <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                                            <h4 className="font-medium text-blue-800 mb-2">
+                                                📋 Method 2: Manual Copy/Paste
+                                            </h4>
+                                            <p className="text-blue-700 text-sm mb-3">
+                                                If you prefer the traditional method:
+                                            </p>
+                                            <div className="bg-white border border-blue-200 p-3 rounded text-sm">
+                                                <p className="text-blue-700">
+                                                    <strong>Example Replit Agent prompt:</strong><br />
+                                                    [Copy master prompt from above] + "Create a betting slip component with multiple selections"
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div className="bg-green-50 border border-green-200 p-3 rounded">
+                                            <p className="text-green-800 text-sm">
+                                                <strong>💡 Pro Tip:</strong> The <code className="bg-green-100 px-1 rounded">@v0/system-prompt.txt</code> method is faster and ensures you never forget to include the pawabloX guidelines!
                                             </p>
                                         </div>
                                     </div>
