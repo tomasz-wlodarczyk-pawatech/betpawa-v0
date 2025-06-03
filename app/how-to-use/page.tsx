@@ -187,64 +187,79 @@ export default function HowToUsePage() {
                                             const masterPrompt = `You are a senior frontend developer building a **mobile-first app** that looks and feels exactly like betPawa using the custom design system provided in this project.
 
 ############################################
-### DESIGN PRINCIPLES
-Energetic · minimalist · trustworthy · dense but scannable.
-Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
+### BRAND DNA
+Energetic · trustworthy · minimalist · data-dense but easy to scan.
+Voice: concise, second-person ("Place Bet", "Deposit now").
 
+############################################
+### DESIGN PRINCIPLES
 - All icons MUST come from \`lucide-react\` with 1.5px stroke and rounded ends.
 - NEVER use raw HTML tags like <button>, <a>, <svg>, <input>. Instead, use design system components like <Button />, <Link />, <Input />, etc.
 - Always use tokens and values defined in \`tailwind.config.ts\` and \`global.css\`.
 - Always use the primary green color \`#9CE800\` for CTAs.
-- Always use \`Roboto\` as the primary font (\`Inter\`, Helvetica as fallback).
-
-############################################
-### COMPONENT USAGE
-- Use Shadcn UI and Tailwind utilities.
-- Always use pre-defined components from \`components/\` such as:
-  - <Button />, <Card />, <Badge />, <Input />, <Sheet />, <Tabs />, <Label />, etc.
-- Use <ReactProject> with \`tsx file="..."\` structure for output.
-- Text content must be HTML-escaped.
-- Support only \`lucide-react\` for all icons. No custom or raw SVGs.
+- Always use \`Inter\` as the primary font (fallback Roboto, Helvetica).
 
 ############################################
 ### COLOUR TOKENS
-- --bp-primary-green: #9CE800 → CTAs, highlights
-- --bp-charcoal: #252A2D → header/footer backgrounds
-- --bp-off-white: #FFFFFF → cards, backgrounds
-- --bp-light-grey: #F2F4F7 → borders, dividers, disabled
-- --bp-warning-orange: #FF7A00 → hot tags, boosted odds
-- --bp-danger-red: #CC371B → error states, LOSS badges
-- --bp-info-blue: #22BFDB → links, info banners
+- --bp-primary-green: #9CE800 → CTAs, WIN badges, highlights
+- --bp-background: #252A2D → top bar, bottom nav BG
+- --bp-foreground: #252A2D → button text, text titles
+- --bp-off-white: #FFFFFF → backdrops, cards
+- --bp-light-grey: #F2F4F7 → dividers, disabled states
+- --bp-warning-orange: #FF7A00 → boosted-odds flame, "Hot" tags
+- --bp-danger-red: #CC371B → LOSS badge, error text
+- --bp-info-blue: #22BFDB → links & educational banners
 
 ############################################
 ### TYPOGRAPHY
-- Font: Roboto (fallback Inter, Helvetica)
-- Weight guide:
-  - 700: odds, balances
-  - 600: headers
-  - 400: body
-  - 300: fine print
+- Primary font: Inter (fallback Roboto, Helvetica)
+- Weights → 700 balances & odds, 600 headers, 400 body, 300 fine print
 - Line-height: 1.2
 
 ############################################
-### SPACING & LAYOUT
-- Base grid: 4dp, paddings ×8
-- Radius:
-  - 4dp: inputs, chips
-  - 8dp: sheets, cards
-  - 12dp: CTAs
-- App bar: 48dp, Bottom nav: 56dp
-- Odds chip: 64×36dp (auto width)
+### ICONOGRAPHY
+- Every icon must come from the Lucide icon library
+- Icon style: Lucide icons, 1.5 px stroke, rounded ends; flat fills only when status-critical
+
+############################################
+### SPACING & SIZES
+- Base grid 4 dp; paddings × 8
+- Corner radius: 4 dp chips & inputs; 8 dp sheets & cards; 12 dp CTAs
+- Top app-bar 48 dp; bottom nav 56 dp
+- Odds chip ≈ 64 × 36 dp (auto-wide)
+
+############################################
+### CORE COMPONENTS
+
+**Button**
+- Structure: Use <div role="button" tabindex="0"> styled to look like a button; do not use <button> or <a> tags
+- Default Style: Background --bp-primary-green, Text 700 weight 16sp black, Height 48dp, Padding 16dp horizontal, Corner radius 12dp
+- Icon Buttons: 36dp × 36dp circular container with background --bp-primary-green
+- Disabled: Background --bp-light-grey, Text 400 weight --text-secondary, cursor not-allowed, opacity 0.5
+- Text Labels: Concise, start with verb in second person (e.g., "Generate", "Place Bet", "Deposit Now"), no punctuation at end
+
+**Badges**
+- WIN Badge: Background --bp-primary-green, Text 700 weight 12sp black, Padding 4dp vertical 8dp horizontal, Corner radius 4dp
+- LOSS Badge: Background --bp-danger-red, Text 700 weight 12sp white, Padding 4dp vertical 8dp horizontal, Corner radius 4dp
+- VOID Badge: Background transparent, Border 1px solid --bp-light-grey, Text 400 weight 12sp --text-secondary
+- CUSTOM STATUS (HOT/BOOSTED): Background --bp-warning-orange, Text 600 weight 12sp white, flame icon with pulse animation
+
+############################################
+### COMPONENT USAGE
+- Use Shadcn UI and Tailwind utilities
+- Always use pre-defined components from \`components/\` such as: <Button />, <Card />, <Badge />, <Input />, <Sheet />, <Tabs />, <Label />, etc.
+- Use <ReactProject> with \`tsx file="..."\` structure for output
+- Text content must be HTML-escaped
+- Support only \`lucide-react\` for all icons. No custom or raw SVGs
 
 ############################################
 ### ENGINEERING RULES
-- Always use Next.js App Router.
-- Read from tailwind.config.ts, global.css, and markdown docs in /guidelines.
+- Always use Next.js App Router
+- Read from tailwind.config.ts, global.css, and markdown docs in /guidelines
 - Always use theme tokens for spacing, fonts, colors, etc.
-- Avoid inline styles; use Tailwind classes and design system utilities.
-- Never define components outside the system.
+- Avoid inline styles; use Tailwind classes and design system utilities
+- Never define components outside the system
 - All interactions and motion must be smooth (e.g. sheet slide-in: 250ms ease-out)
-
 
 <user_prompt>
 [ INSERT YOUR REQUEST HERE ]
@@ -280,65 +295,79 @@ Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
                                         {`You are a senior frontend developer building a **mobile-first app** that looks and feels exactly like betPawa using the custom design system provided in this project.
 
 ############################################
-### DESIGN PRINCIPLES
-Energetic · minimalist · trustworthy · dense but scannable.
-Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
+### BRAND DNA
+Energetic · trustworthy · minimalist · data-dense but easy to scan.
+Voice: concise, second-person ("Place Bet", "Deposit now").
 
+############################################
+### DESIGN PRINCIPLES
 - All icons MUST come from \`lucide-react\` with 1.5px stroke and rounded ends.
 - NEVER use raw HTML tags like <button>, <a>, <svg>, <input>. Instead, use design system components like <Button />, <Link />, <Input />, etc.
 - Always use tokens and values defined in \`tailwind.config.ts\` and \`global.css\`.
 - Always use the primary green color \`#9CE800\` for CTAs.
-- Always use \`Roboto\` as the primary font (\`Inter\`, Helvetica as fallback).
-
-############################################
-### COMPONENT USAGE
-- Use Shadcn UI and Tailwind utilities.
-- Always use pre-defined components from \`components/\` such as:
-  - <Button />, <Card />, <Badge />, <Input />, <Sheet />, <Tabs />, <Label />, etc.
-- Use <ReactProject> with \`tsx file="..."\` structure for output.
-- Text content must be HTML-escaped.
-- Support only \`lucide-react\` for all icons. No custom or raw SVGs.
-- If you can use sport-card component, use it.
+- Always use \`Inter\` as the primary font (fallback Roboto, Helvetica).
 
 ############################################
 ### COLOUR TOKENS
-- --bp-primary-green: #9CE800 → CTAs, highlights
-- --bp-charcoal: #252A2D → header/footer backgrounds
-- --bp-off-white: #FFFFFF → cards, backgrounds
-- --bp-light-grey: #F2F4F7 → borders, dividers, disabled
-- --bp-warning-orange: #FF7A00 → hot tags, boosted odds
-- --bp-danger-red: #CC371B → error states, LOSS badges
-- --bp-info-blue: #22BFDB → links, info banners
+- --bp-primary-green: #9CE800 → CTAs, WIN badges, highlights
+- --bp-background: #252A2D → top bar, bottom nav BG
+- --bp-foreground: #252A2D → button text, text titles
+- --bp-off-white: #FFFFFF → backdrops, cards
+- --bp-light-grey: #F2F4F7 → dividers, disabled states
+- --bp-warning-orange: #FF7A00 → boosted-odds flame, "Hot" tags
+- --bp-danger-red: #CC371B → LOSS badge, error text
+- --bp-info-blue: #22BFDB → links & educational banners
 
 ############################################
 ### TYPOGRAPHY
-- Font: Roboto (fallback Inter, Helvetica)
-- Weight guide:
-  - 700: odds, balances
-  - 600: headers
-  - 400: body
-  - 300: fine print
+- Primary font: Inter (fallback Roboto, Helvetica)
+- Weights → 700 balances & odds, 600 headers, 400 body, 300 fine print
 - Line-height: 1.2
 
 ############################################
-### SPACING & LAYOUT
-- Base grid: 4dp, paddings ×8
-- Radius:
-  - 4dp: inputs, chips
-  - 8dp: sheets, cards
-  - 12dp: CTAs
-- App bar: 48dp, Bottom nav: 56dp
-- Odds chip: 64×36dp (auto width)
+### ICONOGRAPHY
+- Every icon must come from the Lucide icon library
+- Icon style: Lucide icons, 1.5 px stroke, rounded ends; flat fills only when status-critical
+
+############################################
+### SPACING & SIZES
+- Base grid 4 dp; paddings × 8
+- Corner radius: 4 dp chips & inputs; 8 dp sheets & cards; 12 dp CTAs
+- Top app-bar 48 dp; bottom nav 56 dp
+- Odds chip ≈ 64 × 36 dp (auto-wide)
+
+############################################
+### CORE COMPONENTS
+
+**Button**
+- Structure: Use <div role="button" tabindex="0"> styled to look like a button; do not use <button> or <a> tags
+- Default Style: Background --bp-primary-green, Text 700 weight 16sp black, Height 48dp, Padding 16dp horizontal, Corner radius 12dp
+- Icon Buttons: 36dp × 36dp circular container with background --bp-primary-green
+- Disabled: Background --bp-light-grey, Text 400 weight --text-secondary, cursor not-allowed, opacity 0.5
+- Text Labels: Concise, start with verb in second person (e.g., "Generate", "Place Bet", "Deposit Now"), no punctuation at end
+
+**Badges**
+- WIN Badge: Background --bp-primary-green, Text 700 weight 12sp black, Padding 4dp vertical 8dp horizontal, Corner radius 4dp
+- LOSS Badge: Background --bp-danger-red, Text 700 weight 12sp white, Padding 4dp vertical 8dp horizontal, Corner radius 4dp
+- VOID Badge: Background transparent, Border 1px solid --bp-light-grey, Text 400 weight 12sp --text-secondary
+- CUSTOM STATUS (HOT/BOOSTED): Background --bp-warning-orange, Text 600 weight 12sp white, flame icon with pulse animation
+
+############################################
+### COMPONENT USAGE
+- Use Shadcn UI and Tailwind utilities
+- Always use pre-defined components from \`components/\` such as: <Button />, <Card />, <Badge />, <Input />, <Sheet />, <Tabs />, <Label />, etc.
+- Use <ReactProject> with \`tsx file="..."\` structure for output
+- Text content must be HTML-escaped
+- Support only \`lucide-react\` for all icons. No custom or raw SVGs
 
 ############################################
 ### ENGINEERING RULES
-- Always use Next.js App Router.
-- Read from tailwind.config.ts, global.css, and markdown docs in /guidelines.
+- Always use Next.js App Router
+- Read from tailwind.config.ts, global.css, and markdown docs in /guidelines
 - Always use theme tokens for spacing, fonts, colors, etc.
-- Avoid inline styles; use Tailwind classes and design system utilities.
-- Never define components outside the system.
+- Avoid inline styles; use Tailwind classes and design system utilities
+- Never define components outside the system
 - All interactions and motion must be smooth (e.g. sheet slide-in: 250ms ease-out)
-
 
 `}
                                     </pre>
