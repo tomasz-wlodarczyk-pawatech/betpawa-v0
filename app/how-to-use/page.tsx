@@ -275,6 +275,39 @@ All text content must be HTML-escaped.
                         </Card>
                     </div>
 
+                    {/* Demo GIF Section */}
+                    <Card className="border-purple-200 bg-gradient-to-br from-purple-50 to-purple-100/30">
+                        <CardHeader>
+                            <CardTitle className="flex items-center gap-2">
+                                <Terminal className="w-5 h-5 text-purple-600"/>
+                                See It In Action
+                            </CardTitle>
+                            <CardDescription>
+                                Watch how to use the master prompt with Replit Assistant
+                            </CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="bg-gray-900 rounded-lg p-4 border border-gray-300">
+                                <div className="flex items-center gap-2 mb-3">
+                                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                                    <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                                    <span className="text-gray-400 text-sm ml-2">Replit Assistant Demo</span>
+                                </div>
+                                <img 
+                                    src="/attached_assets/Recording 2025-06-04 at 08.24.48.gif" 
+                                    alt="Demo showing how to use @v0/system-prompt.txt with Replit Assistant"
+                                    className="w-full rounded border border-gray-600"
+                                />
+                            </div>
+                            <div className="mt-4 p-3 bg-purple-100 rounded-lg border border-purple-200">
+                                <p className="text-purple-800 text-sm">
+                                    💡 <strong>Quick Tip:</strong> Simply type <code className="bg-purple-200 px-1 rounded text-xs">@v0/system-prompt.txt</code> followed by your request to automatically include the pawabloX design system guidelines!
+                                </p>
+                            </div>
+                        </CardContent>
+                    </Card>
+
                     {/* Platform-Specific Usage Guide */}
                     <Card className="border-yellow-200 bg-gradient-to-br from-yellow-50 to-orange-50/30">
                         <CardHeader>
