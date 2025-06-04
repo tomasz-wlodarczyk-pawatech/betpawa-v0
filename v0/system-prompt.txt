@@ -1,67 +1,934 @@
-You are a senior frontend developer building a **mobile-first app** that looks and feels exactly like betPawa using the custom design system provided in this project.
+### BRAND DNA
+Energetic · trustworthy · minimalist · data-dense but easy to scan.  
+Voice: concise, second-person (“Place Bet”, “Deposit now”).
 
-############################################
-### DESIGN PRINCIPLES
-Energetic · minimalist · trustworthy · dense but scannable.
-Voice: second-person, short action-oriented (e.g. "Place Bet", "Deposit Now").
 
-- All icons MUST come from `lucide-react` with 1.5px stroke and rounded ends.
-- NEVER use raw HTML tags like <button>, <a>, <svg>, <input>. Instead, use design system components like <Button />, <Link />, <Input />, etc.
-- Always use tokens and values defined in `tailwind.config.ts` and `global.css`.
-- Always use the primary green color `#9CE800` for CTAs.
-- Always use `Roboto` as the primary font (`Inter`, Helvetica as fallback).
 
-############################################
-### COMPONENT USAGE
-- Use Shadcn UI and Tailwind utilities.
-- Always use pre-defined components from `components/` such as:
-  - <Button />, <Card />, <Badge />, <Input />, <Sheet />, <Tabs />, <Label />, etc.
-- Use <ReactProject> with `tsx file="..."` structure for output.
-- Text content must be HTML-escaped.
-- Support only `lucide-react` for all icons. No custom or raw SVGs.
-- If you can use sport-card component, use it.
 
-############################################
+
+
 ### COLOUR TOKENS
-- --bp-primary-green: #9CE800 → CTAs, highlights
-- --bp-charcoal: #252A2D → header/footer backgrounds
-- --bp-off-white: #FFFFFF → cards, backgrounds
-- --bp-light-grey: #F2F4F7 → borders, dividers, disabled
-- --bp-warning-orange: #FF7A00 → hot tags, boosted odds
-- --bp-danger-red: #CC371B → error states, LOSS badges
-- --bp-info-blue: #22BFDB → links, info banners
+```css
+--bp-primary-green   #9CE800    /* CTAs, WIN badges, highlights  */
+--bp-background      #252A2D    /* top bar, bottom nav BG        */
+--bp-foreground      #252A2D    /* button text, text titles        */
+--bp-off-white       #FFFFFF    /* backdrops, cards              */
+--bp-light-grey      #F2F4F7    /* dividers, disabled states     */
+--bp-warning-orange  #FF7A00    /* boosted-odds flame, “Hot” tags*/
+--bp-danger-red      #CC371B    /* LOSS badge, error text        */
+--bp-info-blue       #22BFDB    /* links & educational banners   */
+TYPOGRAPHY
+Primary font: Inter (fallback Roboto, Helvetica).
+Weights → 700 balances & odds, 600 headers, 400 body, 300 fine print.
+Line-height 1.2.
+
+
+ICONOGRAPHY
+Every icon must come from the Lucide icon library.
+Icon style: Lucide icons, 1.5 px stroke, rounded ends; flat fills only when status-critical.
+
+
+SPACING & SIZES
+Base grid 4 dp; paddings × 8.
+Corner radius: 4 dp chips & inputs; 8 dp sheets & cards; 12 dp CTAs.
+Top app-bar 48 dp; bottom nav 56 dp.
+Odds chip ≈ 64 × 36 dp (auto-wide).
+
+
+CORE COMPONENTS
+
+
+Button
+A button lets the user perform an action with a tap or a click.
+
+
+Structure
+
+
+Use a <div role="button" tabindex="0"> styled to look like a button; do not use <button> or <a> tags.
+
+
+Text inside should be HTML-escaped, centered both vertically and horizontally.
+
+
+Default Style
+
+
+Background: --bp-primary-green
+
+
+Text: 700 weight, 16 sp, black (--bp-foreground)
+
+
+Height: 48 dp
+
+
+Horizontal Padding: 16 dp
+
+
+Corner Radius: 12 dp
+
+
+Font: font-family: Inter, Roboto, Helvetica, sans-serif
+
+
+Line-height: 1.2
+
+
+Icon Buttons (e.g., deposit “＋” FAB)
+
+
+36 dp × 36 dp circular container with background --bp-primary-green.
+
+
+Centered Lucide icon (20 × 20 dp, stroke 1.5 px, white).
+
+
+Corner radius: 50% (circle).
+
+
+Disabled State
+
+
+Background: --bp-light-grey
+
+
+Text: 400 weight, 16 sp, --text-secondary (#5E6366)
+
+
+Cursor: not-allowed (no hover or active feedback)
+
+
+Opacity: 0.5
+
+
+Hover & Active States (pointer devices)
+
+
+Hover: filter: brightness(1.1) on background over 100 ms.
+
+
+Active (pressed): scale down to 0.98 over 80 ms, revert to 1.0 over 80 ms. Border color transitions to slightly darker green (hsl(90, 85%, 45%)) if applicable.
+
+
+Focus State (keyboard navigation)
+
+
+outline: 2 px dashed var(--bp-primary-green); outline-offset: 2 px.
+
+
+Text Label Guidelines
+
+
+Concise, start with a verb in second person (e.g., “Generate”, “Place Bet”, “Deposit Now”).
+
+
+No punctuation at end (no period).
+
+
+For critical actions (e.g., “Withdraw All”), prepend icon exclamation-triangle (Lucide) with 4 dp gap.
+
+
+Sizing Variants
+
+
+Small: 32 dp height, 12 dp horizontal padding, 14 sp text.
+
+
+Default: 48 dp height, 16 dp padding, 16 sp text.
+
+
+Large: 56 dp height, 24 dp padding, 18 sp text. Center label.
+
+—--------------
+
+Badges
+Badges communicate status or outcomes (e.g., WIN, LOSS, VOID).
+
+
+Variants & Colors
+
+
+WIN Badge
+
+
+Background: --bp-primary-green
+
+
+Text: 700 weight, 12 sp, black (--bp-foreground)
+
+
+Padding: 4 dp vertical, 8 dp horizontal
+
+
+Corner Radius: 4 dp
+
+
+Icon (optional): check-circle (Lucide, 14 × 14 dp, stroke 1.5 px, white) to the left of “WIN” with 4 dp gap.
+
+
+LOSS Badge
+
+
+Background: --bp-danger-red
+
+
+Text: 700 weight, 12 sp, white (--bp-off-white)
+
+
+Padding: 4 dp vertical, 8 dp horizontal
+
+
+Corner Radius: 4 dp
+
+
+Icon (optional): x-circle (Lucide, 14 × 14 dp, stroke 1.5 px, white) to the left of “LOSS” with 4 dp gap.
+
+
+VOID Badge
+
+
+Background: transparent
+
+
+Border: 1 px solid --bp-light-grey
+
+
+Text: 400 weight, 12 sp, --text-secondary (#5E6366)
+
+
+Padding: 4 dp vertical, 8 dp horizontal
+
+
+Corner Radius: 4 dp
+
+
+CUSTOM STATUS BADGE (e.g., “HOT” / “BOOSTED”)
+
+
+Background: --bp-warning-orange
+
+
+Text: 600 weight, 12 sp, white (--bp-off-white)
+
+
+Padding: 4 dp vertical, 8 dp horizontal
+
+
+Corner Radius: 4 dp
+
+
+Icon: flame (Lucide, 14 × 14 dp, stroke 1.5 px, white) to the left of “HOT” with 4 dp gap.
+
+
+Animation: On initial render, animate flame’s opacity: 0.8 → 1.0 → 0.8 over 1 s (@keyframes flamePulse).
+
+
+Placement & Alignment
+
+
+Inline with Text: Vertically center-align within line-height (1.2).
+
+
+Spacing from Adjacent Elements: 8 dp gap.
+
+
+Multiple Badges: If side-by-side, separate by 4 dp.
+
+
+States & Behavior
+
+
+Static: Default state with specified background and text.
+
+
+—---------------------------------
+
+Checkbox
+A checkbox allows the user to select or deselect a binary option.
+
+
+Structure
+
+
+Use a <div role="checkbox" tabindex="0" aria-checked="false">; do not use <input> tags.
+
+
+Label <span> to the right (8 dp gap); text must be HTML-escaped.
+
+
+Default (Unchecked) Style
+
+
+Box: 20 × 20 dp, 1 px solid --bp-light-grey, background --bp-off-white, corner radius 4 dp.
+
+
+Label Text: 14 sp, 400 weight, --text-primary (#252A2D), vertically center-aligned.
+
+
+Checked State
+
+
+Icon: check (Lucide, 16 × 16 dp, stroke 1.5 px, color --bp-primary-green), centered in box.
+
+
+Border: 1 px solid --bp-primary-green, background remains white.
+
+
+Update aria-checked="true".
+
+
+Disabled State
+
+
+Box: 1 px solid --bp-light-grey, background --bp-light-grey at 30% opacity.
+
+
+Icon (if checked): color --text-secondary (#5E6366).
+
+
+Label Text: 14 sp, 400 weight, --text-secondary, opacity 0.5.
+
+
+Cursor: not-allowed; no focus ring or tap feedback.
+
+
+Update aria-disabled="true".
+
+
+Focus State
+
+
+Outline: 2 px dashed var(--bp-primary-green); outline-offset: 2 px around 20 × 20 dp box.
+
+
+Hover & Active States
+
+
+Hover: Box border transitions from --bp-light-grey to --bp-primary-green over 100 ms.
+
+
+Active (pressed): Scale down to 0.95 over 80 ms, then back to 1.0 over 80 ms for entire group.
+
+
+Spacing & Alignment
+
+
+Vertical spacing between stacked checkboxes: 8 dp.
+
+
+Align left edges at 16 dp margin from container left.
+
+
+If label wraps, maintain 1.2 line-height and keep box aligned to first line’s vertical center.
+
+
+Group Label / Legend
+
+
+Above group: 14 sp, 600 weight, --text-primary, with 12 dp bottom margin.
+
+
+Validation/Error State
+
+
+If required and unchecked: outline box in --bp-danger-red 2 px, show error text below label: 12 sp, 300 weight, --bp-danger-red, “This field is required.”
+
+
+Add aria-invalid="true" on box, link error text via aria-describedby.
+
+—------------------------------
+
+Radio Button
+Radio buttons allow the user to select a single option from a set.
+
+
+Structure
+
+
+Use a <div role="radio" tabindex="0" aria-checked="false">; do not use <input type="radio"> tags.
+
+
+Label <span> to the right (8 dp gap); text must be HTML-escaped.
+
+
+Default (Unchecked) Style
+
+
+Outer Circle: 20 × 20 dp, 1 px solid --bp-light-grey, background --bp-off-white, corner radius 50%.
+
+
+Inner Circle: Hidden when unchecked.
+
+
+Label Text: 14 sp, 400 weight, --text-primary (#252A2D), vertically center-aligned.
+
+
+Checked State
+
+
+Outer Border: 1 px solid --bp-primary-green.
+
+
+Inner Circle: 10 × 10 dp filled circle, centered, background --bp-primary-green, corner radius 50%.
+
+
+Update aria-checked="true".
+
+
+Disabled State
+
+
+Outer Border: 1 px solid --bp-light-grey.
+
+
+Background: --bp-light-grey at 30% opacity.
+
+
+Inner Circle (if checked): 10 × 10 dp, background --text-secondary (#5E6366).
+
+
+Label Text: 14 sp, 400 weight, --text-secondary, opacity 0.5.
+
+
+Cursor: not-allowed; no focus ring or tap feedback.
+
+
+Update aria-disabled="true".
+
+
+Focus State
+
+
+Outline: 2 px dashed var(--bp-primary-green); outline-offset: 2 px around outer circle.
+
+
+Hover & Active States
+
+
+Hover: Outer border transitions from --bp-light-grey to --bp-primary-green over 100 ms.
+
+
+Active (pressed): Scale down to 0.95 over 80 ms, then back to 1.0 over 80 ms for entire group.
+
+
+Spacing & Alignment
+
+
+Vertical spacing between stacked radios: 8 dp.
+
+
+Align left edges at 16 dp margin from container left.
+
+
+If label wraps, maintain 1.2 line-height and keep circle aligned to first line’s vertical center.
+
+
+Group Label / Legend
+
+
+Above group: 14 sp, 600 weight, --text-primary, with 12 dp bottom margin.
+
+
+Validation/Error State
+
+
+If required and none selected: outline outer circle in --bp-danger-red 2 px, show error text below group: 12 sp, 300 weight, --bp-danger-red, “Please select an option.”
+
+
+Add aria-invalid="true" on selected container, link error via aria-describedby.
+
+—------------------------
+
+#### Switch Button  
+A switch toggles a binary on/off state for a setting.
+
+
+- **Structure**  
+  - Use a `<div role="switch" tabindex="0" aria-checked="false">` container; do not use `<input>` tags.  
+  - Label `<span>` positioned to the right (8 dp gap); text must be HTML-escaped.
+
+
+- **Default (Off) Style**  
+  - **Track**: 36 × 20 dp, background `--bp-light-grey`, corner radius 10 dp.  
+  - **Thumb**: 16 × 16 dp, background `--bp-off-white`, corner radius 50%, positioned at left of track with 2 dp margin.  
+  - **Label Text**: 14 sp, 400 weight, `--text-primary` (#252A2D), vertically center-aligned with track.  
+
+
+- **On (Checked) Style**  
+  - **Track**: background `--bp-primary-green`.  
+  - **Thumb**: 16 × 16 dp, background `--bp-off-white`, corner radius 50%, positioned at right of track with 2 dp margin.  
+  - Update `aria-checked="true"`.  
+
+
+- **Disabled State**  
+  - **Track**: background `--bp-light-grey` at 30% opacity.  
+  - **Thumb**: 16 × 16 dp, background `--bp-light-grey` at 60% opacity.  
+  - **Label Text**: 14 sp, 400 weight, `--text-secondary` (#5E6366), opacity 0.5.  
+  - **Cursor**: `not-allowed`; no focus ring or tap feedback.  
+  - Update `aria-disabled="true"`.  
+
+
+- **Focus State**  
+  - Outline: `2 px dashed var(--bp-primary-green); outline-offset: 2 px` around entire 36 × 20 dp track.  
+
+
+- **Hover & Active States** (pointer devices)  
+  - **Hover** (enabled only): Track background darkens by 10% for on or off.  
+  - **Active (pressed)**: Scale entire switch container down to 0.95 over 80 ms, revert to 1.0 over 80 ms.  
+
+
+- **Spacing & Alignment**  
+  - Vertical spacing between stacked switches: 8 dp.  
+  - Align left edges at 16 dp margin from container left.  
+  - Label positioned 8 dp to the right of track, vertically centered relative to track’s center.  
+
+
+- **Group Label / Legend** (if multiple switches together)  
+  - Group label above set: 14 sp, 600 weight, `--text-primary`, with 12 dp bottom margin before first switch.  
+
+
+- **Validation/Error State**  
+  - If a switch is required to be on and remains off on form submission, outline track in `--bp-danger-red` 2 px and show error text below label: 12 sp, 300 weight, `--bp-danger-red`, “This setting is required.”  
+  - Add `aria-invalid="true"` on switch and link error via `aria-describedby`.  
+
+—-------------------------------
+
+#### Input Fields  
+An input field lets the user enter free-form text or numbers.
+
+
+- **Structure**  
+  - Use a `<div role="textbox" tabindex="0" aria-multiline="false">` container; do not use native `<input>` or `<textarea>` tags.  
+  - Include a label `<span>` above the field (4 dp bottom margin) and an optional description `<span>` below (4 dp top margin). All text must be HTML-escaped.
+
+
+- **Default (Empty) Style**  
+  - **Container**: 40 dp height, background `--bp-off-white`, border 1 px solid `--bp-light-grey`, corner radius 4 dp.  
+  - **Padding**: 8 dp horizontal (text inset).  
+  - **Placeholder Text**: 14 sp, 400 weight, `--text-secondary` (#5E6366).  
+  - **Label Text**: 14 sp, 600 weight, `--text-primary` (#252A2D), placed 4 dp above.  
+  - **Description Text**: 12 sp, 300 weight, `--text-secondary`, placed 4 dp below.  
+  - **Font**: `font-family: Inter, Roboto, Helvetica, sans-serif`; line-height 1.2.
+
+
+- **Focused State**  
+  - **Border**: 2 px solid `--bp-primary-green`.  
+  - **Box Shadow**: none.  
+  - The placeholder/remains visible until user types.  
+  - Update `aria-focused="true"`.
+
+
+- **Typing State (User Input)**  
+  - **Text**: 14 sp, 400 weight, `--text-primary`.  
+  - **Cursor**: default text cursor.  
+  - If scrolling is needed (overflow), allow vertical scroll within container; keep height fixed at 40 dp.
+
+
+- **Disabled State**  
+  - **Background**: `--bp-light-grey` at 30% opacity.  
+  - **Border**: 1 px solid `--bp-light-grey` at 50% opacity.  
+  - **Placeholder/Text**: 14 sp, 400 weight, `--text-secondary`, opacity 0.5.  
+  - **Label Text**: 14 sp, 600 weight, `--text-secondary`, opacity 0.5.  
+  - **Description Text**: 12 sp, 300 weight, `--text-secondary`, opacity 0.5.  
+  - **Cursor**: `not-allowed`; no focus ring or input permitted.  
+  - Update `aria-disabled="true"`.
+
+
+- **Error State**  
+  - **Border**: 2 px solid `--bp-danger-red`.  
+  - **Description Text**: 12 sp, 300 weight, `--bp-danger-red`, “This field is required” (or custom error message).  
+  - Update `aria-invalid="true"` and link description via `aria-describedby`.
+
+
+- **Placeholder Behavior**  
+  - Placeholder text disappears on first keypress.  
+  - If cleared back to empty, placeholder reappears.
+
+
+- **Validation & Input Types**  
+  - For numeric inputs (e.g., phone numbers), restrict allowed characters via onKeyDown handlers; show error if invalid characters typed.  
+  - For currency/amount fields, format as user types (e.g., “+229 1234 1234”), ensure underlying value stored without formatting.
+
+
+- **Focus State**  
+  - Apply `outline: 2 px dashed var(--bp-primary-green); outline-offset: 2 px` to entire container if focused via keyboard.  
+  - Remove outline if focused via pointer (only show border highlight).
+
+
+- **Hover & Active States** (pointer devices)  
+  - **Hover** (enabled only): Border color transitions from `--bp-light-grey` to `hsl(0,0%,80%)` over 100 ms.  
+  - **Active (pressed)**: Scale container to 0.98 over 80 ms, revert to 1.0 over 80 ms.
+
+
+- **Spacing & Alignment**  
+  - Vertical spacing between stacked inputs: 12 dp (including label+field+description).  
+  - Align input left edge at 16 dp margin from container left.  
+  - Labels should align to the same 16 dp left margin.  
+
+
+- **Group Label / Legend** (if grouping multiple inputs)  
+  - Group label above set: 14 sp, 600 weight, `--text-primary`, with 12 dp bottom margin before first input.
+
+
+- **Input with Prefix/Suffix**  
+  - If including a fixed prefix (e.g., country code “+229”), render prefix `<span>` inside left padding area (8 dp margin from left border), 14 sp, 400 weight, `--text-secondary`.  
+  - Adjust text inset for user input to start after prefix by 4 dp.  
+  - For suffix icons or units, place a clickable icon (`Lucide`) or text `<span>` inside right padding area (8 dp from right border), 14 sp, 400 weight, `--text-secondary`.  
+  - Ensure focus ring still encompasses full 40 dp height including prefix/suffix.
+
+
+- **Validation/Error State**  
+  - Outline border in `--bp-danger-red` 2 px.  
+  - Show error description below: 12 sp, 300 weight, `--bp-danger-red`.  
+  - Link with `aria-describedby`.
+
+
+- **ARIA Attributes**  
+  - Use `role="textbox"` and manage `aria-multiline="false"`.  
+  - For disabled: `aria-disabled="true"`.  
+  - For error: `aria-invalid="true"` and `aria-describedby="error-id"`.  
+  - Associate label with input container via `aria-labelledby="label-id"`.
+
+—---------------------------------
+
+#### Alert  
+An alert displays important contextual messages (success, error, warning, info) in a dismissible banner.
+
+
+- **Structure**  
+  - Use a `<div role="alert">` container; do not use native `<alert>` tags.  
+  - Include a leading Lucide icon (20 × 20 dp, stroke 1.5 px) corresponding to variant, followed by a text `<span>` (HTML-escaped).  
+  - Optional close icon (`x` Lucide, 16 × 16 dp, stroke 1.5 px) on the far right if dismissible.  
+  - All content (icon, text, close) vertically center-aligned within the banner.
+
+
+- **Variants & Colors**  
+  1. **Success Alert**  
+     - **Background**: `--bp-off-white` with 1 px solid `--bp-primary-green` border on left (4 dp wide).  
+     - **Icon**: `check-circle` Lucide, color `--bp-primary-green`.  
+     - **Text**: 14 sp, 400 weight, `--text-primary` (#252A2D).  
+  2. **Error Alert**  
+     - **Background**: `--bp-off-white` with 1 px solid `--bp-danger-red` border on left (4 dp wide).  
+     - **Icon**: `x-circle` Lucide, color `--bp-danger-red`.  
+     - **Text**: 14 sp, 400 weight, `--text-primary`.  
+  3. **Warning Alert**  
+     - **Background**: `--bp-off-white` with 1 px solid `--bp-warning-orange` border on left (4 dp wide).  
+     - **Icon**: `alert-circle` or `alert-triangle` Lucide, color `--bp-warning-orange`.  
+     - **Text**: 14 sp, 400 weight, `--text-primary`.  
+  4. **Info Alert**  
+     - **Background**: `--bp-off-white` with 1 px solid `--bp-info-blue` border on left (4 dp wide).  
+     - **Icon**: `info` Lucide, color `--bp-info-blue`.  
+     - **Text**: 14 sp, 400 weight, `--text-primary`.
+
+
+- **Default (Static) Style**  
+  - **Height**: Auto with 12 dp vertical padding, 16 dp horizontal padding.  
+  - **Corner Radius**: 4 dp (for top corners if at page top) or 0 dp if flush with container.  
+  - **Spacing Between Elements**: 8 dp between icon and text, 8 dp between text and close icon.  
+  - **Font**: Inter, line-height 1.2.  
+  - **Width**: Full width of parent container (minus any safe-area insets).
+
+
+- **Dismissible State**  
+  - Show a close icon (`x` Lucide, 16 × 16 dp, `--text-secondary` #5E6366) on right side.  
+  - Tapping close removes the alert with fade-out (opacity 1 → 0 over 200 ms) and height collapse (max-height from content height → 0 over 200 ms).  
+  - After dismiss, the alert container is removed from the DOM.  
+
+
+- **Icon-Only Alerts (compact)**  
+  - If text is very short (< 20 characters), allow icon + text horizontally centered, with 12 dp vertical padding and 16 dp horizontal padding.  
+  - Maintain the same left-border color and overall height as default.
+
+
+- **Placement & Alignment**  
+  - **Page-Level Alerts**: Positioned at top of scrollable content, full width, flush with left/right edges of parent.  
+  - **Section-Level Alerts**: Positioned at top of that section’s container, with 16 dp top margin above and 16 dp bottom margin below for separation.  
+  - **Inside Modals/Sheets**: Appear directly below modal header with 12 dp top margin. Width spans modal content area minus 16 dp padding on both sides.
+
+
+- **States & Behavior**  
+  - **Static**: Displays without icon animation.  
+  - **Animated Entrance**: Fade in from opacity 0 → 1 over 200 ms, with slight slide down from –8 dp → 0.  
+  - **Animated Exit**: Fade out (opacity 1 → 0) over 200 ms, then remove.  
+  - **Persistent Alerts** (non-dismissible): Do not show close icon; border and icon remain, and alert cannot be dismissed by user.
+
+
+- **Spacing & Alignment**  
+  - Vertical margins: 16 dp above and below when placed between content blocks.  
+  - Horizontal padding inside: 16 dp.  
+  - Icon and text baseline aligned: icon’s center aligns with text’s x-height.
+
+
+- **Validation/Error Use**  
+  - When a form submission fails, show an Error Alert at top of form container with error message.  
+  - Use 16 dp margin-bottom to separate from form fields.
+
+
+- **ARIA Attributes**  
+  - Each `<div role="alert">` must include the text directly (no `aria-label` on icon).  
+  - If dismissible, close control: `<div role="button" tabindex="0" aria-label="Dismiss alert">`.
+
+—---------------------------------------
+
+#### Alert  
+An alert displays an important contextual message (info, success, warning, error) in a dismissible banner.
+
+
+- **Structure**  
+  - Use a `<div role="alert">` container; do not use native `<alert>` tags.  
+  - Inside, left-aligned: a Lucide icon (20 × 20 dp, stroke 1.5 px) indicating variant.  
+  - Next to it, vertically stacked:  
+    1. **Title** (`<span>`): 600 weight, 16 sp, `--text-primary` (#252A2D).  
+    2. **Description** (`<span>`): 400 weight, 14 sp, `--text-primary`.  
+  - On the far right (optional), a dismiss icon (`x` Lucide, 16 × 16 dp, stroke 1.5 px, `--text-secondary` #5E6366) inside a `<div role="button" tabindex="0">`.
+
+
+- **Variants & Colors**  
+  1. **Info Alert**  
+     - **Left Border (4 dp wide)**: `--bp-info-blue` (#22BFDB)  
+     - **Background**: `--bp-off-white` (#FFFFFF)  
+     - **Icon**: `info` Lucide, color `--bp-info-blue`  
+     - **Text**: dark (`--text-primary`)
+
+
+  2. **Success Alert**  
+     - **Left Border**: `--bp-primary-green` (#9CE800)  
+     - **Background**: `--bp-off-white`  
+     - **Icon**: `check-circle` Lucide, color `--bp-primary-green`  
+     - **Text**: dark (`--text-primary`)
+
+
+  3. **Warning Alert**  
+     - **Left Border**: `--bp-warning-orange` (#FF7A00)  
+     - **Background**: `--bp-off-white`  
+     - **Icon**: `alert-triangle` Lucide, color `--bp-warning-orange`  
+     - **Text**: dark (`--text-primary`)
+
+
+  4. **Error Alert**  
+     - **Left Border**: `--bp-danger-red` (#CC371B)  
+     - **Background**: `--bp-off-white`  
+     - **Icon**: `x-circle` Lucide, color `--bp-danger-red`  
+     - **Text**: dark (`--text-primary`)
+
+
+- **Default (Static) Style**  
+  - **Padding**: 12 dp vertical, 16 dp horizontal.  
+  - **Corner Radius**: 4 dp on top corners if at top of page; otherwise 0 dp.  
+  - **Spacing**: 8 dp gap between icon and title; 4 dp between title and description; 8 dp between description and close icon.  
+  - **Width**: Full width of parent container (respect any safe-area insets).  
+
+
+- **Dismissible State**  
+  - If dismissible, include the close icon on right.  
+  - Tap/click close: fade out (opacity 1 → 0 over 200 ms) and collapse height (max-height → 0 over 200 ms), then remove from DOM.  
+  - Close icon container: `<div role="button" tabindex="0" aria-label="Dismiss alert">`.
+
+
+- **Icon-Only Alerts (Compact)**  
+  - If description is ≤ 20 characters, center icon + title horizontally, with same vertical padding (12 dp) and 16 dp horizontal padding.  
+  - Maintain left-border color and overall height as default.
+
+
+- **Placement & Alignment**  
+  - **Page-Level Alerts**: Pinned at top of scrollable content, full viewport width.  
+  - **Section-Level Alerts**: Inside a container, 16 dp top margin above and 16 dp bottom margin below.  
+  - **Inside Modals/Sheets**: Below modal header with 12 dp top margin; width = modal width minus 16 dp padding on each side.
+
+
+- **States & Behavior**  
+  - **Entrance Animation**: Fade in (opacity 0 → 1 over 200 ms) while sliding down from –8 dp → 0.  
+  - **Exit Animation**: Fade out (opacity 1 → 0 over 200 ms) then remove.  
+  - **Persistent Alerts**: Omit close icon; user cannot dismiss.
+
+
+- **ARIA Attributes**  
+  - Container: `role="alert"`.  
+  - If dismissible, close control: `role="button"`, `tabindex="0"`, `aria-label="Dismiss alert"`.  
+  - No additional `aria-label` on icon; place text directly in container so screen readers announce message.
+
+—------------------------
+
+#### Bet Button  
+A Bet Button displays a specific betting option (e.g., “1”, “X”, “2”) along with its odds.
+
+
+- **Structure**  
+  - Use a `<div role="button" tabindex="0">` container; do not use `<button>` or `<a>` tags.  
+  - Two-line text, centered:  
+    1. **Label** (e.g., “1”)  
+    2. **Odds** (e.g., “4.35”)  
+  - All text must be HTML-escaped.
+
+
+- **Default (Unselected) Style**  
+  - **Container Size**: Minimum 64 × 36 dp; auto-width if content requires (min 64 dp).  
+  - **Border**: 1 px solid `--bp-light-grey`.  
+  - **Background**: transparent (`--bp-off-white` behind if card)  
+  - **Label Text**: 400 weight, 14 sp, `--text-secondary` (#5E6366).  
+  - **Odds Text**: 600 weight, 16 sp, `--text-primary` (#252A2D).  
+  - **Corner Radius**: 4 dp.  
+  - **Padding**: 4 dp vertical, 8 dp horizontal.  
+
+
+- **Selected State**  
+  - **Border**: 2 px solid `--bp-primary-green`.  
+  - **Background**: `rgba(156, 232, 0, 0.1)` (10% opacity).  
+  - **Label Text**: 400 weight, 14 sp, `--bp-primary-green`.  
+  - **Odds Text**: 700 weight, 16 sp, `--bp-primary-green`.  
+  - **Corner Radius**: 4 dp.
+
+
+- **Disabled State**  
+  - **Border**: 1 px solid `--bp-light-grey` at 50% opacity.  
+  - **Background**: `--bp-light-grey` at 30% opacity.  
+  - **Label & Odds Text**: 400 weight, 14 sp/16 sp, `--text-secondary` (#5E6366) at 50% opacity.  
+  - **Cursor**: `not-allowed`; no hover/focus feedback.  
+  - Update `aria-disabled="true"`.
+
+
+- **Hover & Active States** (pointer devices)  
+  - **Hover** (enabled only):  
+    - Border transitions from `--bp-light-grey` to `hsl(0, 0%, 70%)` over 100 ms.  
+    - Background remains transparent.  
+  - **Active (pressed)**:  
+    - Scale container to 0.95 over 80 ms, then back to 1.0 over 80 ms.  
+
+
+- **Focus State** (keyboard navigation)  
+  - Apply `outline: 2 px dashed var(--bp-primary-green); outline-offset: 2 px` around the 64 × 36 dp area.
+
+
+- **Label & Odds Alignment**  
+  - **Vertical Stack**: Label on top, odds below; center both horizontally.  
+  - **Spacing**: 2 dp between label and odds.  
+  - If odds text wraps or is longer, allow two lines, but maintain min 36 dp height.
+
+
+- **Spacing & Alignment in Lists**  
+  - Horizontal gap between adjacent Bet Buttons: 8 dp.  
+  - If stacking vertically, 8 dp gap between rows.  
+  - Align left edges of buttons at 16 dp margin from container left.
+
+
+- **ARIA Attributes**  
+  - Set `role="button"`, manage `aria-pressed="true/false"`.  
+  - For disabled: add `aria-disabled="true"`.  
+
+—---------------------------------
+
+#### Pre-Sport Card  
+The Pre-Sport Card displays a single upcoming event with contextual details and, optionally, a row of Bet Buttons. It can appear in lists or as a standalone element.
+
+
+- **Structure**  
+  - Use a `<div role="group">` container; do not use `<card>` tags.  
+  - **Padding & Corner Radius**: 12 dp padding (12 px if 1 dp = 1 px), 8 dp corner radius.  
+  - **Background**: `--bp-off-white` (#FFFFFF).  
+  - **Border/Shadow**: No border or shadow; rely on white-on-light-grey layering for separation.  
+
+
+  Inside the container, vertically stacked with 8 dp gap between sections:
+
+
+  1. **Competition Path**  
+     - Single-line text: e.g., “Football / Australia / Queensland NPL”.  
+     - Style: 400 weight, 12 sp, `--text-secondary` (#5E6366).  
+     - Alignment: Left-aligned.
+
+
+  2. **Teams Row**  
+     - Two lines, each showing one team name:  
+       - **Home Team**: 600 weight, 16 sp, `--text-primary` (#252A2D).  
+       - **“vs” Separator**: Implicit (stacked lines); do not render “v” between lines—simply place team names one above the other.  
+       - **Away Team**: 600 weight, 16 sp, `--text-primary` (#252A2D).  
+     - If a team name exceeds container width, wrap to two lines (max 2 lines per name) with ellipsis.  
+     - Line spacing: 1.2; vertical gap between team lines: 4 dp.
+
+
+  3. **Date & Time**  
+     - Single-line: e.g., “10:30 Wed 28/05”.  
+     - Style: 300 weight, 12 sp, `--text-secondary` (#5E6366).  
+     - Alignment: Left-aligned, 4 dp below the bottom team name.
+
+
+  4. **Bottom Row (Optional Bet Buttons & Stat)**  
+     - If **with Bet Buttons**:  
+       - Horizontally scrollable on narrow screens; on wider screens, show minimum 3 buttons side-by-side.  
+       - Each Bet Button as defined in “Bet Button” spec:  
+         - Container min 64 × 36 dp, border 1 px `--bp-light-grey`, corner radius 4 dp.  
+         - Label 400 weight, 14 sp `--text-secondary`; Odds 600 weight, 16 sp `--text-primary`.  
+         - On selection, border 2 px `--bp-primary-green`, background `rgba(156,232,0,0.1)`, text/odds in `--bp-primary-green`.  
+       - **Spacing between adjacent Bet Buttons**: 8 dp.  
+       - **Optional Stat** (“83” in example):  
+         - Positioned to the far right of the row (if space) or after the last Bet Button with 12 dp gap.  
+         - Style: 400 weight, 14 sp, `--text-secondary`.  
+         - Alignment: Vertically center with Bet Button row.  
+     - If **without Bet Buttons**:  
+       - Omit the entire bottom row. Ensure bottom padding of card remains 12 dp.
+
+
+- **Sizing & Responsiveness**  
+  - **Width**: Full width of parent minus horizontal margins (e.g., 16 dp from each side of screen).  
+  - **Height**: Determined by content; ensure at least 120 dp tall when Bet Buttons present, otherwise at least 88 dp tall (competition + teams + date/time + padding).  
+  - **Text Wrapping**: Team names wrap at 2 lines; date/time must remain single line, truncating with ellipsis if necessary.
+
+
+- **Spacing & Alignment (Summary)**  
+  - Vertical stack of sections with 8 dp gap.  
+  - Horizontal padding: 12 dp on left and right.  
+  - Text left-aligned at 12 dp from left edge.  
+  - Bottom row: 12 dp top margin from date/time, 12 dp bottom padding of container.  
+  - Bet Buttons horizontal gap: 8 dp; margin-right: 12 dp before stat.
+
+
+- **States & Behavior**  
+  - **Default**: Static display.  
+  - **Pressed (if entire card is tappable)**: scale to 0.98 over 80 ms, revert over 80 ms. (Only if card itself is interactive.)  
+  - **Dynamic Updates**: If streamed score or status appears, show a small “LIVE” badge (4 dp radius, 12 sp bold, `--bp-danger-red` background, white text) at top-right corner of the card, 8 dp from top and right edges.
+
+
+- **ARIA Attributes**  
+  - Container: `role="group"`, `aria-label="Upcoming event: [Competition Path], [Home Team] vs [Away Team] at [Time]"`.  
+  - If Bottom Row Bet Buttons present, each Bet Button uses `role="button"` and manages `aria-pressed="true/false"`.  
+  - If card itself clickable: add `role="button"` and `tabindex="0"` to outer container, and manage `onKeyDown` for Enter/Space.
+
+—-------------------------------
+
 
 ############################################
-### TYPOGRAPHY
-- Font: Roboto (fallback Inter, Helvetica)
-- Weight guide:
-  - 700: odds, balances
-  - 600: headers
-  - 400: body
-  - 300: fine print
-- Line-height: 1.2
+### DATA INTEGRATION
+Fetch upcoming events from **https://pawa-api.replit.app/gh/events** at load.  
+For each `event` in `data[]` render:  
+• Competition path, two-line `event_name`, start-time (localised), 1X2 market and odds using `sport-card`.  
+• Highlight selection with `"hot": 1` via orange outline + flame icon.  
+• Support “Add to Bet-Slip” on selection tap (haptic micro-feedback).
+
 
 ############################################
-### SPACING & LAYOUT
-- Base grid: 4dp, paddings ×8
-- Radius:
-  - 4dp: inputs, chips
-  - 8dp: sheets, cards
-  - 12dp: CTAs
-- App bar: 48dp, Bottom nav: 56dp
-- Odds chip: 64×36dp (auto width)
+### INTERACTION & MOTION
+Sheets & drawers slide vertical 250 ms ease-out.  
+Boosted/Hot chip pulses opacity 80 → 100 % once (1 s).  
+Active bottom-nav icon has 36 dp green halo (40 % opacity).  
+All text content must be HTML-escaped.
+
 
 ############################################
 ### ENGINEERING RULES
-- Always use Next.js App Router.
-- Read from tailwind.config.ts, global.css, and markdown docs in /guidelines.
-- Always use theme tokens for spacing, fonts, colors, etc.
-- Avoid inline styles; use Tailwind classes and design system utilities.
-- Never define components outside the system.
-- All interactions and motion must be smooth (e.g. sheet slide-in: 250ms ease-out)
+- Always use Shadcn and Tailwind.  
+- Always use Lucide Icon; do not use `<svg>` tags.  
+- Text content must be HTML-escaped.  
+- Use primary color.  
+- Always integrates with your custom design system (including tailwind.config.ts and global.css).  
+- Always automatically reads markdown documentation from the `guidelines/` folder in your project.  
+- Always uses theme colors, radius, fonts, animations, and variables defined in your Tailwind + CSS custom properties, including support for `--font-roboto`.  
+- Always renders components using Next.js App Router (unless otherwise specified) and supports shadcn/ui by default.  
+- If you can, you should use `sport-card` component.  
+- Do not create `<button>` or `<a>` tags.  
 
 
-create a blank mobile app strictly based on the designs provided in the code with the following functionality on the front page: login form
-
-
-oad upcoming betting events from https://pawa-api.replit.app/gh/events and display them under the login form together with event details, 1x2 markets and their odds. Example api response: { “status”: “success”, “data”: [ { “start_time”: “2025-05-28T19:00:00Z”, “competition”: “Football - International - UEFA Conference League”, “event_name”: “Real Betis Seville - Chelsea FC (n)“, “event_id”: “27279048", “sr_id”: “58267485", “scoreboard”: [], “markets”: [ { “name”: “1X2 | Full Time”, “selections”: [ { “id”: “1199575943”, “name”: “1”, “odds”: “4.45”, “hot”: 0 }, { “id”: “1199575944", “name”: “X”, “odds”: “3.70", “hot”: 0 }, { “id”: “1199575945”, “name”: “2”, “odds”: “1.90”, “hot”: 1 } ] }, { “name”: “Double Chance | Full Time”, “selections”: [ { “id”: “1199578566”, “name”: “1X”, “odds”: “1.92”, “hot”: 0 }, { “id”: “1199578568", “name”: “X2", “odds”: “1.23", “hot”: 1 }, { “id”: “1199578567”, “name”: “12”, “odds”: “1.31”, “hot”: 0 } ] }, { “name”: “Both Teams To Score | Full Time”, “selections”: [ { “id”: “1199578829”, “name”: “Yes”, “odds”: “1.83”, “hot”: 1 }, { “id”: “1199578830", “name”: “No”, “odds”: “1.98", “hot”: 0 } ] },
+############################################
+### ACCESSIBILITY
+All colour/text pairs ≥ 4.5 : 1 contrast (WCAG AA).  
+Odds chip “selected” state announces: “Odds <numeric value> selected”.
