@@ -1312,7 +1312,7 @@ Odds chip “selected” state announces: “Odds <numeric value> selected”.`
                                     <Button
                                         size="lg"
                                         className="w-full"
-                                        onClick={() => window.open("https://v0.dev/community/pawa-blox-e2g02lKaB5a", "_blank")}
+                                        onClick={() => window.open("https://v0.dev/community/pawa-blox-iTWzM3w51Xu", "_blank")}
                                     >
                                         <div className="flex items-center gap-2">
                                             <ExternalLink className="w-4 h-4 mr-2"/>
