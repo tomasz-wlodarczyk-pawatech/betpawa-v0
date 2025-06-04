@@ -1030,7 +1030,7 @@ Odds chip “selected” state announces: “Odds <numeric value> selected”.`
                                 Download Resources
                             </CardTitle>
                             <CardDescription>
-                                Download the system prompt and reference images/GIFs to use locally or attach to your AI
+                                Download the system prompt and reference images to use locally or attach to your AI
                                 tools
                             </CardDescription>
                         </CardHeader>
@@ -1070,7 +1070,7 @@ Odds chip “selected” state announces: “Odds <numeric value> selected”.`
                                     </CardHeader>
                                     <CardContent className="space-y-3">
                                         <p className="text-sm text-muted-foreground">
-                                            Download betPawa app screenshots and GIFs to use as visual references
+                                            Download betPawa app screenshots  to use as visual references
                                         </p>
                                         <div className="space-y-2">
                                             <Button
@@ -1263,7 +1263,7 @@ Odds chip “selected” state announces: “Odds <numeric value> selected”.`
                                         <p className="text-sm font-medium text-purple-800">📎 How to Attach Files</p>
                                         <div className="text-xs text-purple-700 mt-2 space-y-1">
                                             <p>
-                                                <strong>v0:</strong> Drag and drop files (PNG, JPG, GIF, TXT) directly
+                                                <strong>v0:</strong> Drag and drop files (PNG, JPG, TXT) directly
                                                 into the chat, or click
                                                 the attachment button
                                             </p>
@@ -1273,7 +1273,7 @@ Odds chip “selected” state announces: “Odds <numeric value> selected”.`
                                             </p>
                                             <p>
                                                 <strong>ChatGPT/Claude:</strong> Use the paperclip icon to attach files
-                                                (supports images, GIFs,
+                                                (supports images,
                                                 and text files)
                                             </p>
                                         </div>
@@ -1403,7 +1403,7 @@ Odds chip “selected” state announces: “Odds <numeric value> selected”.`
                                             <h4 className="font-semibold">Attach Files (Optional)</h4>
                                             <p className="text-muted-foreground text-sm">
                                                 Drag and drop the downloaded system-prompt.txt file and reference
-                                                images/GIFs into v0 chat for
+                                                images into v0 chat for
                                                 better context.
                                             </p>
                                         </div>
@@ -1606,7 +1606,7 @@ Odds chip “selected” state announces: “Odds <numeric value> selected”.`
                                         <div className="space-y-3">
                                             <h4 className="font-semibold">Upload Files (Optional)</h4>
                                             <p className="text-muted-foreground text-sm">
-                                                Upload the downloaded system-prompt.txt and reference images/GIFs to
+                                                Upload the downloaded system-prompt.txt and reference images to
                                                 your project folder for
                                                 easy access.
                                             </p>
@@ -1677,9 +1677,9 @@ Odds chip “selected” state announces: “Odds <numeric value> selected”.`
                                     <div className="flex gap-3">
                                         <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5"/>
                                         <div>
-                                            <p className="font-medium text-sm">Upload reference images & GIFs</p>
+                                            <p className="font-medium text-sm">Upload reference images </p>
                                             <p className="text-xs text-muted-foreground">
-                                                Add betPawa screenshots and GIFs to your project and reference them in
+                                                Add betPawa screenshots to your project and reference them in
                                                 prompts
                                             </p>
                                         </div>
