@@ -16,7 +16,7 @@ import {
   Rocket,
   Zap,
   RefreshCw,
-  MessageSquare,
+  MessageSquare, Play,
 } from "lucide-react"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { useState, useEffect } from "react"
@@ -357,12 +357,12 @@ export default function PawaProxyPage() {
                       <p className="text-sm font-medium mb-2">Example Prompt:</p>
                       <div className="bg-slate-50 border-l-4 border-blue-500 p-4 rounded-md relative group">
                         <div className="font-mono text-sm text-slate-700 whitespace-pre-wrap">
-                          {`Please log in the user by using the endpoint defined in @docs/api/user.yaml`}
+                          {`Create a login page for betpawa-nigeria using the API defined in @docs/api/user.yaml, with https://pawa-proxy.replit.app as the base URL, and do not use credentials: 'include' or any CSRF-related credentials handling.`}
                         </div>
                         <button
                             onClick={() =>
                                 handleCopy(
-                                    `Please log in the user by using the endpoint defined in @docs/api/user.yaml`,
+                                    `Create a login page for betpawa-nigeria using the API defined in @docs/api/user.yaml, with https://pawa-proxy.replit.app as the base URL, and do not use credentials: 'include' or any CSRF-related credentials handling.`,
                                     "auth-prompt",
                                 )
                             }
@@ -381,32 +381,30 @@ export default function PawaProxyPage() {
                   </div>
                 </div>
 
-                <div>
-                  <p className="text-sm font-medium mb-2 mt-6">Visual Examples:</p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <p className="text-sm font-medium">Login Form:</p>
-                      <div className="border rounded-md overflow-hidden">
-                        <img
-                            src="/login-page.png"
-                            alt="Login form with phone number and password fields, remember me checkbox, and green login button"
-                            className="w-full h-auto"
-                        />
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <Play className="w-5 h-5 text-blue-600" />
+                      Video example
+                    </CardTitle>
+                    <CardDescription className="text-md">Watch how looks like a login page for betpawa-nigeria using the API defined in @docs/api/user.yaml.</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="bg-gray-900 rounded-lg p-4 border border-gray-300">
+                      <div className="flex items-center gap-2 mb-3">
+                        <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                        <span className="text-gray-400 text-sm ml-2">v0 Assistant Demo</span>
                       </div>
+                      <img
+                          src="/login.gif"
+                          alt="Demo showing how to use @v0/system-prompt.txt with Replit Assistant"
+                          className="w-full rounded border border-gray-600 transition-transform duration-300 hover:scale-150"
+                      />
                     </div>
-                    <div className="space-y-2">
-                      <p className="text-sm font-medium">Successful Login:</p>
-                      <div className="border rounded-md overflow-hidden">
-                        <img
-                            src="/login-success.png"
-                            alt="Success page showing Welcome message, user ID, and logout button"
-                            className="w-full h-auto"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
+                  </CardContent>
+                </Card>
 
                 <div className="bg-green-50 border border-green-200 rounded-md p-4 flex gap-3">
                   <div className="text-green-600 mt-1">

@@ -1015,7 +1015,7 @@ Odds chip "selected" state announces: "Odds <numeric value> selected".`
                                     spacing, and buttons in the betPawa style.
                                 </p>
                                 <p className="text-md text-gray-700 leading-relaxed">
-                                    Just download the pawabloX template, and you can start building apps that look and feel like betPawa —
+                                    Just fork it the pawabloX template, and you can start building apps that look and feel like betPawa —
                                     no need to design everything from scratch!
                                 </p>
                                 <div className="flex flex-wrap gap-2 mt-3">
@@ -1147,27 +1147,44 @@ Odds chip "selected" state announces: "Odds <numeric value> selected".`
 
                                     {/* Step 3 */}
                                     <div className="flex gap-4">
-                                        <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                                        <div
+                                            className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
                                             3
                                         </div>
                                         <div className="space-y-3">
-                                            <h4 className="font-semibold">Attach Files (Optional)</h4>
+                                            <h4 className="font-semibold">Use the Master Prompt</h4>
                                             <p className="text-muted-foreground text-sm">
-                                                Drag and drop the downloaded system-prompt.txt file and reference images into v0 chat for better
-                                                context.
+                                                We've created a master prompt that ensures AI-generated UIs follow
+                                                betPawa-style design.
                                             </p>
+                                            <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mt-2">
+                                                <p className="text-sm text-blue-800 mb-2">
+                                                    <strong>Master prompt location:</strong>
+                                                </p>
+                                                <code className="bg-blue-100 px-2 py-1 rounded text-sm text-blue-700">
+                                                    @docs/prompt/system-prompt.txt
+                                                </code>
+                                                <p className="text-xs text-blue-700 mt-2">
+                                                    To maintain consistent styling, you must reference this prompt in
+                                                    every new AI prompt you
+                                                    create. This ensures the UI output is aligned with betPawa's design
+                                                    standards.
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
 
                                     {/* Step 4 */}
                                     <div className="flex gap-4">
-                                        <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                                        <div
+                                            className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
                                             4
                                         </div>
                                         <div className="space-y-3">
                                             <h4 className="font-semibold">Start Creating</h4>
                                             <p className="text-muted-foreground text-sm">
-                                                Type your request in the chat. The pawabloX design system is already loaded!
+                                                Type your request in the chat. The pawabloX design system is already
+                                                loaded!
                                             </p>
                                             <div className="bg-gray-50 border rounded-lg p-3">
                                                 <p className="text-sm font-medium mb-2">Example prompts:</p>
@@ -1337,21 +1354,37 @@ Odds chip "selected" state announces: "Odds <numeric value> selected".`
 
                                     {/* Step 3 */}
                                     <div className="flex gap-4">
-                                        <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                                        <div
+                                            className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
                                             3
                                         </div>
                                         <div className="space-y-3">
-                                            <h4 className="font-semibold">Upload Files (Optional)</h4>
+                                            <h4 className="font-semibold">Use the Master Prompt</h4>
                                             <p className="text-muted-foreground text-sm">
-                                                Upload the downloaded system-prompt.txt and reference images to your project folder for easy
-                                                access.
+                                                We've created a master prompt that ensures AI-generated UIs follow
+                                                betPawa-style design.
                                             </p>
+                                            <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mt-2">
+                                                <p className="text-sm text-blue-800 mb-2">
+                                                    <strong>Master prompt location:</strong>
+                                                </p>
+                                                <code className="bg-blue-100 px-2 py-1 rounded text-sm text-blue-700">
+                                                    @docs/prompt/system-prompt.txt
+                                                </code>
+                                                <p className="text-xs text-blue-700 mt-2">
+                                                    To maintain consistent styling, you must reference this prompt in
+                                                    every new AI prompt you
+                                                    create. This ensures the UI output is aligned with betPawa's design
+                                                    standards.
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
 
                                     {/* Step 4 */}
                                     <div className="flex gap-4">
-                                        <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                                        <div
+                                            className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
                                             4
                                         </div>
                                         <div className="space-y-3">
@@ -1360,8 +1393,10 @@ Odds chip "selected" state announces: "Odds <numeric value> selected".`
                                                 Open the AI Assistant and use the special file reference feature:
                                             </p>
                                             <div className="bg-purple-50 border border-purple-200 rounded-lg p-3">
-                                                <p className="text-sm font-medium text-purple-800 mb-2">Magic Command:</p>
-                                                <code className="bg-purple-100 px-2 py-1 rounded text-sm text-purple-700">
+                                                <p className="text-sm font-medium text-purple-800 mb-2">Magic
+                                                    Command:</p>
+                                                <code
+                                                    className="bg-purple-100 px-2 py-1 rounded text-sm text-purple-700">
                                                     @docs/prompt/system-prompt.txt create a login form
                                                 </code>
                                                 <p className="text-xs text-purple-600 mt-2">
