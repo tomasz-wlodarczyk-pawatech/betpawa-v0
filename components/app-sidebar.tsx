@@ -25,11 +25,7 @@ const data = {
         avatar: "/avatars/shadcn.jpg",
     },
     navMain: [
-        {
-            title: "Getting Started",
-            url: "/getting-started",
-            icon: BookOpen,
-        },
+
         {
             title: "How to Use",
             url: "/how-to-use",

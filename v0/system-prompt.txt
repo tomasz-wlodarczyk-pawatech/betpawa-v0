@@ -899,7 +899,7 @@ The Pre-Sport Card displays a single upcoming event with contextual details and,
 
 ############################################
 ### DATA INTEGRATION
-Fetch upcoming events from **https://pawa-api.replit.app/gh/events** at load.  
+Fetch upcoming events from **https://pawa-proxy.replit.app/apiplus/events/popular** at load.
 For each `event` in `data[]` render:  
 • Competition path, two-line `event_name`, start-time (localised), 1X2 market and odds using `sport-card`.  
 • Highlight selection with `"hot": 1` via orange outline + flame icon.  

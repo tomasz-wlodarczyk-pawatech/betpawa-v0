@@ -1,12 +1,10 @@
 "use client"
-
-import type React from "react"
-import {useState} from "react"
-import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card"
-import {Input} from "@/components/ui/input"
-import {Checkbox} from "@/components/ui/checkbox"
-import {Badge} from "@/components/ui/badge"
-import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs"
+import { useState } from "react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Checkbox } from "@/components/ui/checkbox"
+import { Badge } from "@/components/ui/badge"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import {
     Dialog,
     DialogContent,
@@ -15,15 +13,13 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
-import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select"
-import {Loader2, Eye, Heart, Star, Settings, Calendar} from "lucide-react"
-import {Button} from "@/components/ui/button"
-import {RadioGroup, RadioGroupItem} from "@/components/ui/radio-group";
-import {Spinner} from "@/components/ui/spinner";
-
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Loader2, Eye, Heart, Star, Settings, Calendar } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { Spinner } from "@/components/ui/spinner"
 
 // Custom Spinner Component
-
 
 export default function HomePage() {
     const [inputValue, setInputValue] = useState("")
@@ -37,8 +33,7 @@ export default function HomePage() {
             {/* Mobile header */}
             <div className="md:hidden flex items-center justify-between p-4 border-b bg-background">
                 <div className="flex items-center gap-2">
-                    <div
-                        className="w-6 h-6 bg-gradient-to-br from-green-400 to-green-600 rounded flex items-center justify-center">
+                    <div className="w-6 h-6 bg-gradient-to-br from-green-400 to-green-600 rounded flex items-center justify-center">
                         <span className="text-white font-bold text-xs">P</span>
                     </div>
                     <div className="font-bold text-sm">
@@ -53,10 +48,19 @@ export default function HomePage() {
             <div className="flex-1 bg-background">
                 <div className="container mx-auto p-4 space-y-8 max-w-2xl">
                     {/* Header */}
-                    <div className="space-y-2">
+                    <div className="space-y-4">
                         <h1 className="text-3xl font-bold text-gray-900">Component Catalog</h1>
-                        <p className="text-gray-600">A comprehensive preview of all pawabloX design system
-                            components</p>
+                        <div className="space-y-2">
+                            <p className="text-gray-600 text-lg">A comprehensive preview of all pawabloX design system components</p>
+                            <div className="bg-lime-50 border border-lime-200 rounded-lg p-4">
+                                <p className="text-sm text-gray-700 leading-relaxed">
+                                    This catalog showcases all the UI components available in the pawabloX design system. Each component
+                                    is styled to match the betPawa brand with the signature lime green colors, proper spacing, and
+                                    consistent typography. You can interact with these components to see their different states and
+                                    behaviors before using them in your projects.
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
                     {/* Buttons Section */}
@@ -94,7 +98,7 @@ export default function HomePage() {
                     </section>
 
                     {/* Divider */}
-                    <hr className="border-gray-200"/>
+                    <hr className="border-gray-200" />
 
                     {/* Input Field Section */}
                     <section className="space-y-4">
@@ -113,21 +117,20 @@ export default function HomePage() {
                             </div>
                             <div className="space-y-2">
                                 <label className="text-sm font-medium text-gray-700">Disabled Input</label>
-                                <Input placeholder="Disabled input" disabled/>
+                                <Input placeholder="Disabled input" disabled />
                             </div>
                             <div className="space-y-2">
                                 <label className="text-sm font-medium text-gray-700">Input with Icon</label>
                                 <div className="relative">
-                                    <Eye
-                                        className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"/>
-                                    <Input placeholder="Input with icon" className="pl-10"/>
+                                    <Eye className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                                    <Input placeholder="Input with icon" className="pl-10" />
                                 </div>
                             </div>
                         </div>
                     </section>
 
                     {/* Divider */}
-                    <hr className="border-gray-200"/>
+                    <hr className="border-gray-200" />
 
                     {/* Checkbox Section */}
                     <section className="space-y-4">
@@ -137,20 +140,23 @@ export default function HomePage() {
                         </div>
                         <div className="space-y-3">
                             <div className="flex items-center space-x-2">
-                                <Checkbox id="checkbox1" checked={checkboxChecked}
-                                          onCheckedChange={(e) => setCheckboxChecked((prevState) => !prevState)}/>
+                                <Checkbox
+                                    id="checkbox1"
+                                    checked={checkboxChecked}
+                                    onCheckedChange={(e) => setCheckboxChecked((prevState) => !prevState)}
+                                />
                                 <label htmlFor="checkbox1" className="text-sm font-medium text-gray-700">
                                     Accept terms and conditions
                                 </label>
                             </div>
                             <div className="flex items-center space-x-2">
-                                <Checkbox id="checkbox2"/>
+                                <Checkbox id="checkbox2" />
                                 <label htmlFor="checkbox2" className="text-sm font-medium text-gray-700">
                                     Subscribe to newsletter
                                 </label>
                             </div>
                             <div className="flex items-center space-x-2">
-                                <Checkbox id="checkbox3" disabled/>
+                                <Checkbox id="checkbox3" disabled />
                                 <label htmlFor="checkbox3" className="text-sm font-medium text-gray-400">
                                     Disabled checkbox
                                 </label>
@@ -159,7 +165,7 @@ export default function HomePage() {
                     </section>
 
                     {/* Divider */}
-                    <hr className="border-gray-200"/>
+                    <hr className="border-gray-200" />
 
                     {/* Radio Buttons Section */}
                     <section className="space-y-4">
@@ -171,10 +177,18 @@ export default function HomePage() {
                             <div className="space-y-2">
                                 <p className="text-sm font-medium text-gray-700">Choose your plan:</p>
                                 <RadioGroup>
-                                    <RadioGroupItem label="Basic Plan" value="basic" checked={radioValue === "basic"}
-                                                    onValueChange={setRadioValue}/>
-                                    <RadioGroupItem label="Pro Plan" value="pro" checked={radioValue === "pro"}
-                                                    onValueChange={setRadioValue}/>
+                                    <RadioGroupItem
+                                        label="Basic Plan"
+                                        value="basic"
+                                        checked={radioValue === "basic"}
+                                        onValueChange={setRadioValue}
+                                    />
+                                    <RadioGroupItem
+                                        label="Pro Plan"
+                                        value="pro"
+                                        checked={radioValue === "pro"}
+                                        onValueChange={setRadioValue}
+                                    />
                                     <RadioGroupItem
                                         label="Enterprise Plan"
                                         value="enterprise"
@@ -182,14 +196,14 @@ export default function HomePage() {
                                         checked={radioValue === "enterprise"}
                                         onValueChange={setRadioValue}
                                     />
-                                    <RadioGroupItem label="Disabled Option" value="disabled" disabled/>
+                                    <RadioGroupItem label="Disabled Option" value="disabled" disabled />
                                 </RadioGroup>
                             </div>
                         </div>
                     </section>
 
                     {/* Divider */}
-                    <hr className="border-gray-200"/>
+                    <hr className="border-gray-200" />
 
                     {/* Select Dropdown Section */}
                     <section className="space-y-4">
@@ -202,7 +216,7 @@ export default function HomePage() {
                                 <label className="text-sm font-medium text-gray-700">Select Country</label>
                                 <Select value={selectValue} onValueChange={setSelectValue}>
                                     <SelectTrigger>
-                                        <SelectValue placeholder="Choose a country"/>
+                                        <SelectValue placeholder="Choose a country" />
                                     </SelectTrigger>
                                     <SelectContent>
                                         <SelectItem value="us">United States</SelectItem>
@@ -217,7 +231,7 @@ export default function HomePage() {
                     </section>
 
                     {/* Divider */}
-                    <hr className="border-gray-200"/>
+                    <hr className="border-gray-200" />
 
                     {/* Tabs Section */}
                     <section className="space-y-4">
@@ -233,13 +247,11 @@ export default function HomePage() {
                             </TabsList>
                             <TabsContent value="tab1" className="mt-4 p-4 border rounded-lg">
                                 <h3 className="font-medium mb-2">Overview Content</h3>
-                                <p className="text-sm text-gray-600">This is the overview tab content with general
-                                    information.</p>
+                                <p className="text-sm text-gray-600">This is the overview tab content with general information.</p>
                             </TabsContent>
                             <TabsContent value="tab2" className="mt-4 p-4 border rounded-lg">
                                 <h3 className="font-medium mb-2">Details Content</h3>
-                                <p className="text-sm text-gray-600">This tab contains detailed information and
-                                    specifications.</p>
+                                <p className="text-sm text-gray-600">This tab contains detailed information and specifications.</p>
                             </TabsContent>
                             <TabsContent value="tab3" className="mt-4 p-4 border rounded-lg">
                                 <h3 className="font-medium mb-2">Settings Content</h3>
@@ -249,7 +261,7 @@ export default function HomePage() {
                     </section>
 
                     {/* Divider */}
-                    <hr className="border-gray-200"/>
+                    <hr className="border-gray-200" />
 
                     {/* Card Component Section */}
                     <section className="space-y-4">
@@ -261,16 +273,14 @@ export default function HomePage() {
                             <Card>
                                 <CardHeader>
                                     <CardTitle className="flex items-center gap-2">
-                                        <Heart className="w-5 h-5 text-red-500"/>
+                                        <Heart className="w-5 h-5 text-red-500" />
                                         Basic Card
                                     </CardTitle>
-                                    <CardDescription>This is a basic card component with header and
-                                        content</CardDescription>
+                                    <CardDescription>This is a basic card component with header and content</CardDescription>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-sm text-gray-600">
-                                        Card content goes here. This can include any type of content like text, images,
-                                        buttons, or other
+                                        Card content goes here. This can include any type of content like text, images, buttons, or other
                                         components.
                                     </p>
                                     <div className="mt-4 flex gap-2">
@@ -287,7 +297,7 @@ export default function HomePage() {
                             <Card className="border-lime-200 bg-lime-50">
                                 <CardHeader>
                                     <CardTitle className="flex items-center gap-2">
-                                        <Star className="w-5 h-5 text-yellow-500"/>
+                                        <Star className="w-5 h-5 text-yellow-500" />
                                         Featured Card
                                     </CardTitle>
                                     <CardDescription>A highlighted card with custom styling</CardDescription>
@@ -302,7 +312,7 @@ export default function HomePage() {
                     </section>
 
                     {/* Divider */}
-                    <hr className="border-gray-200"/>
+                    <hr className="border-gray-200" />
 
                     {/* Loader/Spinner Section */}
                     <section className="space-y-4">
@@ -313,21 +323,21 @@ export default function HomePage() {
                         <div className="space-y-4">
                             <div className="flex items-center gap-6">
                                 <div className="text-center">
-                                    <Spinner size="sm"/>
+                                    <Spinner size="sm" />
                                     <p className="text-xs text-gray-600 mt-1">Small</p>
                                 </div>
                                 <div className="text-center">
-                                    <Spinner size="default"/>
+                                    <Spinner size="default" />
                                     <p className="text-xs text-gray-600 mt-1">Default</p>
                                 </div>
                                 <div className="text-center">
-                                    <Spinner size="lg"/>
+                                    <Spinner size="lg" />
                                     <p className="text-xs text-gray-600 mt-1">Large</p>
                                 </div>
                             </div>
                             <div className="p-4 border rounded-lg bg-gray-50">
                                 <div className="flex items-center gap-2">
-                                    <Loader2 className="w-4 h-4 animate-spin text-lime-400"/>
+                                    <Loader2 className="w-4 h-4 animate-spin text-lime-400" />
                                     <span className="text-sm text-gray-600">Loading content...</span>
                                 </div>
                             </div>
@@ -335,7 +345,7 @@ export default function HomePage() {
                     </section>
 
                     {/* Divider */}
-                    <hr className="border-gray-200"/>
+                    <hr className="border-gray-200" />
 
                     {/* Badge Section */}
                     <section className="space-y-4">
@@ -348,7 +358,9 @@ export default function HomePage() {
                                 <Badge className="bg-lime-400 text-black">New</Badge>
                                 <Badge variant="secondary">Popular</Badge>
                                 <Badge variant="outline">Draft</Badge>
-                                <Badge Icon={Calendar} variant="secondary">Error</Badge>
+                                <Badge Icon={Calendar} variant="secondary">
+                                    Error
+                                </Badge>
                             </div>
                             <div className="flex flex-wrap gap-2">
                                 <Badge className="bg-blue-500 text-white">Info</Badge>
@@ -370,7 +382,7 @@ export default function HomePage() {
                     </section>
 
                     {/* Divider */}
-                    <hr className="border-gray-200"/>
+                    <hr className="border-gray-200" />
 
                     {/* Modal Section */}
                     <section className="space-y-4">
@@ -386,23 +398,22 @@ export default function HomePage() {
                                 <DialogContent>
                                     <DialogHeader>
                                         <DialogTitle className="flex items-center gap-2">
-                                            <Settings className="w-5 h-5"/>
+                                            <Settings className="w-5 h-5" />
                                             Modal Title
                                         </DialogTitle>
                                         <DialogDescription>
-                                            This is a modal dialog component. It can contain any content including
-                                            forms, text, images, or
+                                            This is a modal dialog component. It can contain any content including forms, text, images, or
                                             other components.
                                         </DialogDescription>
                                     </DialogHeader>
                                     <div className="space-y-4">
                                         <div className="space-y-2">
                                             <label className="text-sm font-medium">Name</label>
-                                            <Input placeholder="Enter your name"/>
+                                            <Input placeholder="Enter your name" />
                                         </div>
                                         <div className="space-y-2">
                                             <label className="text-sm font-medium">Email</label>
-                                            <Input type="email" placeholder="Enter your email"/>
+                                            <Input type="email" placeholder="Enter your email" />
                                         </div>
                                         <div className="flex gap-2 pt-4">
                                             <Button variant="primary" size="sm">
