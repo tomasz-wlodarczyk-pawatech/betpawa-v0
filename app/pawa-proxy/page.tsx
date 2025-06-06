@@ -117,7 +117,7 @@ export default function PawaProxyPage() {
                 <div>
                   <h1 className="text-4xl font-bold">Getting Started with pawa-proxy</h1>
                   <p className="text-xl text-muted-foreground">
-                    Develop on Replit or v0 without running a backend using our proxy service
+                    Build betting apps easily with real data - no technical setup required!
                   </p>
                 </div>
                 <Button
@@ -127,8 +127,11 @@ export default function PawaProxyPage() {
                     disabled={apiData.loading}
                     className="flex items-center gap-2"
                 >
-                  <RefreshCw className={`h-4 w-4 ${apiData.loading ? "animate-spin" : ""}`} />
-                  Refresh Data
+                  <div className="flex items-center gap-2">
+                    <RefreshCw className={`h-4 w-4 ${apiData.loading ? "animate-spin" : ""}`} />
+                    Refresh Data
+                  </div>
+
                 </Button>
               </div>
             </div>
@@ -137,8 +140,7 @@ export default function PawaProxyPage() {
             <Alert className="bg-green-50 border-green-200">
               <AlertCircle className="h-4 w-4 text-green-600" />
               <AlertDescription className="text-green-700">
-                This guide shows how to use pawa-proxy for frontend development without needing to run the real backend.
-                Perfect for Replit or v0 development! All examples below show real, live data from the API.
+                This guide shows you how to build betting applications using real betPawa data without any complicated setup. Perfect for beginners and experienced developers alike! All examples work with live, real-time data.
               </AlertDescription>
             </Alert>
 
