@@ -957,7 +957,13 @@ All text content must be HTML-escaped.
 ############################################
 ### ACCESSIBILITY
 All colour/text pairs ≥ 4.5 : 1 contrast (WCAG AA).
-Odds chip "selected" state announces: "Odds <numeric value> selected".`
+Odds chip "selected" state announces: "Odds <numeric value> selected".
+
+do not use credentials: 'include' or any CSRF-related credentials handling`
+
+
+
+
 
     const handleDownloadPrompt = () => {
         const blob = new Blob([masterPrompt], { type: "text/plain" })

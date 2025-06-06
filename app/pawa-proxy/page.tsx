@@ -104,6 +104,7 @@ export default function PawaProxyPage() {
           <div></div>
         </div>
 
+
         {/* Main content */}
         <div className="flex-1 bg-background">
           <div className="container mx-auto p-6 space-y-8 max-w-4xl">
@@ -128,7 +129,7 @@ export default function PawaProxyPage() {
                     className="flex items-center gap-2"
                 >
                   <div className="flex items-center gap-2">
-                    <RefreshCw className={`h-4 w-4 ${apiData.loading ? "animate-spin" : ""}`} />
+                    <RefreshCw className={`h-4 w-4 ${apiData.loading ? "animate-spin" : ""}`}/>
                     Refresh Data
                   </div>
 
@@ -136,18 +137,59 @@ export default function PawaProxyPage() {
               </div>
             </div>
 
+            <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+              <div className="flex items-start gap-3">
+                <AlertCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1"/>
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold text-blue-900">🎯 Important: Choose Your Brand First!</h3>
+                  <p className="text-blue-800 leading-relaxed">
+                    Before making any API calls, you must select which betPawa brand/market you want to work with. This
+                    choice determines:
+                  </p>
+                  <ul className="list-disc list-inside text-blue-700 space-y-1 ml-4">
+                    <li>
+                      <strong>Currency:</strong> GHS (Ghana), NGN (Nigeria), KES (Kenya), UGX (Uganda)
+                    </li>
+                    <li>
+                      <strong>Regional Features:</strong> Available sports, betting options, and payment methods
+                    </li>
+                    <li>
+                      <strong>Styling & Branding:</strong> Colors, logos, and UI elements specific to each market
+                    </li>
+                    <li>
+                      <strong>Language & Localization:</strong> Text content and date/time formats
+                    </li>
+                  </ul>
+                  <div className="bg-blue-100 border border-blue-300 rounded-md p-3 mt-3">
+                    <p className="text-sm font-medium text-blue-900">
+                      💡{" "}
+                      <strong>
+                        Once selected, use the same brand consistently throughout your entire application session.
+                      </strong>
+                      All API requests will include the <code
+                        className="bg-blue-200 px-1 rounded">x-pawa-brand</code>{" "}
+                      header with your chosen brand or query parameter (e.g.,{" "}
+                      <code className="bg-blue-200 px-1 rounded">brand-nigeria</code>).
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Introduction */}
             <Alert className="bg-green-50 border-green-200">
-              <AlertCircle className="h-4 w-4 text-green-600" />
+              <AlertCircle className="h-4 w-4 text-green-600"/>
               <AlertDescription className="text-green-700">
-                This guide shows you how to build betting applications using real betPawa data without any complicated setup. Perfect for beginners and experienced developers alike! All examples work with live, real-time data.
+                This guide shows you how to build betting applications using real betPawa data without any complicated
+                setup. Perfect for beginners and experienced developers alike! All examples work with live, real-time
+                data.
               </AlertDescription>
             </Alert>
 
             {/* Error Alert */}
             {apiData.error && (
                 <Alert className="bg-red-50 border-red-200">
-                  <AlertCircle className="h-4 w-4 text-red-600" />
+                  <AlertCircle className="h-4 w-4 text-red-600"/>
                   <AlertTitle className="text-red-800">API Error</AlertTitle>
                   <AlertDescription className="text-red-700">
                     {apiData.error}. Using fallback example data.
@@ -159,7 +201,7 @@ export default function PawaProxyPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Globe className="w-5 h-5 text-green-600" />🌍 Proxy Overview
+                  <Globe className="w-5 h-5 text-green-600"/>🌍 Proxy Overview
                 </CardTitle>
                 <CardDescription>A simple way to access betPawa APIs during development</CardDescription>
               </CardHeader>
@@ -178,7 +220,7 @@ export default function PawaProxyPage() {
                     {copied === "base-url" ? (
                         <span className="text-green-600 text-xs font-medium">Copied!</span>
                     ) : (
-                        <Copy className="h-4 w-4 text-slate-500" />
+                        <Copy className="h-4 w-4 text-slate-500"/>
                     )}
                   </button>
                 </div>
@@ -200,7 +242,7 @@ export default function PawaProxyPage() {
                     {copied === "example-url" ? (
                         <span className="text-green-600 text-xs font-medium">Copied!</span>
                     ) : (
-                        <Copy className="h-4 w-4 text-slate-500" />
+                        <Copy className="h-4 w-4 text-slate-500"/>
                     )}
                   </button>
                 </div>
@@ -208,7 +250,8 @@ export default function PawaProxyPage() {
                 <div className="mt-6 space-y-4">
                   <h4 className="font-semibold text-lg">📋 Understanding Component Data</h4>
                   <p className="text-muted-foreground">
-                    The <code className="bg-slate-100 px-2 py-1 rounded text-sm">component-data</code> endpoint is one of
+                    The <code className="bg-slate-100 px-2 py-1 rounded text-sm">component-data</code> endpoint is one
+                    of
                     the most important APIs for building betPawa-style applications. It provides essential configuration
                     data including:
                   </p>
@@ -223,7 +266,7 @@ export default function PawaProxyPage() {
 
                   <div className="bg-blue-50 border border-blue-200 rounded-md p-4 flex gap-3">
                     <div className="text-blue-600 mt-1">
-                      <AlertCircle className="h-5 w-5" />
+                      <AlertCircle className="h-5 w-5"/>
                     </div>
                     <div>
                       <p className="font-medium text-blue-800">📚 Detailed Documentation</p>
@@ -248,7 +291,7 @@ export default function PawaProxyPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Key className="w-5 h-5 text-green-600" />🔐 Authentication
+                  <Key className="w-5 h-5 text-green-600"/>🔐 Authentication
                 </CardTitle>
                 <CardDescription>How to authenticate with the proxy service</CardDescription>
               </CardHeader>
@@ -384,10 +427,11 @@ export default function PawaProxyPage() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                      <Play className="w-5 h-5 text-blue-600" />
+                      <Play className="w-5 h-5 text-blue-600"/>
                       Video example
                     </CardTitle>
-                    <CardDescription className="text-md">Watch how looks like a login page for betpawa-nigeria using the API defined in @docs/api/user.yaml.</CardDescription>
+                    <CardDescription className="text-md">Watch how looks like a login page for betpawa-nigeria using the
+                      API defined in @docs/api/user.yaml.</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="bg-gray-900 rounded-lg p-4 border border-gray-300">
@@ -617,9 +661,33 @@ Authorization: Bearer sess_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                   <Code className="w-5 h-5 text-green-600"/>🤖 AI-Friendly Endpoints
                   {apiData.loading && <RefreshCw className="h-4 w-4 animate-spin text-green-600"/>}
                 </CardTitle>
-                <CardDescription>Live data from simplified endpoints</CardDescription>
+                <CardDescription>Live data from simplified endpoints
+
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
+                <div className="bg-slate-50 p-4 rounded-md font-mono text-sm overflow-x-auto relative group">
+                  <a
+                      href="https://pawa-proxy.replit.app/docs"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:underline"
+                  >
+                    https://pawa-proxy.replit.app/docs
+                  </a>
+                  <button
+                      onClick={() => handleCopy("https://pawa-proxy.replit.app/docs", "swagger-url")}
+                      className="absolute right-2 top-2 p-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity bg-slate-200 hover:bg-slate-300"
+                      aria-label="Copy to clipboard"
+                  >
+                    {copied === "swagger-url" ? (
+                        <span className="text-green-600 text-xs font-medium">Copied!</span>
+                    ) : (
+                        <Copy className="h-4 w-4 text-slate-500"/>
+                    )}
+                  </button>
+                </div>
+
                 <p className="text-muted-foreground">New, simplified endpoints with real, live data:</p>
 
                 {/* Popular Events with Real Data */}
@@ -639,7 +707,7 @@ Authorization: Bearer sess_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                       {copied === "popular-endpoint" ? (
                           <span className="text-green-600 text-xs font-medium">Copied!</span>
                       ) : (
-                          <Copy className="h-4 w-4 text-slate-500" />
+                          <Copy className="h-4 w-4 text-slate-500"/>
                       )}
                     </button>
                   </div>
@@ -651,7 +719,8 @@ Authorization: Bearer sess_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </TabsList>
 
                     <TabsContent value="request" className="space-y-4">
-                      <div className="bg-slate-800 text-white p-4 rounded-md font-mono text-sm overflow-x-auto relative group">
+                      <div
+                          className="bg-slate-800 text-white p-4 rounded-md font-mono text-sm overflow-x-auto relative group">
                         {`curl -X GET "https://pawa-proxy.replit.app/apiplus/events/popular" \\
   -H "x-pawa-brand: betpawa-ghana"`}
                         <button
@@ -668,14 +737,15 @@ Authorization: Bearer sess_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                           {copied === "popular-curl" ? (
                               <span className="text-green-400 text-xs font-medium">Copied!</span>
                           ) : (
-                              <Copy className="h-4 w-4 text-slate-300" />
+                              <Copy className="h-4 w-4 text-slate-300"/>
                           )}
                         </button>
                       </div>
                     </TabsContent>
 
                     <TabsContent value="response" className="space-y-4">
-                      <div className="bg-slate-50 p-4 rounded-md font-mono text-xs overflow-x-auto max-h-64 overflow-y-auto relative group">
+                      <div
+                          className="bg-slate-50 p-4 rounded-md font-mono text-xs overflow-x-auto max-h-64 overflow-y-auto relative group">
                         {apiData.popularEvents
                             ? JSON.stringify(apiData.popularEvents, null, 2)
                             : `{
@@ -695,7 +765,7 @@ Authorization: Bearer sess_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                           {copied === "popular-response" ? (
                               <span className="text-green-600 text-xs font-medium">Copied!</span>
                           ) : (
-                              <Copy className="h-4 w-4 text-slate-500" />
+                              <Copy className="h-4 w-4 text-slate-500"/>
                           )}
                         </button>
                       </div>
@@ -720,7 +790,7 @@ Authorization: Bearer sess_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                       {copied === "live-endpoint" ? (
                           <span className="text-green-600 text-xs font-medium">Copied!</span>
                       ) : (
-                          <Copy className="h-4 w-4 text-slate-500" />
+                          <Copy className="h-4 w-4 text-slate-500"/>
                       )}
                     </button>
                   </div>
@@ -732,7 +802,8 @@ Authorization: Bearer sess_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     </TabsList>
 
                     <TabsContent value="request" className="space-y-4">
-                      <div className="bg-slate-800 text-white p-4 rounded-md font-mono text-sm overflow-x-auto relative group">
+                      <div
+                          className="bg-slate-800 text-white p-4 rounded-md font-mono text-sm overflow-x-auto relative group">
                         {`curl -X GET "https://pawa-proxy.replit.app/apiplus/events/live" \\
   -H "x-pawa-brand: betpawa-ghana"`}
                         <button
@@ -749,14 +820,15 @@ Authorization: Bearer sess_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                           {copied === "live-curl" ? (
                               <span className="text-green-400 text-xs font-medium">Copied!</span>
                           ) : (
-                              <Copy className="h-4 w-4 text-slate-300" />
+                              <Copy className="h-4 w-4 text-slate-300"/>
                           )}
                         </button>
                       </div>
                     </TabsContent>
 
                     <TabsContent value="response" className="space-y-4">
-                      <div className="bg-slate-50 p-4 rounded-md font-mono text-xs overflow-x-auto max-h-64 overflow-y-auto relative group">
+                      <div
+                          className="bg-slate-50 p-4 rounded-md font-mono text-xs overflow-x-auto max-h-64 overflow-y-auto relative group">
                         {apiData.liveEvents
                             ? JSON.stringify(apiData.liveEvents, null, 2)
                             : `{
@@ -776,7 +848,7 @@ Authorization: Bearer sess_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                           {copied === "live-response" ? (
                               <span className="text-green-600 text-xs font-medium">Copied!</span>
                           ) : (
-                              <Copy className="h-4 w-4 text-slate-500" />
+                              <Copy className="h-4 w-4 text-slate-500"/>
                           )}
                         </button>
                       </div>
@@ -786,7 +858,7 @@ Authorization: Bearer sess_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
                 <div className="bg-blue-50 border border-blue-200 rounded-md p-4 flex gap-3">
                   <div className="text-blue-600 mt-1">
-                    <AlertCircle className="h-5 w-5" />
+                    <AlertCircle className="h-5 w-5"/>
                   </div>
                   <div>
                     <p className="font-medium text-blue-800">💡 Pro Tip</p>
@@ -803,7 +875,7 @@ Authorization: Bearer sess_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <ExternalLink className="w-5 h-5 text-green-600" />📚 Full API Documentation
+                  <ExternalLink className="w-5 h-5 text-green-600"/>📚 Full API Documentation
                 </CardTitle>
                 <CardDescription>Explore all available endpoints</CardDescription>
               </CardHeader>
@@ -834,7 +906,7 @@ Authorization: Bearer sess_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     {copied === "docs-url" ? (
                         <span className="text-green-600 text-xs font-medium">Copied!</span>
                     ) : (
-                        <Copy className="h-4 w-4 text-slate-500" />
+                        <Copy className="h-4 w-4 text-slate-500"/>
                     )}
                   </button>
                 </div>
@@ -848,7 +920,7 @@ Authorization: Bearer sess_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         className="flex flex-row items-center gap-2"
                     >
                       View API Documentation
-                      <ExternalLink className="w-4 h-4 ml-2" />
+                      <ExternalLink className="w-4 h-4 ml-2"/>
                     </a>
                   </Button>
                 </div>
@@ -859,7 +931,7 @@ Authorization: Bearer sess_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <MessageSquare className="w-5 h-5 text-green-600" />💬 Example Prompt for v0/Replit
+                  <MessageSquare className="w-5 h-5 text-green-600"/>💬 Example Prompt for v0/Replit
                 </CardTitle>
                 <CardDescription>Copy this prompt to quickly build a betting app with live data</CardDescription>
               </CardHeader>
@@ -879,14 +951,14 @@ Authorization: Bearer sess_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                     {copied === "example-prompt" ? (
                         <span className="text-green-600 text-xs font-medium">Copied!</span>
                     ) : (
-                        <Copy className="h-4 w-4 text-slate-500" />
+                        <Copy className="h-4 w-4 text-slate-500"/>
                     )}
                   </button>
                 </div>
 
                 <div className="bg-blue-50 border border-blue-200 rounded-md p-4 flex gap-3">
                   <div className="text-blue-600 mt-1">
-                    <MessageSquare className="h-5 w-5" />
+                    <MessageSquare className="h-5 w-5"/>
                   </div>
                   <div>
                     <p className="font-medium text-blue-800">💡 How to use this prompt</p>
@@ -905,7 +977,8 @@ Authorization: Bearer sess_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                       <span className="text-green-600">v0</span> Usage
                     </h3>
                     <p className="text-sm text-muted-foreground">
-                      Paste the prompt directly into v0 chat to generate a complete React component with live betting data
+                      Paste the prompt directly into v0 chat to generate a complete React component with live betting
+                      data
                     </p>
                   </div>
 
@@ -928,7 +1001,7 @@ Authorization: Bearer sess_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                         className="flex flex-row items-center gap-2"
                     >
                       Visit Proxy
-                      <ArrowRight className="w-4 h-4 ml-2" />
+                      <ArrowRight className="w-4 h-4 ml-2"/>
                     </a>
                   </Button>
                   <Button variant="outline" asChild>
