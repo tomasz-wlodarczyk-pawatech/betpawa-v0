@@ -1015,7 +1015,7 @@ Odds chip "selected" state announces: "Odds <numeric value> selected".`
                                     spacing, and buttons in the betPawa style.
                                 </p>
                                 <p className="text-md text-gray-700 leading-relaxed">
-                                    Just download the pawabloX template, and you can start building apps that look and feel like betPawa —
+                                    Just fork it the pawabloX template, and you can start building apps that look and feel like betPawa —
                                     no need to design everything from scratch!
                                 </p>
                                 <div className="flex flex-wrap gap-2 mt-3">
