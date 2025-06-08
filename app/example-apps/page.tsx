@@ -1,11 +1,11 @@
 "use client"
 
 import type React from "react"
-import {useState} from "react"
-import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card"
-import {Button} from "@/components/ui/button"
-import {Badge} from "@/components/ui/badge"
-import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs"
+import { useState } from "react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import {
     Dialog,
     DialogContent,
@@ -14,20 +14,8 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
-import {
-    Copy,
-    Check,
-    ExternalLink,
-    Smartphone,
-    Globe,
-    Calculator,
-    GamepadIcon,
-    ShoppingCart,
-    Calendar,
-    MessageSquare,
-    Zap
-} from "lucide-react"
-import Image from "next/image";
+import { Copy, Check, ExternalLink, Smartphone, Calculator, Play } from "lucide-react"
+import Image from "next/image"
 
 interface ExampleApp {
     id: string
@@ -36,6 +24,7 @@ interface ExampleApp {
     category: string
     prompt: string
     image: string
+    video: boolean
     technologies: string[]
     difficulty: "Beginner" | "Intermediate" | "Advanced"
     icon: React.ComponentType<any>
@@ -51,22 +40,38 @@ const exampleApps: ExampleApp[] = [
 
 load upcoming betting events from https://pawa-api.replit.app/gh/events and display them under the login form together with event details, 1x2 markets and their odds. Example api response: { "status": "success", "data": [ { "start_time": "2025-05-28T19:00:00Z", "competition": "Football - International - UEFA Conference League", "event_name": "Real Betis Seville - Chelsea FC (n)", "event_id": "27279048", "sr_id": "58267485", "scoreboard": [], "markets": [ { "name": "1X2 | Full Time", "selections": [ { "id": "1199575943", "name": "1", "odds": "4.45", "hot": 0 }, { "id": "1199575944", "name": "X", "odds": "3.70", "hot": 0 }, { "id": "1199575945", "name": "2", "odds": "1.90", "hot": 1 } ] }, { "name": "Double Chance | Full Time", "selections": [ { "id": "1199578566", "name": "1X", "odds": "1.92", "hot": 0 }, { "id": "1199578568", "name": "X2", "odds": "1.23", "hot": 1 }, { "id": "1199578567", "name": "12", "odds": "1.31", "hot": 0 } ] }, { "name": "Both Teams To Score | Full Time", "selections": [ { "id": "1199578829", "name": "Yes", "odds": "1.83", "hot": 1 }, { "id": "1199578830", "name": "No", "odds": "1.98", "hot": 0 } ] }`,
         image: "/sport-bet.png",
+        video: false,
         technologies: ["Next.js"],
         difficulty: "Intermediate",
-        icon: Smartphone
+        icon: Smartphone,
     },
+    {
+        id: "balance-wallet",
+        title: "Digital Wallet & Balance App",
+        description: "A mobile wallet app with balance tracking, transaction history, and money transfer features",
+        category: "Finance",
+        prompt: `Create a login page for betpawa-nigeria using the API defined in @docs/api/user.yaml, with https://pawa-proxy.replit.app as the base URL, and do not use credentials: 'include' or any CSRF-related credentials handling.
+Save the sessionToken from body to localStorage.
 
+
+After a user logs in, redirect them to a dashboard page. On the dashboard, fetch and display the user's balance from an API @docs/api/ledger.yaml. The request to the balance API must include the sessionToken stored in localStorage.
+Authorization: Bearer sess_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX`,
+        image: "/balance.gif",
+        video: true,
+        technologies: ["Next.js", "Tailwind CSS", "Recharts"],
+        difficulty: "Intermediate",
+        icon: Calculator,
+    },
 ]
 
 export default function ExampleAppsPage() {
     const [copiedPrompt, setCopiedPrompt] = useState<string>("")
     const [selectedCategory, setSelectedCategory] = useState<string>("All")
 
-    const categories = ["All", ...Array.from(new Set(exampleApps.map(app => app.category)))]
+    const categories = ["All", ...Array.from(new Set(exampleApps.map((app) => app.category)))]
 
-    const filteredApps = selectedCategory === "All"
-        ? exampleApps
-        : exampleApps.filter(app => app.category === selectedCategory)
+    const filteredApps =
+        selectedCategory === "All" ? exampleApps : exampleApps.filter((app) => app.category === selectedCategory)
 
     const handleCopyPrompt = async (prompt: string, appId: string) => {
         try {
@@ -96,8 +101,7 @@ export default function ExampleAppsPage() {
             {/* Mobile header */}
             <div className="md:hidden flex items-center justify-between p-4 border-b bg-background">
                 <div className="flex items-center gap-2">
-                    <div
-                        className="w-6 h-6 bg-gradient-to-br from-green-400 to-green-600 rounded flex items-center justify-center">
+                    <div className="w-6 h-6 bg-gradient-to-br from-green-400 to-green-600 rounded flex items-center justify-center">
                         <span className="text-white font-bold text-xs">P</span>
                     </div>
                     <div className="font-bold text-sm">
@@ -114,8 +118,7 @@ export default function ExampleAppsPage() {
                     <div className="space-y-2">
                         <h1 className="text-2xl font-semibold text-gray-900">Example Apps</h1>
                         <p className="text-gray-600">
-                            Discover what's possible with Replit! Browse example applications with prompts and see the
-                            results.
+                            Discover what's possible with Replit! Browse example applications with prompts and see the results.
                         </p>
                     </div>
 
@@ -140,8 +143,7 @@ export default function ExampleAppsPage() {
                                         <div className="flex items-start justify-between">
                                             <div className="flex items-center gap-3">
                                                 <div className="p-2 bg-green-100 rounded-lg">
-
-                                                    <IconComponent className="w-5 h-5 text-green-600"/>
+                                                    <IconComponent className="w-5 h-5 text-green-600" />
                                                 </div>
                                                 <div>
                                                     <CardTitle className="text-lg">{app.title}</CardTitle>
@@ -149,18 +151,14 @@ export default function ExampleAppsPage() {
                                                         <Badge variant="secondary" className="text-xs">
                                                             {app.category}
                                                         </Badge>
-                                                        <Badge
-                                                            className={`text-xs text-white ${getDifficultyColor(app.difficulty)}`}
-                                                        >
+                                                        <Badge className={`text-xs text-white ${getDifficultyColor(app.difficulty)}`}>
                                                             {app.difficulty}
                                                         </Badge>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <CardDescription className="text-sm leading-relaxed">
-                                            {app.description}
-                                        </CardDescription>
+                                        <CardDescription className="text-sm leading-relaxed">{app.description}</CardDescription>
                                     </CardHeader>
 
                                     <CardContent className="space-y-4">
@@ -173,16 +171,67 @@ export default function ExampleAppsPage() {
                                             ))}
                                         </div>
 
-                                        {/* App preview placeholder */}
-                                        <div
-                                            className="aspect-video bg-gray-100 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300">
-                                            <div className="text-center text-gray-500">
-                                                {app.image ? <Image src={app.image} alt={app.title} width={400}
-                                                                    height={400}/> :
-                                                    <IconComponent className="w-8 h-8 mx-auto mb-2 opacity-50"/>
-                                                }
-                                                <p className="text-sm">App Preview</p>
-                                            </div>
+                                        {/* App preview with video modal */}
+                                        <div className="relative">
+                                            {app.video ? (
+                                                <Dialog>
+                                                    <DialogTrigger asChild>
+                                                        <div className="aspect-video bg-gray-100 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300 cursor-pointer hover:bg-gray-50 transition-colors group/preview">
+                                                            <div className="text-center text-gray-500">
+                                                                <div className="relative">
+                                                                    {app.image ? (
+                                                                        <Image
+                                                                            src={app.image || "/placeholder.svg"}
+                                                                            alt={app.title}
+                                                                            width={400}
+                                                                            height={400}
+                                                                            className="rounded opacity-80"
+                                                                        />
+                                                                    ) : (
+                                                                        <IconComponent className="w-8 h-8 mx-auto mb-2 opacity-50" />
+                                                                    )}
+                                                                    <div className="absolute inset-0 flex items-center justify-center">
+                                                                        <div className="bg-green-600 hover:bg-green-700 text-white rounded-full p-3 shadow-lg transition-colors">
+                                                                            <Play className="w-6 h-6 ml-1" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <p className="text-sm mt-2">Click to view demo</p>
+                                                            </div>
+                                                        </div>
+                                                    </DialogTrigger>
+                                                    <DialogContent className="max-w-[1200px] space-y-4">
+                                                        <DialogHeader>
+                                                            <DialogTitle className="flex items-center gap-2">
+                                                                <IconComponent className="w-5 h-5" />
+                                                                {app.title} Demo
+                                                            </DialogTitle>
+                                                            <DialogDescription>See how the app works in action</DialogDescription>
+                                                        </DialogHeader>
+                                                        <div className="flex justify-center">
+                                                            <Image
+                                                                src={app.image || "/placeholder.svg"}
+                                                                alt={`${app.title} demo`}
+                                                                width={1200}
+                                                                height={1200}
+                                                                className="rounded-lg border"
+                                                                unoptimized
+                                                            />
+                                                        </div>
+                                                    </DialogContent>
+                                                </Dialog>
+                                            ) : (
+                                                <div className="aspect-video bg-gray-100 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300">
+                                                    <div className="text-center text-gray-500">
+                                                        {app.image ? (
+                                                            <Image src={app.image || "/placeholder.svg"} alt={app.title} width={400} height={400} />
+                                                        ) : (
+                                                            <IconComponent className="w-8 h-8 mx-auto mb-2 opacity-50" />
+                                                        )}
+                                                        <p className="text-sm">App Preview</p>
+                                                    </div>
+                                                </div>
+                                            )}
                                         </div>
 
                                         {/* Action buttons */}
@@ -196,7 +245,7 @@ export default function ExampleAppsPage() {
                                                 <DialogContent className="max-w-2xl max-h-[80vh] overflow-hidden">
                                                     <DialogHeader>
                                                         <DialogTitle className="flex items-center gap-2">
-                                                            <IconComponent className="w-5 h-5"/>
+                                                            <IconComponent className="w-5 h-5" />
                                                             {app.title}
                                                         </DialogTitle>
                                                         <DialogDescription>
@@ -205,18 +254,29 @@ export default function ExampleAppsPage() {
                                                     </DialogHeader>
 
                                                     <div className="space-y-4">
-                                                        <div
-                                                            className="bg-gray-50 rounded-lg p-4 max-h-60 overflow-y-auto">
-                                                            <pre
-                                                                className="text-sm whitespace-pre-wrap text-gray-800 font-mono">
-                                                                {app.prompt}
-                                                            </pre>
+                                                        <div className="bg-gray-50 rounded-lg p-4 max-h-60 overflow-y-auto">
+                                                            <pre className="text-sm whitespace-pre-wrap text-gray-800 font-mono">{app.prompt}</pre>
                                                         </div>
+
+                                                        {app.video && app.image && (
+                                                            <div className="space-y-2">
+                                                                <p className="font-medium text-sm">App Demo:</p>
+                                                                <div className="border rounded-lg overflow-hidden">
+                                                                    <Image
+                                                                        src={app.image || "/placeholder.svg"}
+                                                                        alt={`${app.title} demo`}
+                                                                        width={500}
+                                                                        height={900}
+                                                                        className="w-full max-w-sm mx-auto"
+                                                                        unoptimized
+                                                                    />
+                                                                </div>
+                                                            </div>
+                                                        )}
 
                                                         <div className="flex justify-between items-center">
                                                             <div className="flex gap-2">
-                                                                <Badge
-                                                                    className={`text-white ${getDifficultyColor(app.difficulty)}`}>
+                                                                <Badge className={`text-white ${getDifficultyColor(app.difficulty)}`}>
                                                                     {app.difficulty}
                                                                 </Badge>
                                                                 <Badge variant="secondary">{app.category}</Badge>
@@ -230,12 +290,12 @@ export default function ExampleAppsPage() {
                                                             >
                                                                 {copiedPrompt === app.id ? (
                                                                     <div className="flex items-center gap-2">
-                                                                        <Check className="w-4 h-4"/>
+                                                                        <Check className="w-4 h-4" />
                                                                         Copied!
                                                                     </div>
                                                                 ) : (
                                                                     <div className="flex items-center gap-2">
-                                                                        <Copy className="w-4 h-4"/>
+                                                                        <Copy className="w-4 h-4" />
                                                                         Copy Prompt
                                                                     </div>
                                                                 )}
@@ -246,8 +306,7 @@ export default function ExampleAppsPage() {
                                                             <p className="font-medium mb-2">Technologies used:</p>
                                                             <div className="flex flex-wrap gap-1">
                                                                 {app.technologies.map((tech) => (
-                                                                    <Badge key={tech} variant="outline"
-                                                                           className="text-xs">
+                                                                    <Badge key={tech} variant="outline" className="text-xs">
                                                                         {tech}
                                                                     </Badge>
                                                                 ))}
@@ -258,7 +317,7 @@ export default function ExampleAppsPage() {
                                             </Dialog>
 
                                             <Button variant="tertiary" size="sm">
-                                                <ExternalLink className="w-4 h-4"/>
+                                                <ExternalLink className="w-4 h-4" />
                                             </Button>
                                         </div>
                                     </CardContent>
@@ -268,7 +327,6 @@ export default function ExampleAppsPage() {
                     </div>
 
                     {/* Call to action */}
-
                 </div>
             </div>
         </div>
